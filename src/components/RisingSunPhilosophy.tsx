@@ -1,5 +1,5 @@
 import React from 'react';
-import { Brain, Heart, Users, Compass, Calendar, ArrowUpRight } from 'lucide-react';
+import { Calendar, ArrowUpRight } from 'lucide-react';
 
 interface RisingSunPhilosophyProps {
   onOpenCalendar: () => void;
@@ -8,22 +8,18 @@ interface RisingSunPhilosophyProps {
 export const RisingSunPhilosophy: React.FC<RisingSunPhilosophyProps> = ({ onOpenCalendar }) => {
   const items = [
     {
-      icon: Brain,
       title: 'Personalized Learning',
       desc: 'We tailor our Montessori approach to each child\'s unique learning style, promoting individual growth, independent inquiry, and authentic confidence.',
     },
     {
-      icon: Heart,
       title: 'Nurturing Environment',
       desc: 'We provide a safe, supportive, and stimulating environment where children can thrive emotionally, socially, and academically without anxiety.',
     },
     {
-      icon: Users,
       title: 'Experienced Educators',
       desc: 'Our dedicated teachers are internationally certified and deeply committed to fostering creativity, curiosity, and a lifelong passion for discovery.',
     },
     {
-      icon: Compass,
       title: 'Holistic Development',
       desc: 'We focus on developing both robust academic foundations and essential character virtues, preparing every child for purposeful global citizenship.',
     },
@@ -68,41 +64,32 @@ export const RisingSunPhilosophy: React.FC<RisingSunPhilosophyProps> = ({ onOpen
             <div className="hidden sm:block absolute left-4 top-8 bottom-12 w-0.5 bg-orange-200/70 dark:bg-orange-500/30" />
 
             <div className="space-y-8">
-              {items.map((item, idx) => {
-                const IconComponent = item.icon;
-                return (
-                  <div key={idx} className="relative sm:pl-12 flex items-start group">
-                    {/* Orange timeline dot */}
-                    <div className="hidden sm:flex absolute left-2.5 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#f95716] ring-4 ring-orange-100 dark:ring-orange-950/60 items-center justify-center transition-transform group-hover:scale-125" />
+              {items.map((item, idx) => (
+                <div key={idx} className="relative sm:pl-12 flex items-start group">
+                  {/* Orange timeline dot */}
+                  <div className="hidden sm:flex absolute left-2.5 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#f95716] ring-4 ring-orange-100 dark:ring-orange-950/60 items-center justify-center transition-transform group-hover:scale-125" />
 
-                    {/* Card */}
-                    <div className="w-full bg-white dark:bg-[#060c24] rounded-3xl border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row overflow-hidden group-hover:-translate-y-1">
-                      {/* Left navy icon block */}
-                      <div className="sm:w-44 bg-[#0d176d] p-8 flex items-center justify-center shrink-0">
-                        <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-[#f95716] ring-1 ring-white/15">
-                          <IconComponent className="w-8 h-8" strokeWidth={1.75} />
-                        </div>
-                      </div>
-
-                      {/* Right text body */}
-                      <div className="p-8 sm:p-9 flex-1 relative overflow-hidden flex flex-col justify-center">
-                        {/* Faint watermark icon */}
-                        <IconComponent
-                          className="absolute -right-4 -bottom-4 w-32 h-32 text-slate-100 dark:text-white/5 opacity-60 pointer-events-none"
-                          strokeWidth={1}
-                        />
-
-                        <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white mb-3 tracking-tight">
-                          {item.title}
-                        </h3>
-                        <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed relative z-10">
-                          {item.desc}
-                        </p>
-                      </div>
+                  {/* Clean Editorial Pillar Card */}
+                  <div className="w-full bg-white dark:bg-[#060c24] rounded-3xl border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 p-7 sm:p-9 group-hover:-translate-y-1 relative overflow-hidden">
+                    {/* Top bar with Pillar Index */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="font-mono text-xs font-bold text-[#f95716] uppercase tracking-widest bg-orange-50 dark:bg-orange-950/40 px-3.5 py-1 rounded-full border border-orange-200/60 dark:border-orange-500/20">
+                        PILLAR 0{idx + 1}
+                      </span>
+                      <span className="text-3xl font-serif font-black text-slate-200 dark:text-slate-800 select-none">
+                        0{idx + 1}
+                      </span>
                     </div>
+
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0d176d] dark:text-white mb-3 tracking-tight">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+                      {item.desc}
+                    </p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </div>
 
