@@ -66,8 +66,8 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
       className={`fixed left-0 right-0 top-3 sm:top-5 z-[60] mx-auto w-[95vw] sm:w-max max-w-7xl rounded-full p-1.5 sm:p-2 pr-2.5 sm:pr-4 backdrop-blur-2xl transition-all duration-300 ${
         isDark
           ? scrolled
-            ? 'bg-[#09103b]/95 border border-indigo-500/30 shadow-[0_16px_40px_rgba(0,0,0,0.6)] ring-1 ring-white/10'
-            : 'bg-[#080e33]/90 border border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.5)] ring-1 ring-white/10'
+            ? 'bg-[#020617]/95 border border-slate-800/80 shadow-[0_16px_40px_rgba(0,0,0,0.7)] ring-1 ring-white/10'
+            : 'bg-[#030718]/90 border border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.6)] ring-1 ring-white/10'
           : scrolled
             ? 'bg-white/95 shadow-xl ring-1 ring-black/5'
             : 'bg-white/90 ring-1 ring-black/5 shadow-[0_12px_36px_rgba(13,23,109,0.12)]'
@@ -143,7 +143,7 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
                   <div
                     className={`rounded-2xl p-2 shadow-2xl border ring-1 ring-black/5 flex flex-col gap-1 ${
                       isDark
-                        ? 'bg-[#0f1747] border-indigo-500/30 text-white'
+                        ? 'bg-[#060c24] border-slate-800/80 text-white'
                         : 'bg-white border-slate-100 text-slate-800'
                     }`}
                   >
@@ -220,7 +220,7 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
         <div
           className={`xl:hidden absolute top-full left-0 right-0 mt-3 p-4 rounded-3xl border shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200 max-h-[75vh] overflow-y-auto ${
             isDark
-              ? 'bg-[#09103b]/98 backdrop-blur-2xl border-white/15 text-white'
+              ? 'bg-[#020617]/98 backdrop-blur-2xl border-white/10 text-white'
               : 'bg-white/95 backdrop-blur-2xl border-slate-100 text-slate-800'
           }`}
         >
@@ -245,7 +245,7 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
             {/* Mobile Day / Night Segmented Switch */}
             <div
               className={`p-3 rounded-2xl flex items-center justify-between mt-2 border ${
-                isDark ? 'bg-white/5 border-white/10' : 'bg-slate-50 border-slate-200'
+                isDark ? 'bg-[#060c24] border-slate-800' : 'bg-slate-50 border-slate-200'
               }`}
             >
               <div className="flex items-center gap-2 text-xs font-semibold">

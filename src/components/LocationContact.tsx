@@ -38,11 +38,11 @@ export const LocationContact: React.FC = () => {
   };
 
   return (
-    <div className="w-full bg-[#fafafc] text-slate-800 space-y-12">
+    <div className="w-full bg-[#fafafc] dark:bg-[#030718] text-slate-800 dark:text-slate-100 space-y-12 transition-colors duration-300">
       {/* Real Campus Location & Direct Highlights */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Left: Detailed Campus Address & Operational Hub (7 cols) */}
-        <div className="lg:col-span-7 bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-xl relative overflow-hidden flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-white dark:bg-[#060c24] rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-white/10 shadow-xl relative overflow-hidden flex flex-col justify-between">
           <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
 
           <div>
@@ -53,18 +53,18 @@ export const LocationContact: React.FC = () => {
               <span className="text-xs text-slate-400 font-mono">ACCRA · EST. 2020</span>
             </div>
 
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0d176d] tracking-tight mb-4">
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0d176d] dark:text-white tracking-tight mb-4">
               {language === 'tw' ? 'Yɛn Sukuu Bea Wɔ Santa Maria' : 'Queensbury Montessori Campus'}
             </h3>
 
-            <div className="space-y-4 text-sm text-slate-600 mb-8">
-              <div className="flex items-start gap-3 bg-slate-50 p-4 rounded-2xl border border-slate-100">
+            <div className="space-y-4 text-sm text-slate-600 dark:text-slate-300 mb-8">
+              <div className="flex items-start gap-3 bg-slate-50 dark:bg-[#020617] p-4 rounded-2xl border border-slate-100 dark:border-white/10">
                 <MapPin className="w-5 h-5 text-[#f95716] shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-semibold text-slate-900 leading-snug">
+                  <p className="font-semibold text-slate-900 dark:text-white leading-snug">
                     {fullAddress}
                   </p>
-                  <p className="text-xs text-amber-700 font-medium mt-1">
+                  <p className="text-xs text-amber-700 dark:text-amber-300 font-medium mt-1">
                     {language === 'tw'
                       ? 'Ahyɛnsodeɛ: Ɛbɛn North Deseret Hospital, Auntie Aku Last Stop.'
                       : 'Landmark: Near North Deseret Hospital, Auntie Aku Last Stop.'}
@@ -74,29 +74,29 @@ export const LocationContact: React.FC = () => {
 
               {/* Operating Hours Strip */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-[#0d176d] mb-1">
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-[#0d176d] dark:text-amber-300 mb-1">
                     <Clock className="w-4 h-4 text-[#f95716]" />
                     <span>School Hours</span>
                   </div>
-                  <span className="text-xs font-bold text-slate-800 block">Monday – Friday</span>
-                  <span className="text-xs text-slate-500">7:00 AM – 3:00 PM (Regular)</span>
-                  <span className="text-[11px] text-emerald-700 font-semibold block mt-0.5">After-care until 4:00 PM</span>
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">Monday – Friday</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">7:00 AM – 3:00 PM (Regular)</span>
+                  <span className="text-[11px] text-emerald-700 dark:text-emerald-400 font-semibold block mt-0.5">After-care until 4:00 PM</span>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100">
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-[#0d176d] mb-1">
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-[#0d176d] dark:text-amber-300 mb-1">
                     <ShieldCheck className="w-4 h-4 text-[#f95716]" />
                     <span>Admissions & Tours</span>
                   </div>
-                  <span className="text-xs font-bold text-slate-800 block">Daily Walkthroughs</span>
-                  <span className="text-xs text-slate-500">8:30 AM – 2:00 PM</span>
-                  <span className="text-[11px] text-amber-700 font-semibold block mt-0.5">Visits by appointment</span>
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">Daily Walkthroughs</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">8:30 AM – 2:00 PM</span>
+                  <span className="text-[11px] text-amber-700 dark:text-amber-400 font-semibold block mt-0.5">Visits by appointment</span>
                 </div>
               </div>
 
               {/* Neighborhood catchment info */}
-              <div className="text-xs text-slate-500 leading-relaxed font-sans">
+              <div className="text-xs text-slate-500 dark:text-slate-300 leading-relaxed font-sans">
                 {language === 'tw'
                   ? 'Ɛyɛ mmerɛ sɛ awofoɔ a wɔwɔ Kwashieman, Sowutuom, Ablekuma, Lapaz, ne Mallam de wɔn mmofra bɛba ha ntɛm.'
                   : 'Easily accessible for commuting families across Santa Maria, Kwashieman, Sowutuom, Ablekuma, Lapaz, and Mallam.'}
@@ -105,7 +105,7 @@ export const LocationContact: React.FC = () => {
           </div>
 
           {/* Action buttons */}
-          <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+          <div className="pt-6 border-t border-slate-100 dark:border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <a
               href="https://maps.google.com/?q=Queensbury+Montessori+School+Santa+Maria+Accra+Ghana"
               target="_blank"
@@ -119,11 +119,11 @@ export const LocationContact: React.FC = () => {
             <button
               type="button"
               onClick={handleCopy}
-              className="py-3 px-5 sm:px-6 rounded-full border border-slate-200 hover:border-slate-300 text-slate-700 text-xs font-semibold transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+              className="py-3 px-5 sm:px-6 rounded-full border border-slate-200 dark:border-white/15 hover:border-slate-300 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-white/5 text-xs font-semibold transition-all flex items-center justify-center gap-1.5 cursor-pointer"
             >
               {copied ? (
                 <>
-                  <Check className="w-4 h-4 text-emerald-600" />
+                  <Check className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
                   <span>{language === 'tw' ? 'Wɔatwe Beaeɛ No!' : 'Copied to Clipboard!'}</span>
                 </>
               ) : (
@@ -164,27 +164,27 @@ export const LocationContact: React.FC = () => {
           </div>
 
           {/* Quick Telephone Helplines Card */}
-          <div className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-md">
-            <h4 className="font-serif text-xl font-bold text-[#0d176d] mb-4">
+          <div className="bg-white dark:bg-[#060c24] rounded-3xl p-8 border border-slate-200/90 dark:border-white/10 shadow-md">
+            <h4 className="font-serif text-xl font-bold text-[#0d176d] dark:text-white mb-4">
               {language === 'tw' ? 'Frɛ Yɛn Tɛlɛfon So' : 'Official Phone & Email'}
             </h4>
             <div className="space-y-4 text-sm">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-white/10">
                 <div>
-                  <span className="font-bold text-slate-800 block">Main Campus Line</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200 block">Main Campus Line</span>
                   <span className="text-xs text-slate-400">Head of School & Administration</span>
                 </div>
                 <a
                   href="tel:0505688484"
-                  className="font-mono font-bold text-[#0d176d] hover:text-[#f95716] transition-colors"
+                  className="font-mono font-bold text-[#0d176d] dark:text-amber-300 hover:text-[#f95716] transition-colors"
                 >
                   050 568 8484
                 </a>
               </div>
 
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100 dark:border-white/10">
                 <div>
-                  <span className="font-bold text-slate-800 block">Admissions WhatsApp</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200 block">Admissions WhatsApp</span>
                   <span className="text-xs text-slate-400">Enrollment & Form Enquiries</span>
                 </div>
                 <a
@@ -197,12 +197,12 @@ export const LocationContact: React.FC = () => {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <span className="font-bold text-slate-800 block">Official Email</span>
+                  <span className="font-bold text-slate-800 dark:text-slate-200 block">Official Email</span>
                   <span className="text-xs text-slate-400">Direct Inquiries</span>
                 </div>
                 <a
                   href="mailto:info@queensburymontessori.edu.gh"
-                  className="text-xs font-semibold text-[#0d176d] hover:text-[#f95716] transition-colors truncate max-w-[180px]"
+                  className="text-xs font-semibold text-[#0d176d] dark:text-amber-300 hover:text-[#f95716] transition-colors truncate max-w-[180px]"
                 >
                   info@queensburymontessori.edu.gh
                 </a>
@@ -213,30 +213,30 @@ export const LocationContact: React.FC = () => {
       </div>
 
       {/* Direct Inquiry Form */}
-      <div className="bg-white rounded-3xl p-8 sm:p-10 border border-slate-200/90 shadow-xl relative overflow-hidden">
+      <div className="bg-white dark:bg-[#060c24] rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-white/10 shadow-xl relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
 
         <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
           {language === 'tw' ? 'KASA KYERƐ YƐN' : 'SEND A DIRECT INQUIRY'}
         </span>
-        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0d176d] mb-3 tracking-tight">
+        <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0d176d] dark:text-white mb-3 tracking-tight">
           {language === 'tw' ? 'Mena Yɛn Nkratoɔ Ntɛm' : 'We Welcome Your Questions'}
         </h3>
-        <p className="text-slate-600 text-sm mb-6 leading-relaxed max-w-2xl">
+        <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 leading-relaxed max-w-2xl">
           {language === 'tw'
             ? 'Hyehyɛ nkyerɛwee yi na yɛn akyerɛkyerɛfoɔ ne wo bɛkasa ntɛm ara fa abofra no adesua ho.'
             : 'Whether you have questions about our Crèche ratios, Montessori work cycles, nutritional lunches, or fees, our admissions desk will respond within 24 hours.'}
         </p>
 
         {submitted ? (
-          <div className="p-6 bg-emerald-50 border border-emerald-200 rounded-2xl text-center space-y-2 animate-in zoom-in-95">
+          <div className="p-6 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 rounded-2xl text-center space-y-2 animate-in zoom-in-95">
             <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center mx-auto mb-2">
               <Check className="w-6 h-6" />
             </div>
-            <h4 className="font-serif text-lg font-bold text-emerald-900">
+            <h4 className="font-serif text-lg font-bold text-emerald-900 dark:text-emerald-200">
               {language === 'tw' ? 'Yɛanya Wo Nkratoɔ No!' : 'Inquiry Sent Successfully!'}
             </h4>
-            <p className="text-emerald-700 text-xs sm:text-sm">
+            <p className="text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm">
               {language === 'tw'
                 ? 'Yɛbɛkasa akyerɛ wo ntɛm ara. Medaase.'
                 : 'Thank you for contacting Queensbury Montessori School. Our admissions team will connect with you shortly.'}
@@ -246,7 +246,7 @@ export const LocationContact: React.FC = () => {
           <form onSubmit={handleFormSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
                   {language === 'tw' ? 'Wo Din *' : 'Parent / Guardian Name *'}
                 </label>
                 <input
@@ -255,12 +255,12 @@ export const LocationContact: React.FC = () => {
                   placeholder="e.g. Emmanuel Asante"
                   value={formData.parentName}
                   onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
                   {language === 'tw' ? 'Frɛ / WhatsApp Nɔma *' : 'Phone / WhatsApp Number *'}
                 </label>
                 <input
@@ -269,14 +269,14 @@ export const LocationContact: React.FC = () => {
                   placeholder="e.g. 024 113 3632"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
                   {language === 'tw' ? 'Email Beaeɛ' : 'Email Address'}
                 </label>
                 <input
@@ -284,18 +284,18 @@ export const LocationContact: React.FC = () => {
                   placeholder="parent@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 mb-1">
+                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
                   {language === 'tw' ? 'Adesua Gyinapɛn' : 'Stage of Interest'}
                 </label>
                 <select
                   value={formData.stage}
                   onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
                 >
                   <option value="Crèche & Daycare (0–2 Years)">Crèche & Daycare (0–2 Years)</option>
                   <option value="Montessori Nursery (2–4 Years)">Montessori Nursery (2–4 Years)</option>
@@ -305,7 +305,7 @@ export const LocationContact: React.FC = () => {
             </div>
 
             <div>
-              <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 mb-1">
+              <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1">
                 {language === 'tw' ? 'Wo Nkratoɔ Anaa Asɛmmisa' : 'Your Message / Inquiry'}
               </label>
               <textarea
@@ -318,7 +318,7 @@ export const LocationContact: React.FC = () => {
                 }
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white resize-none"
               />
             </div>
 

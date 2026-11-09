@@ -32,7 +32,7 @@ export const RisingSunWhyChooseUs: React.FC<RisingSunWhyChooseUsProps> = ({
   ];
 
   return (
-    <section id="why-choose-us" className="w-full bg-[#fafafc] dark:bg-[#060b24] py-20 md:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-300">
+    <section id="why-choose-us" className="w-full bg-[#fafafc] dark:bg-[#030718] py-20 md:py-28 px-4 sm:px-6 lg:px-8 overflow-hidden transition-colors duration-300">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-14">
@@ -74,7 +74,7 @@ export const RisingSunWhyChooseUs: React.FC<RisingSunWhyChooseUsProps> = ({
               </div>
 
               {/* Floating Orange Experience Badge */}
-              <div className="absolute -bottom-4 right-1 sm:-bottom-6 sm:-right-4 bg-[#f95716] text-white p-3.5 sm:p-5 rounded-2xl shadow-xl border-2 sm:border-4 border-[#fafafc] dark:border-[#0c143d] flex items-center gap-3 sm:gap-4 max-w-[240px] sm:max-w-xs animate-in zoom-in-95 duration-500">
+              <div className="absolute -bottom-4 right-1 sm:-bottom-6 sm:-right-4 bg-[#f95716] text-white p-3.5 sm:p-5 rounded-2xl shadow-xl border-2 sm:border-4 border-[#fafafc] dark:border-[#060c24] flex items-center gap-3 sm:gap-4 max-w-[240px] sm:max-w-xs animate-in zoom-in-95 duration-500">
                 <div className="font-serif text-2xl sm:text-4xl font-extrabold leading-none tracking-tight">
                   2020
                 </div>

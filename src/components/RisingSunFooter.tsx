@@ -24,7 +24,7 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
   };
 
   return (
-    <footer className="w-full bg-[#0d176d] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative">
+    <footer className="w-full bg-[#0d176d] dark:bg-[#020617] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative transition-colors duration-200">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Col 1: Crest & Brand Statement (4 cols) */}

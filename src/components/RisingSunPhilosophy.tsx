@@ -48,7 +48,7 @@ export const RisingSunPhilosophy: React.FC<RisingSunPhilosophyProps> = ({ onOpen
   ];
 
   return (
-    <section id="philosophy" className="w-full bg-[#fafafc] dark:bg-[#060b24] py-20 md:py-28 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <section id="philosophy" className="w-full bg-[#fafafc] dark:bg-[#030718] py-20 md:py-28 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <div className="mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="mb-14 max-w-3xl">
@@ -76,7 +76,7 @@ export const RisingSunPhilosophy: React.FC<RisingSunPhilosophyProps> = ({ onOpen
                     <div className="hidden sm:flex absolute left-2.5 top-8 -translate-x-1/2 w-4 h-4 rounded-full bg-[#f95716] ring-4 ring-orange-100 dark:ring-orange-950/60 items-center justify-center transition-transform group-hover:scale-125" />
 
                     {/* Card */}
-                    <div className="w-full bg-white dark:bg-[#0c143d] rounded-3xl border border-slate-200/90 dark:border-indigo-500/20 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row overflow-hidden group-hover:-translate-y-1">
+                    <div className="w-full bg-white dark:bg-[#060c24] rounded-3xl border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col sm:flex-row overflow-hidden group-hover:-translate-y-1">
                       {/* Left navy icon block */}
                       <div className="sm:w-44 bg-[#0d176d] p-8 flex items-center justify-center shrink-0">
                         <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center text-[#f95716] ring-1 ring-white/15">
@@ -108,7 +108,7 @@ export const RisingSunPhilosophy: React.FC<RisingSunPhilosophyProps> = ({ onOpen
 
           {/* Right Column: Sticky Upcoming Events Card */}
           <div className="lg:col-span-4 sticky top-28">
-            <div className="bg-white dark:bg-[#0c143d] rounded-3xl p-8 border border-slate-200/80 dark:border-indigo-500/20 shadow-lg relative overflow-hidden">
+            <div className="bg-white dark:bg-[#060c24] rounded-3xl p-8 border border-slate-200/80 dark:border-white/10 shadow-lg relative overflow-hidden">
               {/* Card top accent */}
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#f95716]" />
 
@@ -152,7 +152,7 @@ export const RisingSunPhilosophy: React.FC<RisingSunPhilosophyProps> = ({ onOpen
               <button
                 type="button"
                 onClick={onOpenCalendar}
-                className="w-full py-3.5 px-6 rounded-full border-2 border-[#0d176d] dark:border-amber-400 text-[#0d176d] dark:text-amber-300 font-bold text-sm tracking-wider uppercase hover:bg-[#0d176d] hover:text-white dark:hover:bg-amber-400 dark:hover:text-[#060b24] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                className="w-full py-3.5 px-6 rounded-full border-2 border-[#0d176d] dark:border-amber-400 text-[#0d176d] dark:text-amber-300 font-bold text-sm tracking-wider uppercase hover:bg-[#0d176d] hover:text-white dark:hover:bg-amber-400 dark:hover:text-[#030718] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
               >
                 <span>VIEW CALENDAR</span>
                 <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

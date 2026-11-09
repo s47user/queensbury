@@ -40,7 +40,7 @@ export const LearningExperience: React.FC = () => {
   };
 
   return (
-    <section id="experience" className="py-12 bg-[#fafafc]">
+    <section id="experience" className="py-12 bg-[#fafafc] dark:bg-[#030718] text-slate-800 dark:text-slate-100 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -48,10 +48,10 @@ export const LearningExperience: React.FC = () => {
             <div className="text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
               {language === 'tw' ? 'SUKUU MFONINI AKWANKYERƐ' : 'CAMPUS ATMOSPHERE • AUTHENTIC WORK CYCLES'}
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl text-[#0d176d] font-bold tracking-tight leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#0d176d] dark:text-white font-bold tracking-tight leading-tight">
               {language === 'tw' ? 'Adesua ne Ahofadie Mfonini' : 'An unhurried journey of wonder, tactile craft, and outdoor discovery.'}
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed font-light">
+            <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
               {language === 'tw'
                 ? 'Wɔ yɛn sukuudan pa a wɔasiesie no mu wɔ Santa Maria, mmofra no de nsa kura nneɛma mu sua adeɛ. Mia mfonini biara so na hwɛ no kɛseɛ.'
                 : 'Inside our prepared classrooms and under the warm Accra sunshine, early learning unfolds through purposeful activity. Click any photograph to view our daily environment in high-resolution detail.'}
@@ -59,7 +59,7 @@ export const LearningExperience: React.FC = () => {
           </div>
 
           {/* Quick Counter Info */}
-          <div className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-mono text-slate-600 shadow-sm">
+          <div className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-[#060c24] border border-slate-200 dark:border-white/10 text-xs font-mono text-slate-600 dark:text-slate-300 shadow-sm">
             <Eye className="w-4 h-4 text-[#f95716]" />
             <span>9 High-Res Moments</span>
           </div>
@@ -77,13 +77,13 @@ export const LearningExperience: React.FC = () => {
                 className={`py-2 px-4 rounded-full text-xs font-bold transition-all shrink-0 flex items-center gap-2 cursor-pointer shadow-sm ${
                   isSelected
                     ? 'bg-[#0d176d] text-white'
-                    : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200 hover:border-slate-300'
+                    : 'bg-white dark:bg-[#060c24] text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-white/10 hover:border-slate-300'
                 }`}
               >
                 <span>{cat}</span>
                 <span
                   className={`text-[10px] px-1.5 py-0.5 rounded-full font-mono ${
-                    isSelected ? 'bg-[#f95716] text-white' : 'bg-slate-100 text-slate-600'
+                    isSelected ? 'bg-[#f95716] text-white' : 'bg-slate-100 dark:bg-white/10 text-slate-600 dark:text-slate-300'
                   }`}
                 >
                   {count}
@@ -108,7 +108,7 @@ export const LearningExperience: React.FC = () => {
                   handleOpenLightbox(photo.id);
                 }
               }}
-              className={`group relative rounded-3xl overflow-hidden border border-slate-200/90 hover:border-[#f95716]/60 bg-white shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#f95716] ${photo.spanClass}`}
+              className={`group relative rounded-3xl overflow-hidden border border-slate-200/90 dark:border-white/10 hover:border-[#f95716]/60 bg-white dark:bg-[#060c24] shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#f95716] ${photo.spanClass}`}
             >
               {/* Image Container with Dynamic Aspect Ratio */}
               <div className={`w-full ${photo.aspect} overflow-hidden relative`}>
@@ -157,30 +157,30 @@ export const LearningExperience: React.FC = () => {
         </div>
 
         {/* Pedagogical Ethos Callouts */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-200">
-          <div className="bg-white p-7 sm:p-8 rounded-3xl border border-slate-200/90 hover:border-[#f95716]/40 transition-all shadow-sm flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-orange-50 text-[#f95716] flex items-center justify-center shrink-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-200 dark:border-white/10">
+          <div className="bg-white dark:bg-[#060c24] p-7 sm:p-8 rounded-3xl border border-slate-200/90 dark:border-white/10 hover:border-[#f95716]/40 transition-all shadow-sm flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-orange-50 dark:bg-orange-950/50 text-[#f95716] flex items-center justify-center shrink-0">
               <Trees className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-serif text-xl font-bold text-[#0d176d] mb-2">
+              <h3 className="font-serif text-xl font-bold text-[#0d176d] dark:text-white mb-2">
                 Connecting with the Natural World
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
                 Direct engagement with organic soil, indigenous flora, natural sunlight, and fresh air grounds early nervous systems. Children learn ecological stewardship not from screens, but by tending living green garden beds in Santa Maria.
               </p>
             </div>
           </div>
 
-          <div className="bg-white p-7 sm:p-8 rounded-3xl border border-slate-200/90 hover:border-[#f95716]/40 transition-all shadow-sm flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-blue-50 text-[#0d176d] flex items-center justify-center shrink-0">
+          <div className="bg-white dark:bg-[#060c24] p-7 sm:p-8 rounded-3xl border border-slate-200/90 dark:border-white/10 hover:border-[#f95716]/40 transition-all shadow-sm flex items-start gap-4">
+            <div className="w-12 h-12 rounded-2xl bg-blue-50 dark:bg-blue-950/50 text-[#0d176d] dark:text-amber-300 flex items-center justify-center shrink-0">
               <Heart className="w-6 h-6" />
             </div>
             <div>
-              <h3 className="font-serif text-xl font-bold text-[#0d176d] mb-2">
+              <h3 className="font-serif text-xl font-bold text-[#0d176d] dark:text-white mb-2">
                 Grace, Courtesy & Empathy
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light">
                 Early childhood community living teaches the foundational social habits: greeting classmates with genuine eye contact, offering help when a friend spills beads, and resolving conflicts with gentle, respectful words.
               </p>
             </div>

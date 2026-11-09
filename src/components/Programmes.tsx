@@ -76,17 +76,17 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
   const current = programmes[activeTab];
 
   return (
-    <section id="stages-curriculum" className="py-12 bg-[#fafafc]">
+    <section id="stages-curriculum" className="py-12 bg-[#fafafc] dark:bg-[#030718] text-slate-800 dark:text-slate-100 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Programme Selection Segmented Tabs in Rising Sun Pill Aesthetic */}
-        <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 rounded-2xl max-w-xl mb-10 border border-slate-200">
+        <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 dark:bg-[#060c24] rounded-2xl max-w-xl mb-10 border border-slate-200 dark:border-white/10">
           <button
             type="button"
             onClick={() => setActiveTab('creche')}
             className={`flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all text-center cursor-pointer ${
               activeTab === 'creche'
                 ? 'bg-[#0d176d] text-white shadow-md'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5'
             }`}
           >
             {language === 'tw' ? 'Crèche (0–2 yrs)' : 'Crèche & Daycare (0–2 yrs)'}
@@ -97,7 +97,7 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
             className={`flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all text-center cursor-pointer ${
               activeTab === 'nursery'
                 ? 'bg-[#0d176d] text-white shadow-md'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5'
             }`}
           >
             {language === 'tw' ? 'Nursery (2–4 yrs)' : 'Montessori Nursery (2–4 yrs)'}
@@ -108,7 +108,7 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
             className={`flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all text-center cursor-pointer ${
               activeTab === 'kindergarten'
                 ? 'bg-[#0d176d] text-white shadow-md'
-                : 'text-slate-600 hover:text-slate-900 hover:bg-white/60'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5'
             }`}
           >
             {language === 'tw' ? 'Kindergarten (4–6 yrs)' : 'Kindergarten (4–6 yrs)'}
@@ -116,7 +116,7 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
         </div>
 
         {/* Selected Programme Display Card in High-End White Frame */}
-        <div className="bg-white border border-slate-200/90 rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 relative">
+        <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 relative">
           <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
 
           {/* Content Left */}
@@ -124,16 +124,16 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
             <div>
               <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
                 <span>{current.subtitle}</span>
-                <span aria-hidden="true" className="text-slate-300">/</span>
-                <span className="text-slate-600 font-semibold">{current.age}</span>
+                <span aria-hidden="true" className="text-slate-300 dark:text-slate-600">/</span>
+                <span className="text-slate-600 dark:text-slate-400 font-semibold">{current.age}</span>
               </div>
-              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0d176d] mb-3">
+              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0d176d] dark:text-white mb-3">
                 {current.title}
               </h3>
-              <p className="text-xs sm:text-sm font-serif italic text-amber-700 font-medium mb-4">
+              <p className="text-xs sm:text-sm font-serif italic text-amber-700 dark:text-amber-300 font-medium mb-4">
                 “{current.tagline}”
               </p>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light mb-8">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light mb-8">
                 {current.description}
               </p>
 
@@ -141,10 +141,10 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
               <div className="space-y-3 mb-8">
                 {current.features.map((feat, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-orange-100 text-[#f95716] flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-5 h-5 rounded-full bg-orange-100 dark:bg-orange-950/60 text-[#f95716] flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3.5 h-3.5" />
                     </div>
-                    <span className="text-xs sm:text-sm text-slate-700 font-sans">
+                    <span className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-sans">
                       {feat}
                     </span>
                   </div>
@@ -153,10 +153,10 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
             </div>
 
             {/* Bottom Actions & Schedule */}
-            <div className="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-2 text-xs text-slate-600 font-sans">
+            <div className="pt-6 border-t border-slate-100 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400 font-sans">
                 <Clock className="w-4 h-4 text-[#f95716]" />
-                <span><strong className="text-slate-900">Schedule:</strong> {current.schedule}</span>
+                <span><strong className="text-slate-900 dark:text-white">Schedule:</strong> {current.schedule}</span>
               </div>
               <button
                 onClick={() => onSelectProgramme(activeTab)}
@@ -176,8 +176,8 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/95 backdrop-blur-md rounded-2xl border border-white/60 shadow-xl">
-              <div className="font-serif font-bold text-[#0d176d] text-sm">
+            <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/95 dark:bg-[#060c24]/90 backdrop-blur-md rounded-2xl border border-white/60 dark:border-white/10 shadow-xl">
+              <div className="font-serif font-bold text-[#0d176d] dark:text-white text-sm">
                 {current.title}
               </div>
               <div className="text-[11px] text-[#f95716] font-mono font-bold mt-0.5">

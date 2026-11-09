@@ -124,7 +124,7 @@ export const UpcomingEvents: React.FC = () => {
             return (
               <div
                 key={event.id}
-                className="bg-white rounded-3xl p-6 sm:p-7 border border-slate-200/90 hover:border-[#f95716]/50 transition-all duration-300 hover:shadow-lg flex flex-col justify-between group"
+                className="bg-white dark:bg-[#060c24] rounded-3xl p-6 sm:p-7 border border-slate-200/90 dark:border-white/10 hover:border-[#f95716]/50 transition-all duration-300 hover:shadow-lg flex flex-col justify-between group"
               >
                 <div>
                   {/* Top Bar: Date Badge & Category */}
@@ -142,7 +142,7 @@ export const UpcomingEvents: React.FC = () => {
                         <span className="text-xs font-bold text-[#f95716] block uppercase tracking-wider font-mono">
                           {event.dateBadge.dayOfWeek}
                         </span>
-                        <span className="text-xs text-slate-500 font-sans">
+                        <span className="text-xs text-slate-500 dark:text-slate-400 font-sans">
                           {event.targetAudience}
                         </span>
                       </div>
@@ -153,19 +153,19 @@ export const UpcomingEvents: React.FC = () => {
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#0d176d] leading-snug mb-2 group-hover:text-[#f95716] transition-colors">
+                  <h3 className="font-serif text-lg sm:text-xl font-bold text-[#0d176d] dark:text-white leading-snug mb-2 group-hover:text-[#f95716] transition-colors">
                     {event.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-4">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light mb-4">
                     {event.description}
                   </p>
                 </div>
 
                 {/* Footer metadata */}
-                <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500">
+                <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
                   <div className="flex items-center gap-4">
-                    <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-600">
+                    <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-600 dark:text-slate-300">
                       <Clock className="w-3.5 h-3.5 text-[#f95716]" />
                       <span>{event.time}</span>
                     </span>

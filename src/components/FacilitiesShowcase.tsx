@@ -126,7 +126,7 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
     : FACILITIES_DATA.filter((f) => f.category === activeTab);
 
   return (
-    <section id="campus-facilities" className="py-12 sm:py-16 md:py-24 bg-[#fafafc] text-slate-800">
+    <section id="campus-facilities" className="py-12 sm:py-16 md:py-24 bg-[#fafafc] dark:bg-[#030718] text-slate-800 dark:text-slate-100 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
@@ -134,12 +134,12 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
             <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
               {language === 'tw' ? 'SANTA MARIA SUKUUDAN PA' : 'PREPARED LEARNING SPACES · SANTA MARIA'}
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#0d176d] tracking-tight leading-tight">
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#0d176d] dark:text-white tracking-tight leading-tight">
               {language === 'tw'
                 ? 'Sukuudan a Wɔasiesie Ma Mmofra Ahofadie'
                 : 'Designed for Early Childhood Autonomy & Safety'}
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed font-light">
+            <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
               {language === 'tw'
                 ? 'Sukuudan pa a mmofra betumi de wɔn nsa aka nneɛma na wɔasua nyansa wɔ asomdwoeɛ mu wɔ Santa Maria, Auntie Aku Last Stop nkyɛn.'
                 : 'Every space at Queensbury Montessori in Santa Maria is crafted to child proportions—empowering self-direction, joyful discovery, and peaceful security.'}
@@ -158,7 +158,7 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
         </div>
 
         {/* Filter Navigation Bar */}
-        <div className="flex items-center gap-2 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pb-4 mb-10 border-b border-slate-200">
+        <div className="flex items-center gap-2 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden pb-4 mb-10 border-b border-slate-200 dark:border-white/10">
           {filterTabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -168,7 +168,7 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
                 className={`px-5 py-2.5 text-xs font-bold rounded-full whitespace-nowrap transition-all cursor-pointer ${
                   isActive
                     ? 'bg-[#0d176d] text-white shadow-md'
-                    : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200 hover:bg-slate-50'
+                    : 'bg-white dark:bg-[#060c24] text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white border border-slate-200 dark:border-white/10 hover:bg-slate-50 dark:hover:bg-[#0b1540]'
                 }`}
               >
                 {tab.label}
@@ -178,9 +178,9 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
         </div>
 
         {/* Featured Facility Interactive Showcase */}
-        <div className="bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-0 mb-14">
+        <div className="bg-white dark:bg-[#060c24] rounded-3xl border border-slate-200/90 dark:border-white/10 overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 gap-0 mb-14">
           {/* Main Visual Column */}
-          <div className="lg:col-span-7 relative group min-h-[340px] sm:min-h-[440px] bg-slate-100">
+          <div className="lg:col-span-7 relative group min-h-[340px] sm:min-h-[440px] bg-slate-100 dark:bg-slate-900">
             <img
               src={selectedFacility.image}
               alt={selectedFacility.name}
@@ -201,15 +201,15 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
           </div>
 
           {/* Detailed Editorial Column */}
-          <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white">
+          <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white dark:bg-[#060c24]">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
                 PREPARED ENVIRONMENT SPECS
               </span>
-              <h4 className="font-serif text-xl sm:text-2xl text-[#0d176d] font-bold leading-snug mb-3">
+              <h4 className="font-serif text-xl sm:text-2xl text-[#0d176d] dark:text-white font-bold leading-snug mb-3">
                 {selectedFacility.headline}
               </h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light mb-6">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-light mb-6">
                 {selectedFacility.description}
               </p>
 
@@ -218,7 +218,7 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
                   Key Environment Highlights:
                 </span>
                 {selectedFacility.highlights.map((h, idx) => (
-                  <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700">
+                  <div key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-200">
                     <CheckCircle2 className="w-4 h-4 text-[#f95716] shrink-0 mt-0.5" />
                     <span>{h}</span>
                   </div>
@@ -227,12 +227,12 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
             </div>
 
             {/* Safety Protocol Note */}
-            <div className="mt-4 pt-4 border-t border-slate-100 bg-orange-50/50 p-4 rounded-2xl border border-orange-100">
-              <div className="flex items-center gap-1.5 text-xs font-bold text-[#0d176d] mb-1">
+            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-white/10 bg-orange-50/50 dark:bg-orange-950/20 p-4 rounded-2xl border border-orange-100 dark:border-orange-500/20">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-[#0d176d] dark:text-amber-300 mb-1">
                 <ShieldCheck className="w-4 h-4 text-[#f95716]" />
                 <span>Health & Safety Assurance</span>
               </div>
-              <p className="text-[11px] text-slate-600 leading-relaxed font-sans">
+              <p className="text-[11px] text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
                 {selectedFacility.safetyProtocol}
               </p>
             </div>
@@ -249,11 +249,11 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
                 onClick={() => setSelectedFacility(fac)}
                 className={`cursor-pointer rounded-3xl p-5 transition-all border ${
                   isSelected
-                    ? 'bg-blue-50/50 border-[#0d176d] shadow-lg ring-2 ring-[#0d176d]/15'
-                    : 'bg-white border-slate-200 hover:border-slate-300 hover:shadow-md'
+                    ? 'bg-blue-50/50 dark:bg-[#0b1540] border-[#0d176d] dark:border-amber-400 shadow-lg ring-2 ring-[#0d176d]/15'
+                    : 'bg-white dark:bg-[#060c24] border-slate-200 dark:border-white/10 hover:border-slate-300 dark:hover:border-white/20 hover:shadow-md'
                 }`}
               >
-                <div className="aspect-16/10 rounded-2xl overflow-hidden mb-3 bg-slate-100 relative">
+                <div className="aspect-16/10 rounded-2xl overflow-hidden mb-3 bg-slate-100 dark:bg-slate-900 relative">
                   <img
                     src={fac.image}
                     alt={fac.name}
@@ -265,14 +265,14 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
                 </div>
 
                 <div className="flex items-center justify-between gap-2 mb-1">
-                  <h4 className="font-serif font-bold text-base text-[#0d176d]">
+                  <h4 className="font-serif font-bold text-base text-[#0d176d] dark:text-white">
                     {fac.name}
                   </h4>
                   <span className="text-[10px] font-mono text-[#f95716] font-bold uppercase">
                     {fac.ageGroup.split('(')[0].trim()}
                   </span>
                 </div>
-                <p className="text-xs text-slate-500 line-clamp-2 font-light">
+                <p className="text-xs text-slate-500 dark:text-slate-300 line-clamp-2 font-light">
                   {fac.headline}
                 </p>
               </div>

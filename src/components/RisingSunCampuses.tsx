@@ -38,7 +38,7 @@ export const RisingSunCampuses: React.FC<RisingSunCampusesProps> = ({
   ];
 
   return (
-    <section id="facilities" className="w-full bg-[#0d176d] text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8">
+    <section id="facilities" className="w-full bg-[#0d176d] dark:bg-[#030718] text-white py-20 md:py-28 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <div className="mx-auto max-w-7xl">
         {/* Header with Title and "Explore Full Campus Facilities ↗" */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
@@ -67,10 +67,10 @@ export const RisingSunCampuses: React.FC<RisingSunCampusesProps> = ({
             <div
               key={fac.id}
               onClick={() => onSelectBranch && onSelectBranch(fac.id)}
-              className="bg-white text-slate-900 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col group cursor-pointer"
+              className="bg-white dark:bg-[#060c24] text-slate-900 dark:text-slate-100 rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col border border-slate-100 dark:border-white/10 group cursor-pointer"
             >
               {/* Photo */}
-              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-100">
+              <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
                 <img
                   src={fac.image}
                   alt={fac.name}
@@ -86,21 +86,21 @@ export const RisingSunCampuses: React.FC<RisingSunCampusesProps> = ({
                   <span className="text-[11px] font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-1">
                     {fac.stage}
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-[#0d176d] tracking-tight mb-2">
+                  <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white tracking-tight mb-2">
                     {fac.name}
                   </h3>
-                  <div className="flex items-start gap-2 text-slate-500 text-xs mb-4">
+                  <div className="flex items-start gap-2 text-slate-500 dark:text-slate-300 text-xs mb-4">
                     <MapPin className="w-3.5 h-3.5 shrink-0 mt-0.5 text-slate-400" />
                     <span>{fac.address}</span>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-slate-600 font-mono text-sm font-semibold">
-                    <Phone className="w-4 h-4 text-[#0d176d]" />
-                    <span className="text-slate-700">{fac.phone}</span>
+                <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-slate-600 dark:text-slate-300 font-mono text-sm font-semibold">
+                    <Phone className="w-4 h-4 text-[#0d176d] dark:text-amber-400" />
+                    <span className="text-slate-700 dark:text-slate-200">{fac.phone}</span>
                   </div>
-                  <span className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[#0d176d] group-hover:bg-[#0d176d] group-hover:text-white transition-colors">
+                  <span className="w-8 h-8 rounded-full bg-slate-100 dark:bg-white/10 flex items-center justify-center text-[#0d176d] dark:text-white group-hover:bg-[#f95716] group-hover:text-white transition-colors">
                     <ArrowUpRight className="w-4 h-4" />
                   </span>
                 </div>

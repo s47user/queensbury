@@ -59,7 +59,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
   ];
 
   return (
-    <section id="news" className="w-full bg-[#fafafc] dark:bg-[#060b24] py-20 md:py-28 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <section id="news" className="w-full bg-[#fafafc] dark:bg-[#030718] py-20 md:py-28 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <div className="mx-auto max-w-7xl">
         {/* Header with Title and "View All ↗" */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
@@ -88,7 +88,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
             <article
               key={article.id}
               onClick={() => setSelectedArticle(idx)}
-              className="bg-white dark:bg-[#0c143d] rounded-3xl overflow-hidden border border-slate-200/90 dark:border-indigo-500/20 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col group cursor-pointer"
+              className="bg-white dark:bg-[#060c24] rounded-3xl overflow-hidden border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col group cursor-pointer"
             >
               {/* Photo */}
               <div className="relative h-48 sm:h-56 md:h-60 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
@@ -134,7 +134,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
       {/* Article Detail Modal */}
       {selectedArticle !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-[#0c143d] text-slate-800 dark:text-slate-100 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-5 sm:p-8 shadow-2xl relative border border-slate-200 dark:border-indigo-500/30">
+          <div className="bg-white dark:bg-[#060c24] text-slate-800 dark:text-slate-100 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-5 sm:p-8 shadow-2xl relative border border-slate-200 dark:border-white/10">
             <button
               type="button"
               onClick={() => setSelectedArticle(null)}

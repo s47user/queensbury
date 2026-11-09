@@ -44,7 +44,7 @@ Observation Slot: ${preferredSlot}`;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-white dark:bg-[#0c143d] text-slate-800 dark:text-slate-100 rounded-3xl max-w-lg w-full max-h-[92dvh] flex flex-col border border-slate-200 dark:border-indigo-500/30 shadow-2xl overflow-hidden relative">
+      <div className="bg-white dark:bg-[#060c24] text-slate-800 dark:text-slate-100 rounded-3xl max-w-lg w-full max-h-[92dvh] flex flex-col border border-slate-200 dark:border-white/10 shadow-2xl overflow-hidden relative">
         {/* Top Orange Accent */}
         <div className="h-2 bg-[#f95716] w-full shrink-0" />
 
@@ -104,7 +104,7 @@ Observation Slot: ${preferredSlot}`;
                 placeholder="e.g. Emmanuel Asante"
                 value={parentName}
                 onChange={(e) => setParentName(e.target.value)}
-                className="w-full text-sm p-3 bg-slate-50 dark:bg-[#131d4d] border border-slate-200 dark:border-indigo-500/30 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#18245e] focus:border-[#f95716] focus:outline-none"
+                className="w-full text-sm p-3 bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] focus:outline-none"
               />
             </div>
 
@@ -119,7 +119,7 @@ Observation Slot: ${preferredSlot}`;
                   placeholder="e.g. 024 113 3632"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full text-sm p-3 bg-slate-50 dark:bg-[#131d4d] border border-slate-200 dark:border-indigo-500/30 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#18245e] focus:border-[#f95716] focus:outline-none"
+                  className="w-full text-sm p-3 bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] focus:outline-none"
                 />
               </div>
 
@@ -130,7 +130,7 @@ Observation Slot: ${preferredSlot}`;
                 <select
                   value={branch}
                   onChange={(e) => setBranch(e.target.value)}
-                  className="w-full text-sm p-3 bg-slate-50 dark:bg-[#131d4d] border border-slate-200 dark:border-indigo-500/30 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#18245e] focus:border-[#f95716] focus:outline-none"
+                  className="w-full text-sm p-3 bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] focus:outline-none"
                 >
                   <option value="All Campus Prepared Environments">All Environments (Santa Maria)</option>
                   <option value="Crèche Sleep & Daycare Sanctuary">Crèche Sanctuary (0–2 Years)</option>
@@ -148,7 +148,7 @@ Observation Slot: ${preferredSlot}`;
                 <select
                   value={childAge}
                   onChange={(e) => setChildAge(e.target.value)}
-                  className="w-full text-sm p-3 bg-slate-50 dark:bg-[#131d4d] border border-slate-200 dark:border-indigo-500/30 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#18245e] focus:border-[#f95716] focus:outline-none"
+                  className="w-full text-sm p-3 bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] focus:outline-none"
                 >
                   <option value="Crèche (0–2 Years)">Crèche (0–2 Years)</option>
                   <option value="Nursery (2–4 Years)">Nursery (2–4 Years)</option>
@@ -165,7 +165,7 @@ Observation Slot: ${preferredSlot}`;
                   type="date"
                   value={preferredDate}
                   onChange={(e) => setPreferredDate(e.target.value)}
-                  className="w-full text-sm p-3 bg-slate-50 dark:bg-[#131d4d] border border-slate-200 dark:border-indigo-500/30 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#18245e] focus:border-[#f95716] focus:outline-none"
+                  className="w-full text-sm p-3 bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] focus:outline-none"
                 />
               </div>
             </div>
@@ -177,7 +177,7 @@ Observation Slot: ${preferredSlot}`;
               <select
                 value={preferredSlot}
                 onChange={(e) => setPreferredSlot(e.target.value)}
-                className="w-full text-sm p-3 bg-slate-50 dark:bg-[#131d4d] border border-slate-200 dark:border-indigo-500/30 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#18245e] focus:border-[#f95716] focus:outline-none"
+                className="w-full text-sm p-3 bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] focus:outline-none"
               >
                 <option value="9:00 AM – 10:30 AM (Montessori Work Cycle)">
                   9:00 AM – 10:30 AM (Morning Montessori Work Cycle)
