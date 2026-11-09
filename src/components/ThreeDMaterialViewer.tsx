@@ -560,12 +560,12 @@ export const ThreeDMaterialViewer: React.FC = () => {
   };
 
   return (
-    <section id="materials-3d" className="py-12 bg-white dark:bg-[#060c24] rounded-3xl border border-slate-200/90 dark:border-white/10 shadow-sm relative overflow-hidden transition-colors duration-300">
+    <section id="materials-3d" className="py-12 bg-white dark:bg-[#101b42] rounded-3xl border border-slate-200/90 dark:border-white/10 shadow-sm relative overflow-hidden transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Heading */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
           <div className="max-w-2xl">
-            <div className="text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
+            <div className="text-xs font-sans uppercase tracking-widest text-[#f95716] font-bold mb-2">
               SENSORIAL APPARATUS ATELIER • INTERACTIVE 3D
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#0d176d] dark:text-white font-bold tracking-tight leading-tight">
@@ -578,7 +578,7 @@ export const ThreeDMaterialViewer: React.FC = () => {
             </p>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0 text-xs text-slate-500 dark:text-slate-400 font-mono">
+          <div className="flex items-center gap-2 shrink-0 text-xs text-slate-500 dark:text-slate-400 font-sans">
             <span>Interactive Viewport</span>
             <span aria-hidden="true" className="text-slate-300 dark:text-slate-600">/</span>
             <span className="text-[#f95716] font-bold">Drag to rotate · Scroll to zoom</span>
@@ -586,12 +586,12 @@ export const ThreeDMaterialViewer: React.FC = () => {
         </div>
 
         {/* 3D Viewport Container with Collapsible Bottom Dock */}
-        <div className="relative w-full h-[520px] sm:h-[600px] bg-gradient-to-b from-[#060c24] to-[#020617] rounded-2xl border border-slate-300 dark:border-white/10 overflow-hidden shadow-xl">
+        <div className="relative w-full h-[520px] sm:h-[600px] bg-gradient-to-b from-[#101b42] to-[#09102b] rounded-2xl border border-slate-300 dark:border-white/10 overflow-hidden shadow-xl">
           {/* WebGL Canvas Mount Container */}
           <div ref={mountRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
           {/* Top-Left Spec Badge */}
-          <div className="absolute top-4 left-4 p-4 bg-white/95 dark:bg-[#060c24]/95 backdrop-blur-md border border-slate-200 dark:border-white/10 rounded-xl shadow-xl pointer-events-none max-w-sm">
+          <div className="absolute top-4 left-4 p-4 bg-white/95 dark:bg-[#101b42]/95 backdrop-blur-md border border-slate-200 dark:border-white/10 rounded-xl shadow-xl pointer-events-none max-w-sm">
             <div className="flex items-center gap-2">
               <Box className="w-4 h-4 text-[#f95716]" />
               <span className="font-serif text-sm font-bold text-[#0d176d] dark:text-white">
@@ -617,7 +617,7 @@ export const ThreeDMaterialViewer: React.FC = () => {
             <div className="flex justify-center mb-1">
               <button
                 onClick={() => setIsCollapsed(!isCollapsed)}
-                className="px-3.5 py-1 bg-white dark:bg-[#060c24] text-[#0d176d] dark:text-white border border-slate-200 dark:border-white/10 text-xs font-bold rounded-t-lg hover:bg-slate-50 dark:hover:bg-[#0b1540] transition-colors shadow-lg flex items-center gap-1.5 focus-visible:outline-2 cursor-pointer"
+                className="px-3.5 py-1 bg-white dark:bg-[#101b42] text-[#0d176d] dark:text-white border border-slate-200 dark:border-white/10 text-xs font-bold rounded-t-lg hover:bg-slate-50 dark:hover:bg-[#0b1540] transition-colors shadow-lg flex items-center gap-1.5 focus-visible:outline-2 cursor-pointer"
                 aria-label={isCollapsed ? 'Show 3D Apparatus Controls' : 'Hide 3D Apparatus Controls'}
               >
                 {isCollapsed ? (
@@ -635,9 +635,9 @@ export const ThreeDMaterialViewer: React.FC = () => {
             </div>
 
             {/* Main Dock Surface */}
-            <div className="bg-white/95 dark:bg-[#060c24]/95 backdrop-blur-xl text-slate-800 dark:text-slate-100 p-3 sm:p-4 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl flex flex-wrap items-center justify-between gap-4">
+            <div className="bg-white/95 dark:bg-[#101b42]/95 backdrop-blur-xl text-slate-800 dark:text-slate-100 p-3 sm:p-4 rounded-2xl border border-slate-200 dark:border-white/10 shadow-2xl flex flex-wrap items-center justify-between gap-4">
               {/* Material Switch Buttons */}
-              <div className="flex items-center gap-1 bg-slate-100 dark:bg-[#020617] p-1 rounded-xl">
+              <div className="flex items-center gap-1 bg-slate-100 dark:bg-[#09102b] p-1 rounded-xl">
                 <button
                   onClick={() => handleModelChange('pink_tower')}
                   className={`px-3 py-1.5 text-xs font-bold rounded-lg transition-all cursor-pointer ${
@@ -688,7 +688,7 @@ export const ThreeDMaterialViewer: React.FC = () => {
                   <button
                     onClick={() => handleCameraChange('perspective')}
                     title="Perspective Angle"
-                    className={`p-1.5 rounded-md text-xs font-mono font-bold cursor-pointer ${
+                    className={`p-1.5 rounded-md text-xs font-sans font-bold cursor-pointer ${
                       cameraPreset === 'perspective' ? 'text-[#f95716] bg-slate-100' : 'text-slate-500 hover:text-slate-900'
                     }`}
                   >
@@ -697,7 +697,7 @@ export const ThreeDMaterialViewer: React.FC = () => {
                   <button
                     onClick={() => handleCameraChange('front')}
                     title="Front Eye Level"
-                    className={`p-1.5 rounded-md text-xs font-mono font-bold cursor-pointer ${
+                    className={`p-1.5 rounded-md text-xs font-sans font-bold cursor-pointer ${
                       cameraPreset === 'front' ? 'text-[#f95716] bg-slate-100' : 'text-slate-500 hover:text-slate-900'
                     }`}
                   >
@@ -706,7 +706,7 @@ export const ThreeDMaterialViewer: React.FC = () => {
                   <button
                     onClick={() => handleCameraChange('top')}
                     title="Top-Down Plan"
-                    className={`p-1.5 rounded-md text-xs font-mono font-bold cursor-pointer ${
+                    className={`p-1.5 rounded-md text-xs font-sans font-bold cursor-pointer ${
                       cameraPreset === 'top' ? 'text-[#f95716] bg-slate-100' : 'text-slate-500 hover:text-slate-900'
                     }`}
                   >

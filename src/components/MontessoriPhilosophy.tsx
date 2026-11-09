@@ -48,11 +48,11 @@ export const MontessoriPhilosophy: React.FC = () => {
   ];
 
   return (
-    <section id="philosophy" className="py-16 bg-[#fafafc] dark:bg-[#030718] border-b border-slate-200 dark:border-white/10 transition-colors duration-300">
+    <section id="philosophy" className="py-16 bg-[#fafafc] dark:bg-[#0a1128] border-b border-slate-200 dark:border-white/10 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header - Editorial & Dignified */}
         <div className="max-w-3xl mb-12">
-          <div className="text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
+          <div className="text-xs font-sans uppercase tracking-widest text-[#f95716] font-bold mb-2">
             {language === 'tw' ? 'MONTESSORI AKWANKYERƐ • SANTA MARIA' : 'THE MONTESSORI METHOD • CORE PEDAGOGICAL PILLARS'}
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl text-[#0d176d] dark:text-white tracking-tight leading-tight font-bold">
@@ -72,16 +72,16 @@ export const MontessoriPhilosophy: React.FC = () => {
           {pillars.map((p, idx) => (
             <div
               key={p.num}
-              className={`bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 hover:border-[#f95716]/50 rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-lg group ${
+              className={`bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 hover:border-[#f95716]/50 rounded-2xl p-7 flex flex-col justify-between transition-all duration-300 shadow-sm hover:shadow-lg group ${
                 idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-5">
-                  <span className="font-mono text-3xl font-bold text-[#0d176d] dark:text-amber-400">
+                  <span className="font-sans text-3xl font-bold text-[#0d176d] dark:text-amber-400">
                     {p.num}
                   </span>
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold bg-[#f95716]/10 px-2.5 py-1 rounded-full">
+                  <span className="text-[11px] font-sans uppercase tracking-widest text-[#f95716] font-bold bg-[#f95716]/10 px-2.5 py-1 rounded-full">
                     {p.focus}
                   </span>
                 </div>
@@ -96,7 +96,7 @@ export const MontessoriPhilosophy: React.FC = () => {
                 </p>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+              <div className="mt-6 pt-4 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-[11px] text-slate-400 font-sans">
                 <span>Pillar 0{idx + 1} of 05</span>
                 <span className="group-hover:text-[#f95716] transition-colors font-medium">Queensbury Montessori</span>
               </div>

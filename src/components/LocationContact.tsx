@@ -116,19 +116,19 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
   };
 
   return (
-    <div className="w-full bg-[#fafafc] dark:bg-[#030718] text-slate-800 dark:text-slate-100 space-y-12 transition-colors duration-300">
+    <div className="w-full bg-[#fafafc] dark:bg-[#0a1128] text-slate-800 dark:text-slate-100 space-y-12 transition-colors duration-300">
       {/* 1. Official Campus Location & Contact Strip */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Left: Campus Details & Operation Hours (7 cols) */}
-        <div className="lg:col-span-7 bg-white dark:bg-[#060c24] rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-white/10 shadow-xl relative overflow-hidden flex flex-col justify-between">
+        <div className="lg:col-span-7 bg-white dark:bg-[#101b42] rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-white/10 shadow-xl relative overflow-hidden flex flex-col justify-between">
           <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
 
           <div>
             <div className="flex items-center justify-between mb-3">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#f95716]">
+              <span className="text-[11px] font-sans font-bold uppercase tracking-wider text-[#f95716]">
                 OFFICIAL SANTA MARIA CAMPUS
               </span>
-              <span className="text-xs text-slate-400 font-mono">ACCRA · EST. 2020</span>
+              <span className="text-xs text-slate-400 font-sans">ACCRA · EST. 2020</span>
             </div>
 
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0d176d] dark:text-white tracking-tight mb-4">
@@ -136,7 +136,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
             </h3>
 
             <div className="space-y-4 text-sm text-slate-600 dark:text-slate-300 mb-8">
-              <div className="flex items-start gap-3 bg-slate-50 dark:bg-[#020617] p-4 rounded-2xl border border-slate-100 dark:border-white/10">
+              <div className="flex items-start gap-3 bg-slate-50 dark:bg-[#09102b] p-4 rounded-2xl border border-slate-100 dark:border-white/10">
                 <MapPin className="w-5 h-5 text-[#f95716] shrink-0 mt-0.5" />
                 <div>
                   <p className="font-semibold text-slate-900 dark:text-white leading-snug">
@@ -152,8 +152,8 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
 
               {/* Operating Hours Strip */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-[#0d176d] dark:text-amber-300 mb-1">
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
+                  <div className="flex items-center gap-2 text-xs font-sans font-bold uppercase text-[#0d176d] dark:text-amber-300 mb-1">
                     <Clock className="w-4 h-4 text-[#f95716]" />
                     <span>School Hours</span>
                   </div>
@@ -168,8 +168,8 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                   </span>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
-                  <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase text-[#0d176d] dark:text-amber-300 mb-1">
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
+                  <div className="flex items-center gap-2 text-xs font-sans font-bold uppercase text-[#0d176d] dark:text-amber-300 mb-1">
                     <ShieldCheck className="w-4 h-4 text-[#f95716]" />
                     <span>Admissions & Visits</span>
                   </div>
@@ -231,10 +231,10 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
           {/* WhatsApp Direct Admissions Card */}
           <div className="bg-gradient-to-br from-[#0c1a4d] to-[#0d176d] text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden border border-white/10">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#f95716]">
+              <span className="text-[11px] font-sans font-bold uppercase tracking-wider text-[#f95716]">
                 INSTANT WHATSAPP DESK
               </span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-mono font-semibold">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-sans font-semibold">
                 ● Active Now
               </span>
             </div>
@@ -259,7 +259,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
           </div>
 
           {/* Direct Phone & Email Helplines */}
-          <div className="bg-white dark:bg-[#060c24] rounded-3xl p-6 sm:p-8 border border-slate-200/90 dark:border-white/10 shadow-md">
+          <div className="bg-white dark:bg-[#101b42] rounded-3xl p-6 sm:p-8 border border-slate-200/90 dark:border-white/10 shadow-md">
             <h4 className="font-serif text-xl font-bold text-[#0d176d] dark:text-white mb-4">
               {language === 'tw' ? 'Frɛ Yɛn Tɛlɛfon So' : 'Phone & Email Channels'}
             </h4>
@@ -271,7 +271,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                 </div>
                 <a
                   href="tel:0505688484"
-                  className="font-mono font-bold text-[#0d176d] dark:text-amber-300 hover:text-[#f95716] transition-colors"
+                  className="font-sans font-bold text-[#0d176d] dark:text-amber-300 hover:text-[#f95716] transition-colors"
                 >
                   050 568 8484
                 </a>
@@ -284,7 +284,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                 </div>
                 <a
                   href="https://wa.me/233241133632"
-                  className="font-mono font-bold text-[#25D366] hover:underline"
+                  className="font-sans font-bold text-[#25D366] hover:underline"
                 >
                   024 113 3632
                 </a>
@@ -308,12 +308,12 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
       </div>
 
       {/* 2. Interactive Google Maps Navigation to Santa Maria */}
-      <div className="bg-white dark:bg-[#060c24] rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-white/10 shadow-xl relative overflow-hidden">
+      <div className="bg-white dark:bg-[#101b42] rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-white/10 shadow-xl relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-2 bg-[#0d176d]" />
 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
           <div>
-            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-1">
+            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-sans block mb-1">
               LIVE NAVIGATION & COMMUTE
             </span>
             <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#0d176d] dark:text-white">
@@ -339,7 +339,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
         <form onSubmit={handleOpenGoogleMapsDirections} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
             <div className="md:col-span-7">
-              <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+              <label className="block text-xs font-sans font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 Starting Point / Your Location in Accra
               </label>
               <div className="relative">
@@ -349,19 +349,19 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                   value={startLocation}
                   onChange={(e) => setStartLocation(e.target.value)}
                   placeholder="e.g. Lapaz, Sowutuom, Kwashieman, Ablekuma, or 'My Location'"
-                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#09102b] focus:bg-white dark:focus:bg-[#142052] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
                 />
               </div>
             </div>
 
             <div className="md:col-span-3">
-              <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+              <label className="block text-xs font-sans font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 Travel Mode
               </label>
               <select
                 value={travelMode}
                 onChange={(e) => setTravelMode(e.target.value as any)}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white cursor-pointer"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#09102b] focus:bg-white dark:focus:bg-[#142052] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white cursor-pointer"
               >
                 <option value="driving">🚗 Driving / School Drop-off</option>
                 <option value="transit">🚌 Transit (Trotro & Taxi)</option>
@@ -382,7 +382,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
 
           {/* Quick Clickable Neighborhood Pills */}
           <div>
-            <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-2 font-semibold">
+            <span className="text-[11px] font-sans uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-2 font-semibold">
               Quick Pick Accra Neighborhoods:
             </span>
             <div className="flex flex-wrap gap-2">
@@ -407,7 +407,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
         </form>
 
         {/* Embedded Interactive Map Frame */}
-        <div className="mt-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#020617] aspect-16/9 sm:aspect-21/9 shadow-inner relative">
+        <div className="mt-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#09102b] aspect-16/9 sm:aspect-21/9 shadow-inner relative">
           <iframe
             title="Queensbury Montessori School Location"
             width="100%"
@@ -418,7 +418,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
             referrerPolicy="no-referrer-when-downgrade"
             src="https://maps.google.com/maps?q=Queensbury+Montessori+School+Santa+Maria+Accra+Ghana&t=&z=15&ie=UTF8&iwloc=&output=embed"
           />
-          <div className="absolute bottom-3 right-3 bg-white/95 dark:bg-[#060c24]/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-white/10 shadow text-xs font-semibold text-[#0d176d] dark:text-amber-300 flex items-center gap-1.5 pointer-events-none">
+          <div className="absolute bottom-3 right-3 bg-white/95 dark:bg-[#101b42]/95 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-white/10 shadow text-xs font-semibold text-[#0d176d] dark:text-amber-300 flex items-center gap-1.5 pointer-events-none">
             <MapPin className="w-3.5 h-3.5 text-[#f95716]" />
             <span>Santa Maria (Auntie Aku Last Stop)</span>
           </div>
@@ -426,12 +426,12 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
       </div>
 
       {/* 3. Direct Admissions Inquiry Form Linked Directly to WhatsApp */}
-      <div className="bg-white dark:bg-[#060c24] rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-white/10 shadow-xl relative overflow-hidden">
+      <div className="bg-white dark:bg-[#101b42] rounded-3xl p-8 sm:p-10 border border-slate-200/90 dark:border-white/10 shadow-xl relative overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
 
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f95716]/10 text-[#f95716] text-[11px] font-mono font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f95716]/10 text-[#f95716] text-[11px] font-sans font-bold uppercase tracking-wider mb-2">
               <MessageSquare className="w-3.5 h-3.5" />
               <span>DIRECT WHATSAPP INQUIRY</span>
             </div>
@@ -445,9 +445,9 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
             </p>
           </div>
 
-          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10 shrink-0 text-right">
-            <span className="text-[10px] font-mono text-slate-400 uppercase block font-semibold">Official Helpline</span>
-            <span className="font-mono font-bold text-sm text-[#0d176d] dark:text-amber-300 block mt-0.5">024 113 3632</span>
+          <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10 shrink-0 text-right">
+            <span className="text-[10px] font-sans text-slate-400 uppercase block font-semibold">Official Helpline</span>
+            <span className="font-sans font-bold text-sm text-[#0d176d] dark:text-amber-300 block mt-0.5">024 113 3632</span>
             <span className="text-[11px] text-[#25D366] font-semibold block">WhatsApp Direct</span>
           </div>
         </div>
@@ -495,7 +495,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
           <form onSubmit={handleFormSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-xs font-sans font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                   {language === 'tw' ? 'Wo Din *' : 'Parent / Guardian Name *'}
                 </label>
                 <input
@@ -504,12 +504,12 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                   placeholder="e.g. Emmanuel Asante"
                   value={formData.parentName}
                   onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#09102b] focus:bg-white dark:focus:bg-[#142052] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-xs font-sans font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                   {language === 'tw' ? 'Frɛ / WhatsApp Nɔma *' : 'Phone / WhatsApp Number *'}
                 </label>
                 <input
@@ -518,14 +518,14 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                   placeholder="e.g. 024 113 3632"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#09102b] focus:bg-white dark:focus:bg-[#142052] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-xs font-sans font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                   {language === 'tw' ? 'Email Beaeɛ (Sɛ Wowɔ Bi a)' : 'Email Address (Optional)'}
                 </label>
                 <input
@@ -533,18 +533,18 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                   placeholder="parent@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#09102b] focus:bg-white dark:focus:bg-[#142052] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                <label className="block text-xs font-sans font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                   {language === 'tw' ? 'Adesua Gyinapɛn' : 'Stage of Interest'}
                 </label>
                 <select
                   value={formData.stage}
                   onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white cursor-pointer"
+                  className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#09102b] focus:bg-white dark:focus:bg-[#142052] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white cursor-pointer"
                 >
                   <option value="Crèche & Daycare (0–2 Years)">Crèche & Daycare (0–2 Years)</option>
                   <option value="Montessori Nursery (2–4 Years)">Montessori Nursery (2–4 Years)</option>
@@ -555,7 +555,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
             </div>
 
             <div>
-              <label className="block text-xs font-mono font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+              <label className="block text-xs font-sans font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 {language === 'tw' ? 'Wo Nkratoɔ Anaa Asɛmmisa *' : 'Your Message / Inquiry *'}
               </label>
               <textarea
@@ -568,7 +568,7 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                 }
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] focus:bg-white dark:focus:bg-[#080f30] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white resize-none"
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#09102b] focus:bg-white dark:focus:bg-[#142052] focus:outline-none focus:ring-2 focus:ring-[#f95716] text-sm text-slate-900 dark:text-white resize-none"
               />
             </div>
 

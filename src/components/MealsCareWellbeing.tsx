@@ -6,13 +6,13 @@ export const MealsCareWellbeing: React.FC = () => {
   const { language } = useLanguage();
 
   return (
-    <section id="meals" className="py-16 bg-[#fafafc] dark:bg-[#030718] border-b border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-100 transition-colors duration-300">
+    <section id="meals" className="py-16 bg-[#fafafc] dark:bg-[#0a1128] border-b border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-100 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Meals & Nutrition Column */}
-          <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-3">
+              <div className="flex items-center gap-2 text-xs font-sans uppercase tracking-widest text-[#f95716] font-bold mb-3">
                 <Utensils className="w-4 h-4 text-[#f95716]" />
                 <span>{language === 'tw' ? 'ADUANE PA & APƆMUDEN' : 'WHOLESOME PROVISION'}</span>
               </div>
@@ -26,7 +26,7 @@ export const MealsCareWellbeing: React.FC = () => {
               </p>
 
               <div className="space-y-4 mb-6">
-                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                   <div className="text-sm font-bold text-[#0d176d] dark:text-amber-300 mb-1">
                     Morning Breakfast (7:30 AM)
                   </div>
@@ -35,7 +35,7 @@ export const MealsCareWellbeing: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                   <div className="text-sm font-bold text-[#0d176d] dark:text-amber-300 mb-1">
                     Balanced Hot Lunch (12:00 PM)
                   </div>
@@ -46,15 +46,15 @@ export const MealsCareWellbeing: React.FC = () => {
               </div>
             </div>
 
-            <div className="text-xs text-slate-500 dark:text-slate-400 font-mono pt-4 border-t border-slate-100 dark:border-white/10">
+            <div className="text-xs text-slate-500 dark:text-slate-400 font-sans pt-4 border-t border-slate-100 dark:border-white/10">
               *Allergies and special dietary requests recorded and respected during admissions registration.
             </div>
           </div>
 
           {/* Child Wellbeing & First Aid Column */}
-          <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-3">
+              <div className="flex items-center gap-2 text-xs font-sans uppercase tracking-widest text-[#f95716] font-bold mb-3">
                 <HeartPulse className="w-4 h-4 text-[#f95716]" />
                 <span>{language === 'tw' ? 'BANBƆ NE AYARASA' : 'SAFETY & PEDIATRIC CARE'}</span>
               </div>
@@ -68,7 +68,7 @@ export const MealsCareWellbeing: React.FC = () => {
               </p>
 
               <div className="space-y-4 mb-6">
-                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                   <div className="text-sm font-bold text-[#0d176d] dark:text-amber-300 mb-1">
                     Health & Sickness Protocol
                   </div>
@@ -77,7 +77,7 @@ export const MealsCareWellbeing: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+                <div className="p-5 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                   <div className="text-sm font-bold text-[#0d176d] dark:text-amber-300 mb-1">
                     Immediate Medical Proximity (Santa Maria)
                   </div>

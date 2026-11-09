@@ -24,26 +24,26 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
   };
 
   return (
-    <footer className="w-full bg-[#0d176d] dark:bg-[#020617] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative transition-colors duration-200">
+    <footer className="w-full bg-[#0d176d] dark:bg-[#09102b] text-white pt-20 pb-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative transition-colors duration-200">
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Col 1: Crest & Brand Statement (4 cols) */}
           <div className="lg:col-span-4">
             {/* School Crest Logo */}
-            <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-14 rounded-xl overflow-hidden border-2 border-amber-400 shadow-lg bg-[#070d42] shrink-0">
+            <div className="flex items-center gap-3.5 mb-5">
+              <div className="h-16 w-auto shrink-0">
                 <img
-                  src="/assets/logo.jpg"
+                  src="/assets/logo.png"
                   alt="Queensbury Montessori School Crest"
-                  className="w-full h-full object-cover"
+                  className="h-full w-auto object-contain drop-shadow-md"
                 />
               </div>
               <div>
                 <h3 className="font-serif text-2xl font-bold tracking-tight text-white">
                   Queensbury Montessori
                 </h3>
-                <p className="text-xs italic text-white/70">
-                  Where Curious Minds Grow into Lifelong Explorers
+                <p className="text-xs font-sans tracking-wide text-amber-400 font-semibold uppercase mt-0.5">
+                  Learn · Grow · Achieve · Excel
                 </p>
               </div>
             </div>
@@ -78,7 +78,7 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
 
           {/* Col 2: Quick Links (2 cols) */}
           <div className="lg:col-span-2">
-            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-4">
+            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-sans block mb-4">
               QUICK LINKS
             </span>
             <ul className="space-y-2.5 text-sm text-white/80">
@@ -86,10 +86,9 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
                 { id: 'home', label: 'Home' },
                 { id: 'about', label: 'About & Philosophy' },
                 { id: 'programmes', label: 'Programmes' },
-                { id: 'facilities', label: 'Campus & Facilities' },
                 { id: 'admissions', label: 'Admissions' },
                 { id: 'news', label: 'News & Events' },
-                { id: 'contact', label: 'Contact & Visit' },
+                { id: 'contact', label: 'Contact & Location' },
               ].map((link) => (
                 <li key={link.id}>
                   <button
@@ -106,7 +105,7 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
 
           {/* Col 3: Contact & Real Location (3 cols) */}
           <div className="lg:col-span-3">
-            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-4">
+            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-sans block mb-4">
               CAMPUS & CONTACT
             </span>
             <div className="space-y-3.5 text-sm text-white/80">
@@ -120,13 +119,13 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
               <div className="pt-1 space-y-2 text-xs">
                 <div className="flex items-center justify-between">
                   <span className="text-white/60">Official Phone:</span>
-                  <a href="tel:0505688484" className="font-mono font-semibold text-white hover:text-[#f95716]">
+                  <a href="tel:0505688484" className="font-sans font-semibold text-white hover:text-[#f95716]">
                     050 568 8484
                   </a>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-white/60">Admissions WhatsApp:</span>
-                  <a href="https://wa.me/233241133632" target="_blank" rel="noopener noreferrer" className="font-mono font-semibold text-emerald-400 hover:text-emerald-300">
+                  <a href="https://wa.me/233241133632" target="_blank" rel="noopener noreferrer" className="font-sans font-semibold text-emerald-400 hover:text-emerald-300">
                     024 113 3632
                   </a>
                 </div>
@@ -147,7 +146,7 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
 
           {/* Col 4: Stay Updated Newsletter (3 cols) */}
           <div className="lg:col-span-3">
-            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-4">
+            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-sans block mb-4">
               STAY CONNECTED
             </span>
             <p className="text-xs text-white/70 mb-4 leading-relaxed">
@@ -166,7 +165,7 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
                 />
                 <button
                   type="submit"
-                  className="absolute right-1 top-1 bottom-1 px-4 rounded-full bg-[#f95716] hover:bg-[#e0480b] text-white font-mono text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer"
+                  className="absolute right-1 top-1 bottom-1 px-4 rounded-full bg-[#f95716] hover:bg-[#e0480b] text-white font-sans text-[11px] font-bold tracking-wider uppercase transition-colors flex items-center justify-center cursor-pointer"
                 >
                   SUBSCRIBE
                 </button>

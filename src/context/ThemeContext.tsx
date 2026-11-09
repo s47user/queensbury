@@ -18,9 +18,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       if (saved === 'light' || saved === 'dark') {
         return saved;
       }
-      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        return 'dark';
-      }
     }
     return 'light';
   });

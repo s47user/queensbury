@@ -136,11 +136,11 @@ export const ParentPortalFeatures: React.FC = () => {
   ];
 
   return (
-    <section id="parent-portal" className="py-12 bg-[#fafafc] dark:bg-[#030718] transition-colors duration-200">
+    <section id="parent-portal" className="py-12 bg-[#fafafc] dark:bg-[#0a1128] transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl mb-10">
-          <div className="text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
+          <div className="text-xs font-sans uppercase tracking-widest text-[#f95716] font-bold mb-2">
             PARENT RESOURCES & CAMPUS TOOLS
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0d176d] dark:text-white font-bold tracking-tight leading-tight">
@@ -152,7 +152,7 @@ export const ParentPortalFeatures: React.FC = () => {
         </div>
 
         {/* Feature Navigation Tabs */}
-        <div className="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100 dark:bg-[#060c24] rounded-2xl max-w-3xl mb-8 border border-slate-200 dark:border-white/10">
+        <div className="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100 dark:bg-[#101b42] rounded-2xl max-w-3xl mb-8 border border-slate-200 dark:border-white/10">
           <button
             onClick={() => setActiveTab('maps')}
             className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold rounded-xl transition-all cursor-pointer ${
@@ -204,11 +204,11 @@ export const ParentPortalFeatures: React.FC = () => {
 
         {/* Tab 1: Maps & Commute */}
         {activeTab === 'maps' && (
-          <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
+          <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
               <div>
-                <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
+                <span className="text-[11px] font-sans uppercase tracking-widest text-[#f95716] font-bold block mb-1">
                   CAMPUS COMMUTE TO SANTA MARIA
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
@@ -243,7 +243,7 @@ export const ParentPortalFeatures: React.FC = () => {
                       value={startLocation}
                       onChange={(e) => setStartLocation(e.target.value)}
                       placeholder="e.g. Lapaz, Sowutuom, Kwashieman, Ablekuma"
-                      className="w-full text-xs pl-10 pr-3 py-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
+                      className="w-full text-xs pl-10 pr-3 py-3 bg-slate-50 dark:bg-[#09102b] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#142052] focus:border-[#f95716] outline-none"
                     />
                   </div>
                 </div>
@@ -255,7 +255,7 @@ export const ParentPortalFeatures: React.FC = () => {
                   <select
                     value={travelMode}
                     onChange={(e) => setTravelMode(e.target.value as any)}
-                    className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none cursor-pointer"
+                    className="w-full text-xs p-3 bg-slate-50 dark:bg-[#09102b] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#142052] focus:border-[#f95716] outline-none cursor-pointer"
                   >
                     <option value="driving">🚗 Driving / School Drop-off</option>
                     <option value="transit">🚌 Public Transit (Trotro & Taxi)</option>
@@ -266,7 +266,7 @@ export const ParentPortalFeatures: React.FC = () => {
 
               {/* Quick Pick Areas */}
               <div>
-                <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-2 font-semibold">
+                <span className="text-[11px] font-sans uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-2 font-semibold">
                   Quick Select Starting Point:
                 </span>
                 <div className="flex flex-wrap gap-2">
@@ -300,7 +300,7 @@ export const ParentPortalFeatures: React.FC = () => {
             </form>
 
             {/* Embedded interactive map */}
-            <div className="mt-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#020617] aspect-16/9 sm:aspect-21/9 shadow-inner relative">
+            <div className="mt-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#09102b] aspect-16/9 sm:aspect-21/9 shadow-inner relative">
               <iframe
                 title="Queensbury Montessori School Location"
                 width="100%"
@@ -317,11 +317,11 @@ export const ParentPortalFeatures: React.FC = () => {
 
         {/* Tab 2: Montessori Home FAQs */}
         {activeTab === 'faq' && (
-          <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
+          <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
               <div>
-                <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
+                <span className="text-[11px] font-sans uppercase tracking-widest text-[#f95716] font-bold block mb-1">
                   MONTESSORI EARLY CHILDHOOD GUIDANCE
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
@@ -349,7 +349,7 @@ export const ParentPortalFeatures: React.FC = () => {
                 return (
                   <div
                     key={idx}
-                    className="border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden bg-slate-50 dark:bg-[#020617] transition-all"
+                    className="border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden bg-slate-50 dark:bg-[#09102b] transition-all"
                   >
                     <button
                       type="button"
@@ -357,7 +357,7 @@ export const ParentPortalFeatures: React.FC = () => {
                       className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-4 cursor-pointer"
                     >
                       <div>
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#f95716] font-bold block mb-1">
+                        <span className="text-[10px] font-sans uppercase tracking-wider text-[#f95716] font-bold block mb-1">
                           {faq.topic}
                         </span>
                         <h4 className="font-serif text-base font-bold text-[#0d176d] dark:text-white">
@@ -383,10 +383,10 @@ export const ParentPortalFeatures: React.FC = () => {
 
         {/* Tab 3: Classroom Moments Photo Showcase */}
         {activeTab === 'moments' && (
-          <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
+          <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
             <div className="max-w-2xl mb-8">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
+              <span className="text-[11px] font-sans uppercase tracking-widest text-[#f95716] font-bold block mb-1">
                 DISCOVERY IN ACTION
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
@@ -401,7 +401,7 @@ export const ParentPortalFeatures: React.FC = () => {
               {classroomMoments.map((moment, idx) => (
                 <div
                   key={idx}
-                  className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] flex flex-col justify-between"
+                  className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#09102b] flex flex-col justify-between"
                 >
                   <div className="aspect-16/10 overflow-hidden relative">
                     <img
@@ -409,7 +409,7 @@ export const ParentPortalFeatures: React.FC = () => {
                       alt={moment.title}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
-                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#0d176d]/90 backdrop-blur-md text-white text-[10px] font-mono uppercase font-bold tracking-wider">
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#0d176d]/90 backdrop-blur-md text-white text-[10px] font-sans uppercase font-bold tracking-wider">
                       {moment.stage}
                     </div>
                   </div>
@@ -429,10 +429,10 @@ export const ParentPortalFeatures: React.FC = () => {
 
         {/* Tab 4: Parent Notices & PTA */}
         {activeTab === 'notices' && (
-          <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
+          <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
             <div className="max-w-2xl mb-6">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
+              <span className="text-[11px] font-sans uppercase tracking-widest text-[#f95716] font-bold block mb-1">
                 COMMUNITY BULLETIN · SANTA MARIA
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
@@ -444,12 +444,12 @@ export const ParentPortalFeatures: React.FC = () => {
             </div>
 
             <div className="space-y-4">
-              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
                     Uniform & Footwear Guidelines
                   </h4>
-                  <span className="text-[11px] font-mono text-[#f95716] uppercase font-bold bg-[#f95716]/10 px-2.5 py-1 rounded-full">
+                  <span className="text-[11px] font-sans text-[#f95716] uppercase font-bold bg-[#f95716]/10 px-2.5 py-1 rounded-full">
                     Notice 01
                   </span>
                 </div>
@@ -458,12 +458,12 @@ export const ParentPortalFeatures: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
                     PTA General Meeting & Progress Review
                   </h4>
-                  <span className="text-[11px] font-mono text-[#0d176d] dark:text-blue-300 uppercase font-bold bg-blue-100 dark:bg-blue-950/60 px-2.5 py-1 rounded-full">
+                  <span className="text-[11px] font-sans text-[#0d176d] dark:text-blue-300 uppercase font-bold bg-blue-100 dark:bg-blue-950/60 px-2.5 py-1 rounded-full">
                     Notice 02
                   </span>
                 </div>
@@ -472,12 +472,12 @@ export const ParentPortalFeatures: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
                     Healthy Lunch & Fruit Break Reminder
                   </h4>
-                  <span className="text-[11px] font-mono text-emerald-700 dark:text-emerald-300 uppercase font-bold bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full">
+                  <span className="text-[11px] font-sans text-emerald-700 dark:text-emerald-300 uppercase font-bold bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full">
                     Notice 03
                   </span>
                 </div>

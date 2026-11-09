@@ -40,7 +40,7 @@ export const RisingSunStats: React.FC = () => {
                 {s.value}
               </span>
               <div className="w-6 sm:w-8 h-px bg-white/30 mb-2 sm:mb-3" />
-              <span className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-white/85 font-semibold font-mono leading-tight max-w-[160px] sm:max-w-none">
+              <span className="text-[10px] sm:text-xs uppercase tracking-wider sm:tracking-widest text-white/85 font-semibold font-sans leading-tight max-w-[160px] sm:max-w-none">
                 {language === 'tw' ? s.labelTw : s.labelEn}
               </span>
             </div>

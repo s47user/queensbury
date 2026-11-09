@@ -56,7 +56,7 @@ export const RisingSunTestimonials: React.FC = () => {
       <div className="mx-auto max-w-7xl">
         {/* Centered Heading */}
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
+          <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-sans block mb-2">
             {language === 'tw' ? 'SANTA MARIA MMUSUA ADANSEƐ' : 'COMMUNITY TESTIMONIALS'}
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white">
@@ -93,7 +93,7 @@ export const RisingSunTestimonials: React.FC = () => {
                   </p>
                 </div>
 
-                <span className="px-3 py-1 rounded-full bg-white/10 text-white/85 text-[11px] font-mono font-bold tracking-wider uppercase border border-white/15">
+                <span className="px-3 py-1 rounded-full bg-white/10 text-white/85 text-[11px] font-sans font-bold tracking-wider uppercase border border-white/15">
                   {t.community}
                 </span>
               </div>

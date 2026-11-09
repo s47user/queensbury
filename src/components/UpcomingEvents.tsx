@@ -85,7 +85,7 @@ export const UpcomingEvents: React.FC = () => {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
-            <div className="text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
+            <div className="text-xs font-sans uppercase tracking-widest text-[#f95716] font-bold mb-2">
               {language === 'tw' ? 'SUKUU KALENDA & DWUMADI' : 'SCHOOL CALENDAR & ACTIVITIES • SANTA MARIA'}
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#0d176d] font-bold tracking-tight leading-tight">
@@ -124,13 +124,13 @@ export const UpcomingEvents: React.FC = () => {
             return (
               <div
                 key={event.id}
-                className="bg-white dark:bg-[#060c24] rounded-3xl p-6 sm:p-7 border border-slate-200/90 dark:border-white/10 hover:border-[#f95716]/50 transition-all duration-300 hover:shadow-lg flex flex-col justify-between group"
+                className="bg-white dark:bg-[#101b42] rounded-3xl p-6 sm:p-7 border border-slate-200/90 dark:border-white/10 hover:border-[#f95716]/50 transition-all duration-300 hover:shadow-lg flex flex-col justify-between group"
               >
                 <div>
                   {/* Top Bar: Date Badge & Category */}
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <div className="flex items-center gap-3.5">
-                      <div className="w-14 h-14 rounded-2xl bg-[#0d176d] text-white flex flex-col items-center justify-center font-mono shadow-md shrink-0 group-hover:bg-[#f95716] transition-colors">
+                      <div className="w-14 h-14 rounded-2xl bg-[#0d176d] text-white flex flex-col items-center justify-center font-sans shadow-md shrink-0 group-hover:bg-[#f95716] transition-colors">
                         <span className="text-[10px] tracking-widest text-amber-300 uppercase font-bold leading-none">
                           {event.dateBadge.month}
                         </span>
@@ -139,7 +139,7 @@ export const UpcomingEvents: React.FC = () => {
                         </span>
                       </div>
                       <div>
-                        <span className="text-xs font-bold text-[#f95716] block uppercase tracking-wider font-mono">
+                        <span className="text-xs font-bold text-[#f95716] block uppercase tracking-wider font-sans">
                           {event.dateBadge.dayOfWeek}
                         </span>
                         <span className="text-xs text-slate-500 dark:text-slate-400 font-sans">
@@ -148,7 +148,7 @@ export const UpcomingEvents: React.FC = () => {
                       </div>
                     </div>
 
-                    <span className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider ${categoryBadge}`}>
+                    <span className={`px-2.5 py-1 rounded-full text-[10px] font-sans font-bold uppercase tracking-wider ${categoryBadge}`}>
                       {event.category}
                     </span>
                   </div>
@@ -165,11 +165,11 @@ export const UpcomingEvents: React.FC = () => {
                 {/* Footer metadata */}
                 <div className="pt-4 border-t border-slate-100 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 dark:text-slate-400">
                   <div className="flex items-center gap-4">
-                    <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-600 dark:text-slate-300">
+                    <span className="inline-flex items-center gap-1.5 font-sans text-[11px] text-slate-600 dark:text-slate-300">
                       <Clock className="w-3.5 h-3.5 text-[#f95716]" />
                       <span>{event.time}</span>
                     </span>
-                    <span className="inline-flex items-center gap-1.5 font-mono text-[11px] text-slate-600">
+                    <span className="inline-flex items-center gap-1.5 font-sans text-[11px] text-slate-600">
                       <MapPin className="w-3.5 h-3.5 text-[#0d176d]" />
                       <span>{event.location.split(',')[0]}</span>
                     </span>

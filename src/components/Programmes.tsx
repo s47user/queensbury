@@ -76,10 +76,10 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
   const current = programmes[activeTab];
 
   return (
-    <section id="stages-curriculum" className="py-12 bg-[#fafafc] dark:bg-[#030718] text-slate-800 dark:text-slate-100 transition-colors duration-300">
+    <section id="stages-curriculum" className="py-12 bg-[#fafafc] dark:bg-[#0a1128] text-slate-800 dark:text-slate-100 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Programme Selection Segmented Tabs in Rising Sun Pill Aesthetic */}
-        <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 dark:bg-[#060c24] rounded-2xl max-w-xl mb-10 border border-slate-200 dark:border-white/10">
+        <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 dark:bg-[#101b42] rounded-2xl max-w-xl mb-10 border border-slate-200 dark:border-white/10">
           <button
             type="button"
             onClick={() => setActiveTab('creche')}
@@ -116,13 +116,13 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
         </div>
 
         {/* Selected Programme Display Card in High-End White Frame */}
-        <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 relative">
+        <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 relative">
           <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
 
           {/* Content Left */}
           <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
+              <div className="flex items-center gap-2 text-xs font-sans uppercase tracking-widest text-[#f95716] font-bold mb-2">
                 <span>{current.subtitle}</span>
                 <span aria-hidden="true" className="text-slate-300 dark:text-slate-600">/</span>
                 <span className="text-slate-600 dark:text-slate-400 font-semibold">{current.age}</span>
@@ -176,11 +176,11 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-            <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/95 dark:bg-[#060c24]/90 backdrop-blur-md rounded-2xl border border-white/60 dark:border-white/10 shadow-xl">
+            <div className="absolute bottom-6 left-6 right-6 p-4 bg-white/95 dark:bg-[#101b42]/90 backdrop-blur-md rounded-2xl border border-white/60 dark:border-white/10 shadow-xl">
               <div className="font-serif font-bold text-[#0d176d] dark:text-white text-sm">
                 {current.title}
               </div>
-              <div className="text-[11px] text-[#f95716] font-mono font-bold mt-0.5">
+              <div className="text-[11px] text-[#f95716] font-sans font-bold mt-0.5">
                 {current.status}
               </div>
             </div>

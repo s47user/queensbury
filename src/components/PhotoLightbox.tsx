@@ -92,7 +92,7 @@ export const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
       <div className="flex items-center justify-between gap-4 py-2 border-b border-white/10 shrink-0">
         {/* Left: Photo Title & Category */}
         <div className="flex items-center gap-3 min-w-0">
-          <span className="px-2.5 py-1 rounded-full bg-[#10B981]/20 border border-[#10B981]/30 text-[#10B981] font-mono text-xs uppercase tracking-wider font-semibold shrink-0">
+          <span className="px-2.5 py-1 rounded-full bg-[#10B981]/20 border border-[#10B981]/30 text-[#10B981] font-sans text-xs uppercase tracking-wider font-semibold shrink-0">
             {currentPhoto.category}
           </span>
           <h2 className="font-serif font-bold text-sm sm:text-base text-white truncate max-w-[200px] sm:max-w-md">
@@ -103,7 +103,7 @@ export const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
         {/* Right: Counter, Zoom & Close Button */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           {/* Index Counter */}
-          <span className="text-xs font-mono text-[#94A3B8] px-2 py-1 rounded bg-white/5 border border-white/10">
+          <span className="text-xs font-sans text-[#94A3B8] px-2 py-1 rounded bg-white/5 border border-white/10">
             {currentIndex + 1} / {photos.length}
           </span>
 
@@ -174,7 +174,7 @@ export const PhotoLightbox: React.FC<PhotoLightboxProps> = ({
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div className="space-y-1">
             <div className="flex flex-wrap items-center gap-2 text-xs">
-              <span className="font-bold text-[#f95716] font-mono">{currentPhoto.pillar}</span>
+              <span className="font-bold text-[#f95716] font-sans">{currentPhoto.pillar}</span>
               <span className="text-white/30">•</span>
               <span className="text-white/80">{currentPhoto.age}</span>
               <span className="text-white/30">•</span>

@@ -14,9 +14,9 @@ test('getSectionContext returns correct metadata for valid section IDs', () => {
   assert.equal(programmes.title, 'Our Programmes');
   assert.equal(programmes.href, '#programmes');
 
-  const facilities = getSectionContext('#facilities');
-  assert.equal(facilities.id, 'facilities');
-  assert.equal(facilities.category, 'Campus Infrastructure');
+  const about = getSectionContext('#about');
+  assert.equal(about.id, 'about');
+  assert.equal(about.category, 'Academy & Heritage');
 });
 
 test('getSectionContext falls back to home for unknown sections', () => {

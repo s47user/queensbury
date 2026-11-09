@@ -13,7 +13,7 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
   onNavigate,
   onOpenAdmissions,
 }) => {
-  const { isDark, toggleTheme, setTheme } = useTheme();
+  const { isDark, toggleTheme } = useTheme();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -35,8 +35,8 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
       subItems: [
         { label: 'Our Story & Heritage', id: 'about' },
         { label: 'Montessori Method', id: 'about' },
-        { label: 'Sensorial Apparatus', id: 'about' },
-        { label: 'Care & Nutrition', id: 'about' },
+        { label: 'Sensorial Learning', id: 'about' },
+        { label: 'Care & Daily Nutrition', id: 'about' },
       ],
     },
     {
@@ -51,27 +51,16 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
       ],
     },
     {
-      label: 'Campus & Facilities',
-      id: 'facilities',
-      hasDropdown: true,
-      subItems: [
-        { label: 'Prepared Environments', id: 'facilities' },
-        { label: 'Photo Tour Gallery', id: 'facilities' },
-        { label: 'Botanical Courtyard', id: 'facilities' },
-        { label: 'Dining & Sleep Suites', id: 'facilities' },
-      ],
-    },
-    {
-      label: 'News & Events',
+      label: 'News & Calendar',
       id: 'news',
       hasDropdown: true,
       subItems: [
         { label: 'Campus Announcements', id: 'news' },
-        { label: 'Academic Calendar', id: 'news' },
-        { label: 'Observation Weeks', id: 'news' },
+        { label: 'Academic Term Dates', id: 'news' },
+        { label: 'Parent Resources', id: 'news' },
       ],
     },
-    { label: 'Contact', id: 'contact' },
+    { label: 'Contact & Location', id: 'contact' },
   ];
 
   const handleItemClick = (id: string) => {
@@ -85,49 +74,49 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
       className={`fixed left-0 right-0 top-3 sm:top-5 z-[60] mx-auto w-[95vw] sm:w-max max-w-7xl rounded-full p-1.5 sm:p-2 pr-2.5 sm:pr-4 backdrop-blur-2xl transition-all duration-300 ${
         isDark
           ? scrolled
-            ? 'bg-[#020617]/95 border border-slate-800/80 shadow-[0_16px_40px_rgba(0,0,0,0.7)] ring-1 ring-white/10'
-            : 'bg-[#030718]/90 border border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.6)] ring-1 ring-white/10'
+            ? 'bg-[#0b1437]/95 border border-slate-700/60 shadow-[0_16px_40px_rgba(0,0,0,0.6)]'
+            : 'bg-[#0d176d]/90 border border-white/15 shadow-[0_12px_36px_rgba(0,0,0,0.5)]'
           : scrolled
-            ? 'bg-white/95 shadow-xl ring-1 ring-black/5'
-            : 'bg-white/90 ring-1 ring-black/5 shadow-[0_12px_36px_rgba(13,23,109,0.12)]'
+            ? 'bg-white/95 border border-slate-200/80 shadow-xl'
+            : 'bg-white/90 border border-slate-100 shadow-[0_12px_36px_rgba(13,23,109,0.1)]'
       }`}
     >
-      <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-5 xl:gap-7">
+      <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-4 xl:gap-6">
         {/* Brand Crest & Title */}
         <button
           type="button"
           onClick={() => handleItemClick('home')}
-          className="flex items-center gap-2 sm:gap-2.5 pl-1.5 sm:pl-2 group outline-none cursor-pointer shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 pl-1 sm:pl-2 group outline-none cursor-pointer shrink-0 text-left"
         >
-          {/* Authentic Queensbury Crest */}
-          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0d176d] border border-amber-400/50 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform overflow-hidden shrink-0">
+          {/* Authentic Queensbury Shield Emblem (Natural ratio, no circular clipping) */}
+          <div className="relative h-10 sm:h-12 w-auto shrink-0 transition-transform duration-200 group-hover:scale-105">
             <img
-              src="/assets/logo.jpg"
+              src="/assets/logo.png"
               alt="Queensbury Montessori School Crest"
-              className="w-full h-full object-cover"
+              className="h-full w-auto object-contain drop-shadow-sm"
             />
           </div>
 
-          <div className="flex flex-col text-left">
+          <div className="flex flex-col text-left justify-center">
             <span
-              className={`font-bold text-sm sm:text-base md:text-lg tracking-tight leading-none font-sans transition-colors ${
+              className={`font-serif font-bold text-base sm:text-lg tracking-tight leading-none transition-colors ${
                 isDark ? 'text-white' : 'text-[#0d176d]'
               }`}
             >
               Queensbury
             </span>
             <span
-              className={`hidden sm:block text-[9px] font-mono tracking-widest uppercase font-semibold leading-tight mt-0.5 transition-colors ${
-                isDark ? 'text-amber-300/80' : 'text-slate-500'
+              className={`text-[9px] sm:text-[10px] font-sans font-semibold tracking-wider uppercase leading-tight mt-1 transition-colors ${
+                isDark ? 'text-amber-300' : 'text-amber-700'
               }`}
             >
-              Santa Maria · Accra
+              Montessori Sch. · Santa Maria
             </span>
           </div>
         </button>
 
         {/* Desktop Nav Links */}
-        <div className="hidden items-center gap-4 xl:flex text-[13px] font-semibold relative">
+        <div className="hidden items-center gap-3 lg:gap-4 xl:flex text-[13px] font-semibold relative">
           {navItems.map((item) => (
             <div
               key={item.id + item.label}
@@ -138,7 +127,7 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
               <button
                 type="button"
                 onClick={() => handleItemClick(item.id)}
-                className={`flex items-center gap-1 transition-colors outline-none cursor-pointer rounded-md ${
+                className={`flex items-center gap-1 transition-colors outline-none cursor-pointer px-2 py-1 rounded-lg ${
                   activePage === item.id
                     ? 'text-[#f95716] font-bold'
                     : isDark
@@ -158,7 +147,7 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
                   <div
                     className={`rounded-2xl p-2 shadow-2xl border ring-1 ring-black/5 flex flex-col gap-1 ${
                       isDark
-                        ? 'bg-[#060c24] border-slate-800/80 text-white'
+                        ? 'bg-[#0b1437] border-slate-700 text-white'
                         : 'bg-white border-slate-100 text-slate-800'
                     }`}
                   >
@@ -191,8 +180,8 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
             onClick={toggleTheme}
             className={`p-2 rounded-full transition-all duration-300 flex items-center justify-center cursor-pointer shadow-sm ${
               isDark
-                ? 'bg-indigo-950/90 text-amber-300 hover:bg-indigo-900 border border-indigo-500/40 shadow-[0_0_15px_rgba(251,191,36,0.25)]'
-                : 'bg-amber-50 text-amber-600 hover:bg-amber-100 border border-amber-200/90'
+                ? 'bg-white/10 text-amber-300 hover:bg-white/15 border border-white/15'
+                : 'bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200/90'
             }`}
             title={isDark ? 'Switch to Day Mode' : 'Switch to Night Mode'}
             aria-label="Toggle day and night mode"
@@ -200,7 +189,7 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
             {isDark ? (
               <Sun className="w-4 h-4 text-amber-300 transition-transform duration-500 hover:rotate-90" />
             ) : (
-              <Moon className="w-4 h-4 text-indigo-800 transition-transform duration-500 hover:-rotate-45" />
+              <Moon className="w-4 h-4 text-[#0d176d] transition-transform duration-500 hover:-rotate-45" />
             )}
           </button>
 
@@ -235,7 +224,7 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
         <div
           className={`xl:hidden absolute top-full left-0 right-0 mt-3 p-4 rounded-3xl border shadow-2xl animate-in fade-in slide-in-from-top-3 duration-200 max-h-[75vh] overflow-y-auto ${
             isDark
-              ? 'bg-[#020617]/98 backdrop-blur-2xl border-white/10 text-white'
+              ? 'bg-[#0b1437]/98 backdrop-blur-2xl border-white/15 text-white'
               : 'bg-white/95 backdrop-blur-2xl border-slate-100 text-slate-800'
           }`}
         >
@@ -256,58 +245,16 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
                 {item.label}
               </button>
             ))}
-
-            {/* Mobile Day / Night Segmented Switch */}
-            <div
-              className={`p-3 rounded-2xl flex items-center justify-between mt-2 border ${
-                isDark ? 'bg-[#060c24] border-slate-800' : 'bg-slate-50 border-slate-200'
-              }`}
-            >
-              <div className="flex items-center gap-2 text-xs font-semibold">
-                {isDark ? (
-                  <Moon className="w-4 h-4 text-amber-300" />
-                ) : (
-                  <Sun className="w-4 h-4 text-amber-500" />
-                )}
-                <span>Theme Mode</span>
-              </div>
-              <div className="flex items-center gap-1 p-0.5 rounded-full bg-slate-200/80 dark:bg-black/40">
-                <button
-                  type="button"
-                  onClick={() => setTheme('light')}
-                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                    !isDark
-                      ? 'bg-white text-slate-900 shadow-sm'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  ☀️ Day
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setTheme('dark')}
-                  className={`px-3 py-1 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                    isDark
-                      ? 'bg-[#0d176d] text-white shadow-sm'
-                      : 'text-slate-500 hover:text-slate-900'
-                  }`}
-                >
-                  🌙 Night
-                </button>
-              </div>
-            </div>
-
-            <div className="pt-3 border-t border-slate-200 dark:border-white/10 flex items-center justify-between px-2 mt-1">
-              <span className="text-xs text-slate-400 font-mono">SANTA MARIA, ACCRA</span>
+            <div className="pt-2 mt-2 border-t border-slate-100 dark:border-white/10">
               <button
                 type="button"
                 onClick={() => {
                   onOpenAdmissions();
                   setMobileOpen(false);
                 }}
-                className="text-xs font-bold text-[#f95716] uppercase font-mono tracking-wider cursor-pointer"
+                className="w-full py-3 rounded-2xl bg-[#f95716] text-white text-xs font-bold uppercase tracking-wider text-center"
               >
-                Admissions →
+                Apply for Admission (2024/2025)
               </button>
             </div>
           </div>

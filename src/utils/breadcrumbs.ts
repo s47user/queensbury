@@ -54,13 +54,6 @@ export const SECTION_METADATA: Record<string, SectionContext> = {
     subtitle: 'Crèche · Nursery · Kindergarten',
     href: '#programmes',
   },
-  facilities: {
-    id: 'facilities',
-    category: 'Campus Infrastructure',
-    title: 'Prepared Facilities',
-    subtitle: 'Rest Suite · Atelier · Courtyard',
-    href: '#facilities',
-  },
   experience: {
     id: 'experience',
     category: 'Learning Atmosphere',

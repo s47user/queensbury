@@ -59,12 +59,12 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
   ];
 
   return (
-    <section id="news" className="w-full bg-[#fafafc] dark:bg-[#030718] py-20 md:py-28 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
+    <section id="news" className="w-full bg-[#fafafc] dark:bg-[#0a1128] py-20 md:py-28 px-4 sm:px-6 lg:px-8 transition-colors duration-300">
       <div className="mx-auto max-w-7xl">
         {/* Header with Title and "View All ↗" */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-4">
           <div>
-            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
+            <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-sans block mb-2">
               {language === 'tw' ? 'SANTA MARIA NSƐM FOFORƆ' : 'CAMPUS ANNOUNCEMENTS'}
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[#0d176d] dark:text-white">
@@ -88,7 +88,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
             <article
               key={article.id}
               onClick={() => setSelectedArticle(idx)}
-              className="bg-white dark:bg-[#060c24] rounded-3xl overflow-hidden border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col group cursor-pointer"
+              className="bg-white dark:bg-[#101b42] rounded-3xl overflow-hidden border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col group cursor-pointer"
             >
               {/* Photo */}
               <div className="relative h-48 sm:h-56 md:h-60 w-full overflow-hidden bg-slate-100 dark:bg-slate-900">
@@ -104,7 +104,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
               <div className="p-5 sm:p-7 md:p-8 flex flex-col flex-1 justify-between">
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
-                    <span className="px-2.5 sm:px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/50 text-[#f95716] text-[10px] sm:text-[11px] font-mono font-bold tracking-wider uppercase">
+                    <span className="px-2.5 sm:px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/50 text-[#f95716] text-[10px] sm:text-[11px] font-sans font-bold tracking-wider uppercase">
                       {article.badge}
                     </span>
                     <span className="text-[11px] sm:text-xs text-slate-400 font-sans">
@@ -134,7 +134,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
       {/* Article Detail Modal */}
       {selectedArticle !== null && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-[#060c24] text-slate-800 dark:text-slate-100 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-5 sm:p-8 shadow-2xl relative border border-slate-200 dark:border-white/10">
+          <div className="bg-white dark:bg-[#101b42] text-slate-800 dark:text-slate-100 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-5 sm:p-8 shadow-2xl relative border border-slate-200 dark:border-white/10">
             <button
               type="button"
               onClick={() => setSelectedArticle(null)}
@@ -143,7 +143,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
               <X className="w-5 h-5" />
             </button>
 
-            <span className="px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/50 text-[#f95716] text-[11px] font-mono font-bold tracking-wider uppercase mb-3 inline-block">
+            <span className="px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-950/50 text-[#f95716] text-[11px] font-sans font-bold tracking-wider uppercase mb-3 inline-block">
               {articles[selectedArticle].badge} • {articles[selectedArticle].date}
             </span>
 
