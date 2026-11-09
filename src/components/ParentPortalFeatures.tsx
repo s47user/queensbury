@@ -110,28 +110,28 @@ export const ParentPortalFeatures: React.FC = () => {
 
   const classroomMoments = [
     {
-      title: 'Practical Life & Independence',
-      description: 'Care of self and environment: pouring water, spooning grains, and buttoning frames.',
-      image: '/src/assets/images/programme_nursery_practical_1793950102981.jpg',
+      title: 'School Leadership & Vision',
+      description: 'Our Head of School addressing parents and faculty, celebrating early childhood progress in Santa Maria.',
+      image: '/assets/school/school_fb_photo_1.jpg',
+      stage: 'Campus Leadership',
+    },
+    {
+      title: 'Cohort Community & Celebration',
+      description: 'Teachers and early learners uniting to cut the milestone celebration cake together.',
+      image: '/assets/school/school_fb_photo_8.jpg',
+      stage: 'Early Childhood Cohort',
+    },
+    {
+      title: 'Nursery Learning Milestones',
+      description: 'Nursery learner Vanessa Yeboah proudly holding her Queensbury Montessori Achievers Certificate with her teacher.',
+      image: '/assets/school/school_fb_photo_3.jpg',
       stage: 'Nursery (2–4 Years)',
     },
     {
-      title: 'Sensorial Dimension & Geometry',
-      description: 'Exploring dimension, tactile weight, and geometric forms using wooden Montessori apparatus.',
-      image: '/assets/school/school_fb_photo_1.jpg',
+      title: 'Academic Citation & Character Recognition',
+      description: 'Faculty presenting personalized framed citations celebrating perseverance and character.',
+      image: '/assets/school/school_fb_photo_4.jpg',
       stage: 'Kindergarten (4–6 Years)',
-    },
-    {
-      title: 'Outdoor Exploration & Social Play',
-      description: 'Courtyard movement, sand play, gross motor coordination, and cooperative communication.',
-      image: '/assets/school/school_fb_photo_2.jpg',
-      stage: 'All Stages',
-    },
-    {
-      title: 'Language & Phonetic Sandpaper Letters',
-      description: 'Tracing tactile letters with fingertips while pronouncing pure phonetic sounds.',
-      image: '/assets/school/school_fb_photo_3.jpg',
-      stage: 'Preschool & Kindergarten',
     },
   ];
 

@@ -6,7 +6,7 @@
 export interface GalleryPhoto {
   id: string;
   title: string;
-  category: 'All' | 'Nature & Garden' | 'Sensorial & Math' | 'Practical Life' | 'Creativity & Art' | 'Prepared Environment';
+  category: 'All' | 'Campus Ceremonies' | 'Student Achievers' | 'Community Celebrations';
   image: string;
   aspect: string;
   spanClass: string;
@@ -17,103 +17,81 @@ export interface GalleryPhoto {
 
 export const GALLERY_ITEMS: GalleryPhoto[] = [
   {
-    id: 'outdoor-nature',
-    title: 'Botanical Discovery & Sensory Flora Garden',
-    category: 'Nature & Garden',
-    image: '/src/assets/images/learning_outdoors_nature_1793950104302.jpg',
-    aspect: 'aspect-[16/10]',
-    spanClass: 'sm:col-span-2 lg:col-span-2',
-    age: 'All Learners (0–6 yrs)',
-    pillar: 'Nature Stewardship',
-    description: 'Children tend soil, aromatic herbs, and water terracotta planters under the warm Accra breeze, discovering environmental reverence and sensory calm.',
-  },
-  {
-    id: 'sandpaper-letters',
-    title: 'Phonetic Tactile Sandpaper Letters',
-    category: 'Sensorial & Math',
-    image: '/src/assets/images/sandpaper_letters_1793954199709.jpg',
+    id: 'graduation-keynote',
+    title: 'Head of School Graduation Keynote Address',
+    category: 'Campus Ceremonies',
+    image: '/assets/school/school_fb_photo_1.jpg',
     aspect: 'aspect-[3/4]',
-    spanClass: 'sm:col-span-1 lg:col-span-1',
-    age: 'Nursery & KG (3–5 yrs)',
-    pillar: 'Tactile Phonics',
-    description: 'Tracing the textured sandpaper letters connects muscular memory with auditory phonetics, creating an intuitive foundation for reading and storytelling.',
-  },
-  {
-    id: 'clay-atelier',
-    title: 'Tactile Clay Sculpting & Creative Atelier',
-    category: 'Creativity & Art',
-    image: '/src/assets/images/sensory_clay_art_1793954179538.jpg',
-    aspect: 'aspect-[4/3]',
-    spanClass: 'sm:col-span-1 lg:col-span-1',
-    age: 'Nursery (2–4 yrs)',
-    pillar: 'Sensory Expression',
-    description: 'Unhurried tactile exploration with natural earthenware clay and plant-derived pigments strengthens fine hand muscles and expressive confidence.',
-  },
-  {
-    id: 'nursery-pouring',
-    title: 'Practical Life: Precision Water Pouring',
-    category: 'Practical Life',
-    image: '/src/assets/images/programme_nursery_practical_1793950102981.jpg',
-    aspect: 'aspect-[4/3]',
-    spanClass: 'sm:col-span-1 lg:col-span-1',
-    age: 'Nursery (2–4 yrs)',
-    pillar: 'Motor Coordination',
-    description: 'Pouring water between child-proportioned ceramic vessels refines bimanual coordination, balance, and deep concentration without adult interruption.',
-  },
-  {
-    id: 'kindergarten-math',
-    title: 'Montessori Golden Beads Decimal System',
-    category: 'Sensorial & Math',
-    image: '/src/assets/images/programme_kindergarten_math_1793950104698.jpg',
-    aspect: 'aspect-[16/10]',
-    spanClass: 'sm:col-span-2 lg:col-span-2',
-    age: 'Kindergarten (4–6 yrs)',
-    pillar: 'Concrete Mathematics',
-    description: 'Children physically weigh and touch the difference between single units, bars of 10, squares of 100, and cubes of 1000 before encountering abstract arithmetic.',
-  },
-  {
-    id: 'creche-sensory',
-    title: 'Natural Sensorial Treasure Basket',
-    category: 'Sensorial & Math',
-    image: '/src/assets/images/programme_creche_sensory_1793950102593.jpg',
-    aspect: 'aspect-[4/3]',
-    spanClass: 'sm:col-span-1 lg:col-span-1',
-    age: 'Crèche (0–2 yrs)',
-    pillar: 'Early Sensorial',
-    description: 'Infants explore polished wood, organic wool, and gourd textures rather than synthetic plastics, gently nurturing neural sensory pathways.',
-  },
-  {
-    id: 'prepared-classroom',
-    title: 'The Prepared Environment in Santa Maria',
-    category: 'Prepared Environment',
-    image: '/src/assets/images/hero_montessori_classroom_1793950102607.jpg',
-    aspect: 'aspect-[16/10]',
     spanClass: 'sm:col-span-2 lg:col-span-2',
     age: 'Campus Wide',
-    pillar: 'Prepared Environment',
-    description: 'Child-scaled solid mahogany and cedar shelving arranged meticulously from simple to complex, bathed in gentle natural daylight for uninterrupted focus.',
+    pillar: 'School Leadership',
+    description: 'Our Head of School addressing parents, faculty, and graduating learners during the 1st Graduation Ceremony at Queensbury Montessori School.',
   },
   {
-    id: 'dining-communal',
-    title: 'Grace, Courtesy & Family-Style Dining',
-    category: 'Practical Life',
-    image: '/src/assets/images/facility_dining_hall_1793951168327.jpg',
-    aspect: 'aspect-[4/3]',
+    id: 'graduation-cake-cutting',
+    title: 'Milestone Celebration Cake Cutting',
+    category: 'Community Celebrations',
+    image: '/assets/school/school_fb_photo_8.jpg',
+    aspect: 'aspect-[9/16]',
     spanClass: 'sm:col-span-1 lg:col-span-1',
-    age: 'All Learners (0–6 yrs)',
-    pillar: 'Grace & Courtesy',
-    description: 'Children set placemats, serve wholesome meals with balanced portions, practice courteous dialogue, and clear tables collaboratively.',
+    age: 'Toddlers & Graduates',
+    pillar: 'Community Unity',
+    description: 'Educators and early learners gathered around the celebratory graduation cake, marking the joyful completion of their foundational learning cycle.',
   },
   {
-    id: 'sleep-sanctuary',
-    title: 'Peaceful Rest Suites & Sleep Room',
-    category: 'Prepared Environment',
-    image: '/src/assets/images/facility_sleep_sanctuary_1793951151256.jpg',
-    aspect: 'aspect-[4/3]',
+    id: 'nursery-achiever-vanessa',
+    title: 'Achievers Certificate Awarded to Vanessa Yeboah',
+    category: 'Student Achievers',
+    image: '/assets/school/school_fb_photo_3.jpg',
+    aspect: 'aspect-[3/4]',
     spanClass: 'sm:col-span-1 lg:col-span-1',
-    age: 'Crèche & Toddlers (0–3 yrs)',
-    pillar: 'Rest & Recovery',
-    description: 'Low wooden floor beds preserving motor autonomy and organic cotton bedding supporting healthy natural circadian restorative cycles.',
+    age: 'Nursery Stage',
+    pillar: 'Early Excellence',
+    description: 'Young Vanessa proudly presenting her Queensbury Montessori Achievers Certificate alongside her teacher in traditional kente attire.',
+  },
+  {
+    id: 'citation-aarif',
+    title: 'Academic Citation Presented to Aarif Massud Kouanda',
+    category: 'Student Achievers',
+    image: '/assets/school/school_fb_photo_4.jpg',
+    aspect: 'aspect-[3/4]',
+    spanClass: 'sm:col-span-1 lg:col-span-1',
+    age: 'Kindergarten Stage',
+    pillar: 'Academic Honour',
+    description: 'Faculty presenting a framed graduation citation celebrating curiosity, dedication, and respectful character at Queensbury.',
+  },
+  {
+    id: 'citation-cynthia',
+    title: 'Academic Citation Presented to Cynthia Naa Koshie Lamptey',
+    category: 'Student Achievers',
+    image: '/assets/school/school_fb_photo_5.jpg',
+    aspect: 'aspect-[3/4]',
+    spanClass: 'sm:col-span-1 lg:col-span-1',
+    age: 'Kindergarten Stage',
+    pillar: 'Character Virtue',
+    description: 'Cynthia receiving her personalized framed citation in recognition of her outstanding engagement and social grace.',
+  },
+  {
+    id: 'achiever-darion',
+    title: 'Graduation Certificate Awarded to Darion Ofosu Nyaako Appiah',
+    category: 'Student Achievers',
+    image: '/assets/school/school_fb_photo_6.jpg',
+    aspect: 'aspect-[3/4]',
+    spanClass: 'sm:col-span-1 lg:col-span-1',
+    age: 'Early Learners',
+    pillar: 'Individual Growth',
+    description: 'Darion holding his graduation certificate with faculty celebrating his milestones in self-discipline and cheerful learning.',
+  },
+  {
+    id: 'graduation-cake',
+    title: 'Official Queensbury Graduation Cake Display',
+    category: 'Community Celebrations',
+    image: '/assets/school/school_fb_photo_2.jpg',
+    aspect: 'aspect-[3/4]',
+    spanClass: 'sm:col-span-1 lg:col-span-1',
+    age: 'Campus Milestone',
+    pillar: 'Celebration',
+    description: 'The beautifully decorated celebration cake for the 1st Queensbury Montessori School Graduation Ceremony in Santa Maria, Accra.',
   },
 ];
 
@@ -130,29 +108,20 @@ export function filterGalleryItems(
   return items.filter((item) => item.category === selectedCategory);
 }
 
-/**
- * Computes next photo index with wrap-around.
- */
-export function getNextPhotoIndex(currentIndex: number, totalCount: number): number {
-  if (totalCount <= 0) return 0;
-  return (currentIndex + 1) % totalCount;
-}
-
-/**
- * Computes previous photo index with wrap-around.
- */
-export function getPrevPhotoIndex(currentIndex: number, totalCount: number): number {
-  if (totalCount <= 0) return 0;
-  return (currentIndex - 1 + totalCount) % totalCount;
-}
-
-/**
- * Returns distinct category list with count statistics.
- */
 export function getCategoryCounts(items: GalleryPhoto[]): Record<string, number> {
   const counts: Record<string, number> = { All: items.length };
   for (const item of items) {
     counts[item.category] = (counts[item.category] || 0) + 1;
   }
   return counts;
+}
+
+export function getNextPhotoIndex(currentIndex: number, totalPhotos: number): number {
+  if (totalPhotos <= 0) return 0;
+  return (currentIndex + 1) % totalPhotos;
+}
+
+export function getPrevPhotoIndex(currentIndex: number, totalPhotos: number): number {
+  if (totalPhotos <= 0) return 0;
+  return (currentIndex - 1 + totalPhotos) % totalPhotos;
 }

@@ -17,13 +17,13 @@ test('filterGalleryItems returns all items when All or empty is passed', () => {
 });
 
 test('filterGalleryItems filters correctly by category', () => {
-  const nature = filterGalleryItems(GALLERY_ITEMS, 'Nature & Garden');
-  assert.ok(nature.length >= 1);
-  assert.ok(nature.every((item) => item.category === 'Nature & Garden'));
+  const ceremonies = filterGalleryItems(GALLERY_ITEMS, 'Campus Ceremonies');
+  assert.ok(ceremonies.length >= 1);
+  assert.ok(ceremonies.every((item) => item.category === 'Campus Ceremonies'));
 
-  const math = filterGalleryItems(GALLERY_ITEMS, 'Sensorial & Math');
-  assert.ok(math.length >= 2);
-  assert.ok(math.every((item) => item.category === 'Sensorial & Math'));
+  const achievers = filterGalleryItems(GALLERY_ITEMS, 'Student Achievers');
+  assert.ok(achievers.length >= 2);
+  assert.ok(achievers.every((item) => item.category === 'Student Achievers'));
 });
 
 test('getNextPhotoIndex and getPrevPhotoIndex handle wrap-around correctly', () => {
@@ -39,6 +39,6 @@ test('getNextPhotoIndex and getPrevPhotoIndex handle wrap-around correctly', () 
 test('getCategoryCounts aggregates category tallies', () => {
   const counts = getCategoryCounts(GALLERY_ITEMS);
   assert.equal(counts.All, GALLERY_ITEMS.length);
-  assert.ok(counts['Sensorial & Math'] >= 2);
-  assert.ok(counts['Practical Life'] >= 2);
+  assert.ok(counts['Campus Ceremonies'] >= 1);
+  assert.ok(counts['Student Achievers'] >= 2);
 });

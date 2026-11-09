@@ -14,22 +14,22 @@ export const RisingSunHero: React.FC<RisingSunHeroProps> = ({
 
   const slides = [
     {
-      image: '/src/assets/images/hero_montessori_classroom_1793950102607.jpg',
+      image: '/assets/school/school_fb_photo_3.jpg',
       headline: 'Where Curious Minds Grow into Lifelong Explorers',
       subheadline:
         'A dedicated, child-centred Montessori school in Santa Maria, Auntie Aku, Accra. Nurturing independence, creativity, and purposeful early childhood growth.',
     },
     {
       image: '/assets/school/school_fb_photo_1.jpg',
-      headline: 'Empowering Inquisitive Minds with Hands-On Apparatus',
+      headline: 'Empowering Inquisitive Minds with Hands-On Learning',
       subheadline:
-        'From Crèche through Kindergarten, children explore hands-on discovery in child-scaled classrooms tailored to each developmental stage.',
+        'From Crèche through Kindergarten, children explore self-directed discovery in child-scaled classrooms tailored to each developmental stage.',
     },
     {
-      image: '/assets/school/school_fb_photo_2.jpg',
+      image: '/assets/school/school_fb_photo_8.jpg',
       headline: 'Rooted in Santa Maria: Dignity, Grace & Character',
       subheadline:
-        'Serving families across Santa Maria, Kwashieman, Sowutuom, and Ablekuma with nutritious hot meals, safe gatekeeping, and dedicated educators.',
+        'Serving families across Santa Maria, Kwashieman, Sowutuom, and Ablekuma with nutritious meals, safe care, and dedicated educators.',
     },
   ];
 

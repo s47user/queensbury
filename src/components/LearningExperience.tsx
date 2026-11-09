@@ -21,11 +21,9 @@ export const LearningExperience: React.FC = () => {
 
   const categories = [
     'All',
-    'Nature & Garden',
-    'Sensorial & Math',
-    'Practical Life',
-    'Creativity & Art',
-    'Prepared Environment',
+    'Campus Ceremonies',
+    'Student Achievers',
+    'Community Celebrations',
   ];
 
   const categoryCounts = getCategoryCounts(GALLERY_ITEMS);
