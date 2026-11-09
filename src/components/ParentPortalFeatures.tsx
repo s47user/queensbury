@@ -444,45 +444,69 @@ export const ParentPortalFeatures: React.FC = () => {
             </div>
 
             <div className="space-y-4">
+              {/* Soft Copy Academic Calendar Banner */}
+              <div className="p-6 rounded-2xl bg-gradient-to-r from-orange-50 to-[#f4fae6] dark:from-[#1a140f] dark:to-[#132007] border border-orange-200 dark:border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-sans font-bold uppercase text-[#f95716] mb-1">
+                    <Calendar className="w-4 h-4" />
+                    <span>Academic Calendar (Soft Copy Available)</span>
+                  </div>
+                  <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
+                    Current Term Academic Calendar & Dates
+                  </h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                    Term dates, observation weeks, mid-term breaks, and graduation speech days are available in soft copy.
+                  </p>
+                </div>
+                <a
+                  href="https://wa.me/233241133632?text=Hello%20Queensbury%20Montessori,%20please%20send%20me%20the%20soft%20copy%20Academic%20Calendar."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-full bg-[#0d176d] hover:bg-[#f95716] text-white text-xs font-bold uppercase tracking-wider transition-colors shrink-0 shadow-sm"
+                >
+                  Request Soft Copy (WhatsApp) ↗
+                </a>
+              </div>
+
               <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
-                    Uniform & Footwear Guidelines
+                    PTA Committee & Parent Communication
+                  </h4>
+                  <span className="text-[11px] font-sans text-[#70b800] dark:text-[#a3e635] uppercase font-bold bg-[#f4fae6] dark:bg-[#1a2b00]/60 px-2.5 py-1 rounded-full">
+                    PTA Channels
+                  </span>
+                </div>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                  Direct parent communication is maintained through our official admissions WhatsApp hotline (024 113 3632) and the Queensbury PTA committee. Termly assemblies allow parents and educators to review progress collaboratively.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
+                    School Meals: Breakfast (7:30 AM) & Lunch (12:00 PM)
                   </h4>
                   <span className="text-[11px] font-sans text-[#f95716] uppercase font-bold bg-[#f95716]/10 px-2.5 py-1 rounded-full">
-                    Notice 01
+                    Nutrition Included
                   </span>
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                  Please ensure children wear comfortable velcro or slip-on shoes so they can independently practice putting on and taking off footwear each morning.
+                  Both breakfast and hot lunch are freshly cooked on-site and provided by the school. Please notify the administration desk of any specific allergies or dietary notes.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
-                    PTA General Meeting & Progress Review
+                    Weekend Daycare (Saturday & Sunday)
                   </h4>
-                  <span className="text-[11px] font-sans text-[#0d176d] dark:text-blue-300 uppercase font-bold bg-blue-100 dark:bg-blue-950/60 px-2.5 py-1 rounded-full">
-                    Notice 02
+                  <span className="text-[11px] font-sans text-blue-700 dark:text-blue-300 uppercase font-bold bg-blue-100 dark:bg-blue-950/60 px-2.5 py-1 rounded-full">
+                    Weekend Care
                   </span>
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                  Our termly parent-teacher gathering takes place on campus. Meet with class educators, review portfolio milestones, and discuss term activities.
-                </p>
-              </div>
-
-              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
-                <div className="flex items-center justify-between mb-2">
-                  <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
-                    Healthy Lunch & Fruit Break Reminder
-                  </h4>
-                  <span className="text-[11px] font-sans text-emerald-700 dark:text-emerald-300 uppercase font-bold bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full">
-                    Notice 03
-                  </span>
-                </div>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                  Fresh fruits and water are shared during mid-morning break. Hot nutritious lunches are freshly prepared daily in our clean campus kitchen.
+                  For working parents with weekend shifts or commitments, Queensbury provides weekend daycare support on campus. Contact the admissions desk to register.
                 </p>
               </div>
             </div>

@@ -133,7 +133,10 @@ function QueensburyMainApp() {
               onExploreProgrammes={() => navigateTo('programmes')}
             />
 
-            {/* 5. News & Announcements 3-Card Grid */}
+            {/* 5. Daily Routine & Schedule (Meals Provided & Weekend Care) */}
+            <DailyRoutine />
+
+            {/* 6. News & Announcements 3-Card Grid */}
             <RisingSunNews
               onNavigateToNews={() => navigateTo('news')}
             />

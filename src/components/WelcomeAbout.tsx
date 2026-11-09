@@ -36,9 +36,15 @@ export const WelcomeAbout: React.FC<{ onNavigate?: (page: string) => void }> = (
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header - Clean Typography */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-sans block mb-2">
-            {language === 'tw' ? 'SANTA MARIA ABAKƆSƐM • EST. 2020' : 'OUR SANTA MARIA HERITAGE · EST. 2020'}
-          </span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-sans font-bold uppercase tracking-widest mb-3 border border-slate-200 dark:border-white/10">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#f95716]" />
+            <span className="text-[#f95716]">Orange</span>
+            <span className="text-slate-400">•</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-[#70b800]" />
+            <span className="text-[#70b800]">Lemon Green</span>
+            <span className="text-slate-400">•</span>
+            <span className="text-slate-700 dark:text-slate-200">Est. 2020</span>
+          </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#0d176d] dark:text-white tracking-tight leading-tight">
             {t.welcome.headline}
           </h2>

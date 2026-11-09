@@ -63,9 +63,10 @@ export const RisingSunHero: React.FC<RisingSunHeroProps> = ({
 
       {/* Floating Content Box */}
       <div className="relative z-20 mx-auto max-w-5xl px-4 pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-24 sm:px-6 lg:px-8 flex flex-col items-center">
-        {/* Subtle Location Capsule */}
+        {/* Subtle Location Capsule with Brand Colors */}
         <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-white/10 px-3 sm:px-4 py-1 sm:py-1.5 backdrop-blur-md border border-white/20 text-white/90 text-[10px] sm:text-xs font-sans font-medium tracking-wider mb-5 sm:mb-6 animate-in fade-in slide-in-from-bottom-3 duration-500 max-w-full text-center">
-          <Sparkles className="w-3.5 h-3.5 text-amber-300 shrink-0" />
+          <span className="w-2 h-2 rounded-full bg-[#f95716]" />
+          <span className="w-2 h-2 rounded-full bg-[#70b800]" />
           <span className="truncate sm:whitespace-normal">SANTA MARIA · AUNTIE AKU, ACCRA · EST. 2020</span>
         </div>
 

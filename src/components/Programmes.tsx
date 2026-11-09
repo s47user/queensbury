@@ -1,5 +1,10 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React, { useState } from 'react';
-import { Check, ArrowRight, Clock } from 'lucide-react';
+import { Check, ArrowRight, Clock, Utensils, Calendar, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 interface ProgrammesProps {
@@ -15,21 +20,22 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
       id: 'creche',
       age: '0–2 Years',
       subtitle: 'The Nurturing Nest',
-      title: 'Crèche & Infant Discovery',
+      title: 'Crèche & Infant Daycare',
       tagline: 'A gentle, safe environment of sensory exploration, physical movement, and warm individual bonding.',
       description:
-        'Our Santa Maria Crèche environment is thoughtfully prepared for babies and toddlers taking their earliest steps into the world. Low wooden floor beds, grasping toys, tactile sensory fabrics, and attentive caregivers create an atmosphere of peaceful, secure attachment.',
+        'Our Santa Maria Crèche environment is thoughtfully prepared for babies and toddlers taking their earliest steps into the world. Low wooden floor beds, grasping toys, tactile sensory fabrics, and attentive caregivers create an atmosphere of peaceful, secure attachment. Fresh breakfast (7:30 AM) and hot lunch (12:00 PM) are fully provided.',
       features: [
-        'Dedicated caregiver-to-infant ratio ensuring responsive, unhurried care',
-        'Natural wooden grasping materials, mobile objects, and tactile textures',
+        'Dedicated caregiver-to-infant ratio ensuring responsive, unhurried attention',
+        'Daily hot meals: Breakfast at 7:30 AM and Lunch at 12:00 PM included',
+        'Tactile sensory spheres, wooden grasping materials, and mobile discovery',
         'Gentle motor freedom: floor mats for rolling, crawling, and pulling up',
-        'Daily rhythm respecting individual infant sleep, feeding, and awake cycles',
-        'Warm communication and language immersion through singing and storytelling',
+        'Hygienic sleep suites respecting natural infant sleep and awake rhythms',
+        'Saturday & Sunday weekend care available for working parents',
       ],
-      schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM)',
+      schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM | Weekend care available)',
       image: '/assets/school/school_fb_photo_10.jpg',
       imageAlt: 'Crèche toddler exploring color sensory spheres guided by early educators at Queensbury Montessori',
-      status: 'Admissions Open (Limited infant spaces)',
+      status: 'Rolling Admissions · Limited infant spaces',
     },
     nursery: {
       id: 'nursery',
@@ -38,48 +44,74 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
       title: 'Montessori Nursery',
       tagline: 'Fostering practical independence, language refinement, and cooperative play.',
       description:
-        'The Nursery environment meets the child during the sensitive period for language, order, and physical movement. Children engage joyfully in practical life exercises—pouring, buttoning, sweeping—and develop the concentration required for advanced mathematical and phonetic concepts.',
+        'The Nursery environment meets the child during the sensitive period for language, order, and physical movement. Children engage joyfully in practical life exercises—pouring, buttoning, sweeping—and develop the concentration required for advanced mathematical and phonetic concepts. Nutritious school-prepared meals keep minds energized.',
       features: [
-        'Hands-on Practical Life: pouring, sorting, folding, and self-care',
+        'Hands-on Practical Life: pouring water, sorting, folding, and self-care',
         'Sensorial Apparatus: Pink Tower, Brown Stair, and Cylinder Blocks',
         'Phonetic language immersion with sandpaper letters and storytelling',
+        'Daily hot meals: Breakfast at 7:30 AM and Lunch at 12:00 PM provided',
         'Social grace and courtesy: greeting peers, taking turns, peaceful conflict resolution',
-        'Daily assembly, music, rhythmic movement, and outdoor discovery',
+        'Saturday & Sunday weekend care available for working families',
       ],
-      schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM)',
+      schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM | Weekend care available)',
       image: '/assets/school/school_fb_photo_9.jpg',
       imageAlt: 'Young learner demonstrating practical life water pouring and balance at Queensbury Montessori',
-      status: 'Rolling Admissions (Subject to space availability)',
+      status: 'Rolling Admissions · Ongoing enrollment',
     },
     kindergarten: {
       id: 'kindergarten',
       age: '4–6 Years',
-      subtitle: 'Confident Thinkers',
+      subtitle: 'Highest Level Offered',
       title: 'Montessori Kindergarten (KG1 & KG2)',
       tagline: 'Bridging concrete sensorial understanding to abstract literacy, mathematics, and science.',
       description:
-        'In the Kindergarten years, children blossom into self-assured, empathetic leaders. They master multi-digit decimal math through Golden Beads, decode complex words with the Moveable Alphabet, and investigate botany, geography, and world cultures with boundless enthusiasm.',
+        'In the Kindergarten years—the highest academic level offered at Queensbury—children blossom into self-assured, empathetic leaders. They master multi-digit decimal math through Golden Beads, decode complex words with the Moveable Alphabet, and investigate botany, geography, and world cultures with boundless enthusiasm.',
       features: [
         'Advanced Mathematics: Golden Bead material, Stamp Game, and multiplication boards',
         'Early Literacy: moveable alphabet, word building, expressive reading and creative writing',
         'Cultural & Natural Sciences: puzzle maps, animal classification, plant care, weather cycles',
         'Leadership & Mentorship: helping younger peers and collaborating in group projects',
+        'Hot Breakfast (7:30 AM) and Nutritious Lunch (12:00 PM) provided daily',
         'Comprehensive preparation for seamless transition into primary school',
       ],
-      schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM)',
+      schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM | Weekend care available)',
       image: '/assets/school/school_fb_photo_15.jpg',
       imageAlt: 'Graduating Kindergarten scholars in royal blue gowns and ceremonial kente stoles',
-      status: 'Enrolling for Upcoming Academic Term',
+      status: 'Enrolling for Upcoming Academic Term · Rolling admission',
     },
   };
 
   const current = programmes[activeTab];
 
   return (
-    <section id="stages-curriculum" className="py-12 bg-[#fafafc] dark:bg-[#0a1128] text-slate-800 dark:text-slate-100 transition-colors duration-300">
+    <section id="stages-curriculum" className="py-20 bg-[#fafafc] dark:bg-[#0a1128] text-slate-800 dark:text-slate-100 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12">
+          {/* Dual Brand Identity Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-sans font-bold uppercase tracking-widest mb-3 border border-slate-200 dark:border-white/10">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#f95716]" />
+            <span className="text-[#f95716]">Orange</span>
+            <span className="text-slate-400 dark:text-slate-500">•</span>
+            <span className="w-2.5 h-2.5 rounded-full bg-[#70b800]" />
+            <span className="text-[#70b800]">Lemon Green</span>
+            <span className="text-slate-400 dark:text-slate-500">•</span>
+            <span className="text-slate-700 dark:text-slate-200">Ages 0 to 6 Years Strictly</span>
+          </div>
+
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-[#0d176d] dark:text-white tracking-tight">
+            {language === 'tw' ? 'Yɛn Adesua Gyinapɛn Nson' : 'Educational Stages & Age Groups'}
+          </h2>
+          <p className="mt-3 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+            {language === 'tw'
+              ? 'Firi Crèche kɔsi Kindergarten (gyinapɛn a ɛkorɔn pa ara a yɛwɔ). Mmofra firi afe 0 kɔsi 6 nya aduane pa (anɔpa ne awia), ahomegyeɛ, ne Montessori nteteeɛ a ɛmu dɔ.'
+              : 'Focusing exclusively on early childhood foundation from ages 0 to 6 years. With Kindergarten (KG2) as our highest academic tier, 100% of our educators, child-sized apparatus, and culinary care are dedicated to these formative years.'}
+          </p>
+        </div>
+
         {/* Programme Selection Segmented Tabs in Rising Sun Pill Aesthetic */}
-        <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 dark:bg-[#101b42] rounded-2xl max-w-xl mb-10 border border-slate-200 dark:border-white/10">
+        <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 dark:bg-[#101b42] rounded-2xl max-w-2xl mb-10 border border-slate-200 dark:border-white/10">
           <button
             type="button"
             onClick={() => setActiveTab('creche')}
@@ -111,13 +143,13 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5'
             }`}
           >
-            {language === 'tw' ? 'Kindergarten (4–6 yrs)' : 'Kindergarten (4–6 yrs)'}
+            {language === 'tw' ? 'Kindergarten (4–6 yrs)' : 'Kindergarten (4–6 yrs, Highest Level)'}
           </button>
         </div>
 
         {/* Selected Programme Display Card in High-End White Frame */}
-        <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 relative">
-          <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
+        <div className="bg-white dark:bg-[#101b42] border border-slate-200/90 dark:border-white/10 rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 relative mb-10">
+          <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#f95716] via-[#70b800] to-[#0d176d]" />
 
           {/* Content Left */}
           <div className="lg:col-span-7 p-8 sm:p-12 flex flex-col justify-between">
@@ -125,7 +157,7 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
               <div className="flex items-center gap-2 text-xs font-sans uppercase tracking-widest text-[#f95716] font-bold mb-2">
                 <span>{current.subtitle}</span>
                 <span aria-hidden="true" className="text-slate-300 dark:text-slate-600">/</span>
-                <span className="text-slate-600 dark:text-slate-400 font-semibold">{current.age}</span>
+                <span className="text-[#70b800] dark:text-[#a3e635] font-semibold">{current.age}</span>
               </div>
               <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0d176d] dark:text-white mb-3">
                 {current.title}
@@ -141,7 +173,7 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
               <div className="space-y-3 mb-8">
                 {current.features.map((feat, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <div className="w-5 h-5 rounded-full bg-orange-100 dark:bg-orange-950/60 text-[#f95716] flex items-center justify-center shrink-0 mt-0.5">
+                    <div className="w-5 h-5 rounded-full bg-[#f4fae6] dark:bg-[#1a2b00]/60 text-[#70b800] dark:text-[#a3e635] flex items-center justify-center shrink-0 mt-0.5">
                       <Check className="w-3.5 h-3.5" />
                     </div>
                     <span className="text-xs sm:text-sm text-slate-700 dark:text-slate-200 font-sans">
@@ -159,6 +191,7 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
                 <span><strong className="text-slate-900 dark:text-white">Schedule:</strong> {current.schedule}</span>
               </div>
               <button
+                type="button"
                 onClick={() => onSelectProgramme(activeTab)}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-wider text-white bg-[#0d176d] hover:bg-[#f95716] rounded-full shadow-md hover:shadow-lg transition-all cursor-pointer"
               >
@@ -169,7 +202,7 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
           </div>
 
           {/* Photography Right */}
-          <div className="lg:col-span-5 relative min-h-[350px] lg:min-h-full bg-slate-100">
+          <div className="lg:col-span-5 relative min-h-[350px] lg:min-h-full bg-slate-100 dark:bg-[#070d24]">
             <img
               src={current.image}
               alt={current.imageAlt}
@@ -186,6 +219,40 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
             </div>
           </div>
         </div>
+
+        {/* 3 Value Ribbons */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-5 rounded-2xl bg-white dark:bg-[#101b42] border border-slate-200 dark:border-white/10 flex items-center gap-4 shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/40 text-[#f95716] flex items-center justify-center shrink-0">
+              <Utensils className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="font-serif font-bold text-sm text-[#0d176d] dark:text-white">Meals Provided</h4>
+              <p className="text-xs text-slate-500 dark:text-slate-400">Breakfast (7:30 AM) & Lunch (12:00 PM) included.</p>
+            </div>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-white dark:bg-[#101b42] border border-slate-200 dark:border-white/10 flex items-center gap-4 shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-[#f4fae6] dark:bg-[#1a2b00]/40 text-[#70b800] flex items-center justify-center shrink-0">
+              <Calendar className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="font-serif font-bold text-sm text-[#0d176d] dark:text-white">Weekend Daycare</h4>
+              <p className="text-xs text-slate-500 dark:text-slate-400">Saturday & Sunday aftercare available on campus.</p>
+            </div>
+          </div>
+
+          <div className="p-5 rounded-2xl bg-white dark:bg-[#101b42] border border-slate-200 dark:border-white/10 flex items-center gap-4 shadow-sm">
+            <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-[#0d176d] dark:text-amber-300 flex items-center justify-center shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="font-serif font-bold text-sm text-[#0d176d] dark:text-white">Rolling Admissions</h4>
+              <p className="text-xs text-slate-500 dark:text-slate-400">No deadline · GH₵100 physical form on-site.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

@@ -12,6 +12,10 @@
   --color-brand-navy-dark: #070d42;
   --color-brand-orange: #f95716;
   --color-brand-orange-hover: #e0480b;
+  --color-brand-lemon: #70b800;
+  --color-brand-lemon-hover: #5d9900;
+  --color-brand-lemon-light: #f4fae6;
+  --color-brand-lemon-dark: #3f6600;
 
   --color-surface-light: #fafafc;
   --color-text-navy: #0d176d;
@@ -21,6 +25,7 @@
 :root {
   --color-brand-navy: #0d176d;
   --color-brand-orange: #f95716;
+  --color-brand-lemon: #70b800;
   color-scheme: light;
 }
 

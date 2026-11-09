@@ -48,9 +48,20 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
               </div>
             </div>
 
-            <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-sm">
-              A high-calibre early childhood Montessori school in Santa Maria, Auntie Aku, Accra. Nurturing independence, sensorial exploration, and character from Crèche to Kindergarten.
+            <p className="text-white/70 text-sm leading-relaxed mb-4 max-w-sm">
+              Established in 2020 in Santa Maria, Auntie Aku Last Stop, Accra. Dedicated exclusively to early childhood education (ages 0 to 6 years) from Crèche to Kindergarten.
             </p>
+
+            {/* Official Brand Colors & Weekend Care Badge */}
+            <div className="flex flex-wrap items-center gap-2 mb-6 text-[11px] font-sans font-bold">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-white border border-white/15">
+                <span className="w-2 h-2 rounded-full bg-[#f95716]" /> Orange
+                <span className="w-2 h-2 rounded-full bg-[#70b800] ml-1" /> Lemon Green
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-amber-300 border border-white/15">
+                Est. 2020
+              </span>
+            </div>
 
             {/* Social Icons */}
             <div className="flex items-center gap-3">
@@ -137,9 +148,15 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
                 </div>
               </div>
 
-              <div className="pt-3 border-t border-white/10 flex items-center gap-2 text-xs text-white/70">
-                <Clock className="w-3.5 h-3.5 text-[#f95716] shrink-0" />
-                <span>Monday – Friday: 7:00 AM – 4:00 PM</span>
+              <div className="pt-3 border-t border-white/10 space-y-1 text-xs text-white/70">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-3.5 h-3.5 text-[#f95716] shrink-0" />
+                  <span>Mon – Fri: 7:00 AM – 3:00 PM (After-care to 4:00 PM)</span>
+                </div>
+                <div className="flex items-center gap-2 text-amber-300">
+                  <Clock className="w-3.5 h-3.5 text-[#70b800] shrink-0" />
+                  <span>Saturday & Sunday Weekend Care Provided</span>
+                </div>
               </div>
             </div>
           </div>

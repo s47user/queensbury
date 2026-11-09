@@ -150,37 +150,53 @@ ${formData.email.trim() ? `📧 *Email:* ${formData.email.trim()}\n` : ''}🎓 *
                 </div>
               </div>
 
-              {/* Operating Hours Strip */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              {/* Operating Hours & Services Strip */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                   <div className="flex items-center gap-2 text-xs font-sans font-bold uppercase text-[#0d176d] dark:text-amber-300 mb-1">
                     <Clock className="w-4 h-4 text-[#f95716]" />
                     <span>School Hours</span>
                   </div>
                   <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">
-                    Monday – Friday
+                    Mon – Fri: 7:00 AM – 3:00 PM
                   </span>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">
-                    7:00 AM – 3:00 PM (Regular)
+                  <span className="text-[11px] text-[#f95716] font-semibold block mt-0.5">
+                    Breakfast (7:30) & Lunch (12:00)
                   </span>
-                  <span className="text-[11px] text-emerald-700 dark:text-emerald-400 font-semibold block mt-0.5">
+                  <span className="text-[11px] text-slate-500 dark:text-slate-400 block">
                     After-care until 4:00 PM
+                  </span>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
+                  <div className="flex items-center gap-2 text-xs font-sans font-bold uppercase text-[#4d7c0f] dark:text-[#a3e635] mb-1">
+                    <Clock className="w-4 h-4 text-[#70b800]" />
+                    <span>Weekend Care</span>
+                  </div>
+                  <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">
+                    Saturday & Sunday
+                  </span>
+                  <span className="text-[11px] text-slate-600 dark:text-slate-400 block mt-0.5">
+                    Dedicated weekend aftercare
+                  </span>
+                  <span className="text-[11px] text-[#70b800] dark:text-[#a3e635] font-semibold block">
+                    Working parents support
                   </span>
                 </div>
 
                 <div className="p-4 rounded-2xl bg-slate-50 dark:bg-[#09102b] border border-slate-100 dark:border-white/10">
                   <div className="flex items-center gap-2 text-xs font-sans font-bold uppercase text-[#0d176d] dark:text-amber-300 mb-1">
                     <ShieldCheck className="w-4 h-4 text-[#f95716]" />
-                    <span>Admissions & Visits</span>
+                    <span>Enrollment & Forms</span>
                   </div>
                   <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">
-                    Daily Campus Visits
+                    Rolling Admissions
                   </span>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">
-                    8:30 AM – 2:00 PM
+                  <span className="text-[11px] text-slate-600 dark:text-slate-400 block mt-0.5">
+                    Physical form: GH₵100
                   </span>
-                  <span className="text-[11px] text-amber-700 dark:text-amber-400 font-semibold block mt-0.5">
-                    Bookings via WhatsApp
+                  <span className="text-[11px] text-amber-700 dark:text-amber-400 font-semibold block">
+                    Cash or Mobile Money (MoMo)
                   </span>
                 </div>
               </div>
