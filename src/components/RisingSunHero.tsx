@@ -14,20 +14,20 @@ export const RisingSunHero: React.FC<RisingSunHeroProps> = ({
 
   const slides = [
     {
-      image: '/assets/school/school_fb_photo_3.jpg',
-      headline: 'Where Curious Minds Grow into Lifelong Explorers',
+      image: '/assets/school/school_fb_photo_15.jpg',
+      headline: 'Where Curious Minds Grow into Confident Scholars',
       subheadline:
-        'A dedicated, child-centred Montessori school in Santa Maria, Auntie Aku, Accra. Nurturing independence, creativity, and purposeful early childhood growth.',
+        'A dedicated, child-centred Montessori school in Santa Maria (Auntie Aku Last Stop), Accra. Nurturing independence, dignity, and purposeful early childhood growth.',
     },
     {
-      image: '/assets/school/school_fb_photo_1.jpg',
-      headline: 'Empowering Inquisitive Minds with Hands-On Learning',
+      image: '/assets/school/school_fb_photo_9.jpg',
+      headline: 'Hands-On Montessori Independence from the Earliest Years',
       subheadline:
-        'From Crèche through Kindergarten, children explore self-directed discovery in child-scaled classrooms tailored to each developmental stage.',
+        'From child-scaled practical life exercises to sensorial discovery, every learner develops deep concentration and joy in purposeful work.',
     },
     {
-      image: '/assets/school/school_fb_photo_8.jpg',
-      headline: 'Rooted in Santa Maria: Dignity, Grace & Character',
+      image: '/assets/school/school_fb_photo_13.jpg',
+      headline: 'Rooted in Santa Maria: Dignity, Grace & Creative Expression',
       subheadline:
         'Serving families across Santa Maria, Kwashieman, Sowutuom, and Ablekuma with nutritious meals, safe care, and dedicated educators.',
     },

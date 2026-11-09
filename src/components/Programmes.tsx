@@ -27,8 +27,8 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
         'Warm communication and language immersion through singing and storytelling',
       ],
       schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM)',
-      image: '/assets/school/school_fb_photo_8.jpg',
-      imageAlt: 'Young learners with caring educators at Queensbury Montessori',
+      image: '/assets/school/school_fb_photo_10.jpg',
+      imageAlt: 'Crèche toddler exploring color sensory spheres guided by early educators at Queensbury Montessori',
       status: 'Admissions Open (Limited infant spaces)',
     },
     nursery: {
@@ -47,8 +47,8 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
         'Daily assembly, music, rhythmic movement, and outdoor discovery',
       ],
       schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM)',
-      image: '/assets/school/school_fb_photo_3.jpg',
-      imageAlt: 'Nursery learner celebrating achievement with her teacher',
+      image: '/assets/school/school_fb_photo_9.jpg',
+      imageAlt: 'Young learner demonstrating practical life water pouring and balance at Queensbury Montessori',
       status: 'Rolling Admissions (Subject to space availability)',
     },
     kindergarten: {
@@ -67,8 +67,8 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
         'Comprehensive preparation for seamless transition into primary school',
       ],
       schedule: '7:00 AM – 3:00 PM (After-care until 4:00 PM)',
-      image: '/assets/school/school_fb_photo_4.jpg',
-      imageAlt: 'Kindergarten graduate receiving his academic citation from faculty',
+      image: '/assets/school/school_fb_photo_15.jpg',
+      imageAlt: 'Graduating Kindergarten scholars in royal blue gowns and ceremonial kente stoles',
       status: 'Enrolling for Upcoming Academic Term',
     },
   };

@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { ArrowUpRight, Play, CheckCircle2, Award, Sparkles } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight, CheckCircle2, Award, Sparkles } from 'lucide-react';
 
 interface RisingSunWhyChooseUsProps {
   onOpenVideo?: () => void;
@@ -7,10 +7,8 @@ interface RisingSunWhyChooseUsProps {
 }
 
 export const RisingSunWhyChooseUs: React.FC<RisingSunWhyChooseUsProps> = ({
-  onOpenVideo,
   onExploreProgrammes,
 }) => {
-  const [isPlayingVideo, setIsPlayingVideo] = useState(false);
 
   const strengths = [
     {
@@ -46,31 +44,19 @@ export const RisingSunWhyChooseUs: React.FC<RisingSunWhyChooseUsProps> = ({
 
         {/* 2-Column Content Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Portrait Photography with floating badge & video play trigger */}
+          {/* Left Column: Portrait Photography with floating badge */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
               {/* Main Image Frame */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 ring-1 ring-slate-900/10 dark:ring-white/10 aspect-[4/5]">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 ring-1 ring-slate-900/10 dark:ring-white/10 aspect-[4/5] group">
                 <img
-                  src="/assets/school/school_fb_photo_2.jpg"
-                  alt="Queensbury Montessori Learner in Santa Maria"
-                  className="w-full h-full object-cover"
+                  src="/assets/school/school_fb_photo_9.jpg"
+                  alt="Queensbury Montessori learner demonstrating practical life exercises"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
 
                 {/* Subtle overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0d176d]/50 via-transparent to-transparent" />
-
-                {/* Video Play Overlay Button */}
-                <button
-                  type="button"
-                  onClick={() => (onOpenVideo ? onOpenVideo() : setIsPlayingVideo(!isPlayingVideo))}
-                  className="absolute inset-0 flex items-center justify-center group cursor-pointer"
-                  aria-label="Play Campus Video Tour"
-                >
-                  <div className="w-20 h-20 rounded-full bg-white/95 text-[#0d176d] flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-[#f95716] group-hover:text-white ring-8 ring-white/30">
-                    <Play className="w-8 h-8 fill-current ml-1" />
-                  </div>
-                </button>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0d176d]/40 via-transparent to-transparent" />
               </div>
 
               {/* Floating Orange Experience Badge */}

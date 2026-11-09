@@ -59,7 +59,7 @@ export const LearningExperience: React.FC = () => {
           {/* Quick Counter Info */}
           <div className="shrink-0 flex items-center gap-2 px-4 py-2 rounded-full bg-white dark:bg-[#101b42] border border-slate-200 dark:border-white/10 text-xs font-sans text-slate-600 dark:text-slate-300 shadow-sm">
             <Eye className="w-4 h-4 text-[#f95716]" />
-            <span>9 High-Res Moments</span>
+            <span>{GALLERY_ITEMS.length} Authentic Campus Moments</span>
           </div>
         </div>
 

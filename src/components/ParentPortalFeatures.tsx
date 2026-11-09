@@ -110,27 +110,27 @@ export const ParentPortalFeatures: React.FC = () => {
 
   const classroomMoments = [
     {
-      title: 'School Leadership & Vision',
-      description: 'Our Head of School addressing parents and faculty, celebrating early childhood progress in Santa Maria.',
-      image: '/assets/school/school_fb_photo_1.jpg',
-      stage: 'Campus Leadership',
-    },
-    {
-      title: 'Cohort Community & Celebration',
-      description: 'Teachers and early learners uniting to cut the milestone celebration cake together.',
-      image: '/assets/school/school_fb_photo_8.jpg',
-      stage: 'Early Childhood Cohort',
-    },
-    {
-      title: 'Nursery Learning Milestones',
-      description: 'Nursery learner Vanessa Yeboah proudly holding her Queensbury Montessori Achievers Certificate with her teacher.',
-      image: '/assets/school/school_fb_photo_3.jpg',
+      title: 'Practical Life & Self-Regulation',
+      description: 'Learners developing hand-eye coordination, balance, and independence through Montessori water pouring exercises.',
+      image: '/assets/school/school_fb_photo_9.jpg',
       stage: 'Nursery (2–4 Years)',
     },
     {
-      title: 'Academic Citation & Character Recognition',
-      description: 'Faculty presenting personalized framed citations celebrating perseverance and character.',
-      image: '/assets/school/school_fb_photo_4.jpg',
+      title: 'Sensorial Exploration & Early Care',
+      description: 'Toddler exploring tactile primary colour spheres at child-scaled tables, supported attentively by caring early educators.',
+      image: '/assets/school/school_fb_photo_10.jpg',
+      stage: 'Crèche (0–2 Years)',
+    },
+    {
+      title: 'Creative Movement & Expression',
+      description: 'Early learners performing graceful stage ballet and rhythmic dance in signature Queensbury orange tutus.',
+      image: '/assets/school/school_fb_photo_13.jpg',
+      stage: 'Expressive Arts',
+    },
+    {
+      title: 'Academic Milestone & Certification',
+      description: 'Faculty presenting official Queensbury Montessori School 2024 graduation certificates and citations.',
+      image: '/assets/school/school_fb_photo_16.jpg',
       stage: 'Kindergarten (4–6 Years)',
     },
   ];
