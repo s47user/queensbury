@@ -24,7 +24,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
         'Yɛasiesie yɛn agoprama no na yɛadua nneɛma fɛfɛɛfɛ a mmofra betumi asua nneɛma pii afi mu wɔ Santa Maria.',
       fullContentEn:
         'Queensbury Montessori School has unveiled its refreshed Botanical Discovery Courtyard at our Santa Maria campus. Incorporating child-height sensory flora boxes, water transfer channels, and shaded wooden benches, this outdoor space bridges classroom botany with tactile life exploration under Accra sunshine.',
-      image: '/src/assets/images/gallery_botanical_garden_1793951912444.jpg',
+      image: '/src/assets/images/learning_outdoors_nature_1793950104302.jpg',
     },
     {
       id: 2,
@@ -54,7 +54,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
         'Yɛn akyerɛkyerɛfoɔ no anya nteteeɛ foforɔ wɔ bammbɔ ne aduro a wɔde boa mmofra ntɛm ara ho.',
       fullContentEn:
         'All Queensbury Montessori lead guides and childcare assistants have completed accredited Pediatric First Aid and Child Safeguarding certification. In accordance with our hygiene and care protocols, continuous training ensures our Santa Maria haven remains secure, clean, and serene for all learners.',
-      image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=800&auto=format&fit=crop',
+      image: '/assets/school/school_fb_photo_5.jpg',
     },
   ];
 

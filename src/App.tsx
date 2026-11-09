@@ -63,8 +63,11 @@ function QueensburyMainApp() {
         'admissions',
       ];
       if (validPages.includes(hash as PageId)) {
-        // Map legacy 'branches' to 'facilities'
-        const target = hash === 'branches' ? 'facilities' : (hash as PageId);
+        // Map legacy aliases
+        let target: PageId = hash as PageId;
+        if (hash === 'branches' || hash === 'gallery') target = 'facilities';
+        if (hash === 'philosophy') target = 'about';
+        if (hash === 'calendar') target = 'news';
         setCurrentPage(target);
         window.scrollTo({ top: 0, behavior: 'instant' });
       } else if (hash === '') {
@@ -93,7 +96,9 @@ function QueensburyMainApp() {
       'admissions',
     ];
     let target = validPages.includes(page as PageId) ? (page as PageId) : 'home';
-    if (target === 'branches') target = 'facilities';
+    if (target === 'branches' || target === 'gallery') target = 'facilities';
+    if (target === 'philosophy') target = 'about';
+    if (target === 'calendar') target = 'news';
     setCurrentPage(target);
     window.location.hash = target === 'home' ? '' : `#/${target}`;
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -164,40 +169,8 @@ function QueensburyMainApp() {
           </div>
         )}
 
-        {/* PHILOSOPHY VIEW */}
-        {currentPage === 'philosophy' && (
-          <div className="animate-in fade-in duration-300 pt-32 pb-24">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl mb-14">
-                <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
-                  PEDAGOGICAL FOUNDATION · SANTA MARIA
-                </span>
-                <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-[#0d176d] dark:text-white tracking-tight mb-4">
-                  The Montessori Philosophy at Queensbury
-                </h1>
-                <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
-                  Founded upon Dr. Maria Montessori's insight: children are natural seekers of knowledge when provided with respectful, self-correcting environments and caring mentorship.
-                </p>
-              </div>
-
-              {/* Timeline Component */}
-              <RisingSunPhilosophy onOpenCalendar={() => navigateTo('calendar')} />
-
-              {/* 5 Pedagogical Framework Pillars */}
-              <div className="mt-16">
-                <MontessoriPhilosophy />
-              </div>
-
-              {/* 3D Sensorial Apparatus Viewer */}
-              <div className="mt-16">
-                <ThreeDMaterialViewer />
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* ABOUT VIEW */}
-        {currentPage === 'about' && (
+        {/* ABOUT & PHILOSOPHY VIEW (CONSOLIDATED) */}
+        {(currentPage === 'about' || currentPage === 'philosophy') && (
           <div className="animate-in fade-in duration-300 pt-32 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="max-w-3xl mb-14">
@@ -208,12 +181,27 @@ function QueensburyMainApp() {
                   Inspiring Independence, Dignity & Discovery.
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
-                  Founded in 2020 in Santa Maria, Auntie Aku, Queensbury Montessori School provides an authentic, child-centred early learning haven in western Accra.
+                  Founded in 2020 in Santa Maria, Auntie Aku, Queensbury Montessori School provides an authentic, child-centred early learning haven in western Accra founded upon Dr. Maria Montessori's principles.
                 </p>
               </div>
 
               {/* Welcome & Story */}
               <WelcomeAbout onNavigate={navigateTo} />
+
+              {/* Montessori Method Timeline */}
+              <div className="mt-16">
+                <RisingSunPhilosophy onOpenCalendar={() => navigateTo('news')} />
+              </div>
+
+              {/* 5 Pedagogical Framework Pillars */}
+              <div className="mt-16">
+                <MontessoriPhilosophy />
+              </div>
+
+              {/* 3D Sensorial Apparatus Viewer */}
+              <div className="mt-16">
+                <ThreeDMaterialViewer />
+              </div>
 
               {/* Why Choose Us Highlight */}
               <div className="mt-16">
@@ -258,24 +246,40 @@ function QueensburyMainApp() {
           </div>
         )}
 
-        {/* FACILITIES VIEW: AUTHENTIC SANTA MARIA CAMPUS */}
-        {(currentPage === 'facilities' || currentPage === 'branches') && (
+        {/* FACILITIES & CAMPUS TOUR VIEW (CONSOLIDATED) */}
+        {(currentPage === 'facilities' || currentPage === 'branches' || currentPage === 'gallery') && (
           <div className="animate-in fade-in duration-300 pt-32 pb-24">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="max-w-3xl mb-14">
                 <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
-                  CAMPUS INFRASTRUCTURE · SANTA MARIA
+                  CAMPUS INFRASTRUCTURE & LIFE · SANTA MARIA
                 </span>
                 <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-[#0d176d] dark:text-white tracking-tight mb-4">
-                  Prepared Environments & Learning Facilities
+                  Prepared Environments & Campus Life
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
                   Tour our Infant Sleep Sanctuary, Sensorial Atelier, Kindergarten Discovery Wing, Dining Pavilion, and Botanical Discovery Courtyard in Santa Maria, Accra.
                 </p>
               </div>
 
-              {/* Facilities Showcase */}
+              {/* Facilities Showcase with Tour CTA */}
               <FacilitiesShowcase onBookTour={() => setIsTourModalOpen(true)} />
+
+              {/* Masonry Photo Gallery */}
+              <div className="mt-20">
+                <div className="mb-10 text-center max-w-2xl mx-auto">
+                  <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
+                    VISUAL ARCHIVE
+                  </span>
+                  <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#0d176d] dark:text-white tracking-tight mb-3">
+                    Everyday Learning Moments
+                  </h2>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                    Honest, unhurried glimpses of our children engaged in Montessori work cycles, botanical care, and creative play in Santa Maria.
+                  </p>
+                </div>
+                <LearningExperience />
+              </div>
             </div>
           </div>
         )}
@@ -287,52 +291,28 @@ function QueensburyMainApp() {
           </div>
         )}
 
-        {/* GALLERY VIEW */}
-        {currentPage === 'gallery' && (
+        {/* NEWS & CALENDAR VIEW (CONSOLIDATED) */}
+        {(currentPage === 'news' || currentPage === 'calendar') && (
           <div className="animate-in fade-in duration-300 pt-32 pb-24">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl mb-14">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mb-12">
+              <div className="max-w-3xl">
                 <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
-                  VISUAL ARCHIVE
+                  COMMUNITY & ACADEMIC CALENDAR
                 </span>
                 <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-[#0d176d] dark:text-white tracking-tight mb-4">
-                  Campus Life & Learning Moments
+                  Campus News, Term Dates & Events
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
-                  Explore hands-on Montessori work cycles, botanical gardening, practical life exercises, and classroom moments at Queensbury.
+                  Stay synchronized with term resumptions, observation cycles, cultural day celebrations, and pedagogical workshops in Santa Maria.
                 </p>
               </div>
-
-              {/* Masonry Lightbox Gallery */}
-              <LearningExperience />
             </div>
-          </div>
-        )}
 
-        {/* NEWS VIEW */}
-        {currentPage === 'news' && (
-          <div className="animate-in fade-in duration-300 pt-32 pb-24">
+            {/* News Articles */}
             <RisingSunNews onNavigateToNews={() => navigateTo('news')} />
-          </div>
-        )}
 
-        {/* CALENDAR VIEW */}
-        {currentPage === 'calendar' && (
-          <div className="animate-in fade-in duration-300 pt-32 pb-24">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-              <div className="max-w-3xl mb-14">
-                <span className="text-xs font-bold tracking-widest text-[#f95716] uppercase font-mono block mb-2">
-                  ACADEMIC TIMETABLE
-                </span>
-                <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-[#0d176d] dark:text-white tracking-tight mb-4">
-                  Upcoming Events & Term Dates
-                </h1>
-                <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
-                  Stay synchronized with academic term resumptions, observation weeks, cultural day, and parent-teacher fellowship.
-                </p>
-              </div>
-
-              {/* Events timeline */}
+            {/* Events timeline */}
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-16">
               <UpcomingEvents />
 
               {/* Parent Support Features */}
@@ -415,7 +395,7 @@ function QueensburyMainApp() {
 
             <div className="aspect-video w-full flex items-center justify-center bg-slate-900 text-white relative">
               <img
-                src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1400&auto=format&fit=crop"
+                src="/assets/school/school_fb_photo_1.jpg"
                 alt="Queensbury Montessori Campus Video Tour"
                 className="w-full h-full object-cover opacity-75"
               />

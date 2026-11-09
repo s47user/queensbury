@@ -58,7 +58,7 @@ const FACILITIES_DATA: Facility[] = [
     ageGroup: 'Nursery & Kindergarten (2–6 Years)',
     headline: 'Authentic child-proportioned apparatus arranged on open wooden shelving.',
     description: 'Every Montessori classroom at Queensbury is a scientifically prepared environment. Children are free to select their own activities—from button frames, sweeping, and spooning, to cylinder blocks, binomial cubes, and sandpaper letters.',
-    image: '/src/assets/images/programme_nursery_practical_1793951102981.jpg',
+    image: '/src/assets/images/programme_nursery_practical_1793950102981.jpg',
     highlights: [
       'Genuine AMI-standard solid wood materials imported for tactile precision',
       'Child-height accessible open shelving without plastic containers',
@@ -75,7 +75,7 @@ const FACILITIES_DATA: Facility[] = [
     ageGroup: 'All Ages (Guided Discovery)',
     headline: 'Shaded sensory flora, raised garden beds, and safe gross-motor freedom.',
     description: 'Nature is a primary teacher in authentic Montessori pedagogy. Our Santa Maria campus courtyard features indigenous fruit trees, tactile herb beds, and a gross-motor play balance track designed for natural motor development.',
-    image: '/src/assets/images/gallery_botanical_garden_1793951912444.jpg',
+    image: '/src/assets/images/learning_outdoors_nature_1793950104302.jpg',
     highlights: [
       'Raised planting beds where children plant seeds and care for plants',
       'Shaded wooden pergolas protecting tender skin from intense midday sun',

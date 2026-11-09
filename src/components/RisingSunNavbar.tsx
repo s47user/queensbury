@@ -29,29 +29,48 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
   const navItems = [
     { label: 'Home', id: 'home' },
     {
-      label: 'Philosophy',
-      id: 'philosophy',
-      hasDropdown: true,
-      subItems: [
-        { label: 'Montessori Method', id: 'philosophy' },
-        { label: 'Holistic Development', id: 'philosophy' },
-        { label: 'Sensorial Apparatus', id: 'philosophy' },
-      ],
-    },
-    {
-      label: 'About Us',
+      label: 'About & Philosophy',
       id: 'about',
       hasDropdown: true,
       subItems: [
         { label: 'Our Story & Heritage', id: 'about' },
-        { label: 'Faculty & Educators', id: 'about' },
+        { label: 'Montessori Method', id: 'about' },
+        { label: 'Sensorial Apparatus', id: 'about' },
         { label: 'Care & Nutrition', id: 'about' },
       ],
     },
-    { label: 'Programmes', id: 'programmes' },
-    { label: 'Facilities', id: 'facilities' },
-    { label: 'Gallery', id: 'gallery' },
-    { label: 'News', id: 'news' },
+    {
+      label: 'Programmes',
+      id: 'programmes',
+      hasDropdown: true,
+      subItems: [
+        { label: 'Crèche (0–2 yrs)', id: 'programmes' },
+        { label: 'Nursery (2–4 yrs)', id: 'programmes' },
+        { label: 'Kindergarten (4–6 yrs)', id: 'programmes' },
+        { label: 'Daily Work Cycle', id: 'programmes' },
+      ],
+    },
+    {
+      label: 'Campus & Facilities',
+      id: 'facilities',
+      hasDropdown: true,
+      subItems: [
+        { label: 'Prepared Environments', id: 'facilities' },
+        { label: 'Photo Tour Gallery', id: 'facilities' },
+        { label: 'Botanical Courtyard', id: 'facilities' },
+        { label: 'Dining & Sleep Suites', id: 'facilities' },
+      ],
+    },
+    {
+      label: 'News & Events',
+      id: 'news',
+      hasDropdown: true,
+      subItems: [
+        { label: 'Campus Announcements', id: 'news' },
+        { label: 'Academic Calendar', id: 'news' },
+        { label: 'Observation Weeks', id: 'news' },
+      ],
+    },
     { label: 'Contact', id: 'contact' },
   ];
 
@@ -80,17 +99,13 @@ export const RisingSunNavbar: React.FC<RisingSunNavbarProps> = ({
           onClick={() => handleItemClick('home')}
           className="flex items-center gap-2 sm:gap-2.5 pl-1.5 sm:pl-2 group outline-none cursor-pointer shrink-0"
         >
-          {/* Authentic Queensbury Crest in Rising Sun Pill Aesthetic */}
-          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0d176d] border border-amber-400/50 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform overflow-hidden shrink-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#1a2894] to-[#09104f]" />
-            <div className="relative flex flex-col items-center">
-              <span className="font-serif font-black text-amber-300 text-xs sm:text-sm tracking-tight leading-none">
-                QM
-              </span>
-              <span className="text-[6px] sm:text-[7px] text-white/80 font-mono tracking-widest uppercase">
-                ACCRA
-              </span>
-            </div>
+          {/* Authentic Queensbury Crest */}
+          <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#0d176d] border border-amber-400/50 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform overflow-hidden shrink-0">
+            <img
+              src="/assets/logo.jpg"
+              alt="Queensbury Montessori School Crest"
+              className="w-full h-full object-cover"
+            />
           </div>
 
           <div className="flex flex-col text-left">

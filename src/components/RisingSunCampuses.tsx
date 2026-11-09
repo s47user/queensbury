@@ -25,7 +25,7 @@ export const RisingSunCampuses: React.FC<RisingSunCampusesProps> = ({
       stage: 'NURSERY · AGES 2 TO 4 YEARS',
       phone: '024 113 3632',
       address: 'Child-scaled solid wood shelves, cylinder blocks, pink tower, and practical life frames',
-      image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1000&auto=format&fit=crop',
+      image: '/assets/school/school_fb_photo_3.jpg',
     },
     {
       id: 'kindergarten-wing',
@@ -33,7 +33,7 @@ export const RisingSunCampuses: React.FC<RisingSunCampusesProps> = ({
       stage: 'KINDERGARTEN · AGES 4 TO 6 YEARS',
       phone: '050 568 8484',
       address: 'Golden beads decimal system, sandpaper phonetics, and botanical sensory courtyard',
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop',
+      image: '/assets/school/school_fb_photo_4.jpg',
     },
   ];
 

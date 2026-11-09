@@ -20,13 +20,13 @@ export const RisingSunHero: React.FC<RisingSunHeroProps> = ({
         'An authentic, child-centred Montessori sanctuary in Santa Maria, Auntie Aku, Accra. Nurturing independence, creativity, and purposeful early childhood growth.',
     },
     {
-      image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1600&auto=format&fit=crop',
+      image: '/assets/school/school_fb_photo_1.jpg',
       headline: 'Empowering Inquisitive Minds with Hands-On Apparatus',
       subheadline:
         'From Crèche through Kindergarten, children explore self-paced discovery in child-scaled prepared environments tailored to their sensitive developmental windows.',
     },
     {
-      image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1600&auto=format&fit=crop',
+      image: '/assets/school/school_fb_photo_2.jpg',
       headline: 'Rooted in Santa Maria: Dignity, Grace & Character',
       subheadline:
         'Serving families across Santa Maria, Kwashieman, Sowutuom, and Ablekuma with nutritious hot meals, safe gatekeeping, and dedicated educators.',

@@ -52,7 +52,7 @@ export const RisingSunWhyChooseUs: React.FC<RisingSunWhyChooseUsProps> = ({
               {/* Main Image Frame */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-slate-100 ring-1 ring-slate-900/10 dark:ring-white/10 aspect-[4/5]">
                 <img
-                  src="https://images.unsplash.com/photo-1544717305-2782549b5136?q=80&w=1000&auto=format&fit=crop"
+                  src="/assets/school/school_fb_photo_2.jpg"
                   alt="Queensbury Montessori Learner in Santa Maria"
                   className="w-full h-full object-cover"
                 />

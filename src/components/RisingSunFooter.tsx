@@ -31,10 +31,12 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
           <div className="lg:col-span-4">
             {/* School Crest Logo */}
             <div className="flex items-center gap-3 mb-5">
-              <div className="w-12 h-14 rounded-xl bg-gradient-to-b from-[#132087] to-[#070d42] border-2 border-amber-400 p-1.5 flex flex-col items-center justify-between shadow-lg">
-                <span className="text-[8px] font-mono font-bold text-amber-300">★★★</span>
-                <span className="font-serif text-[12px] font-bold text-white tracking-tight">QM</span>
-                <div className="w-5 h-0.5 bg-[#f95716] rounded-full" />
+              <div className="w-12 h-14 rounded-xl overflow-hidden border-2 border-amber-400 shadow-lg bg-[#070d42] shrink-0">
+                <img
+                  src="/assets/logo.jpg"
+                  alt="Queensbury Montessori School Crest"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div>
                 <h3 className="font-serif text-2xl font-bold tracking-tight text-white">
@@ -53,7 +55,7 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
             {/* Social Icons */}
             <div className="flex items-center gap-3">
               {[
-                { icon: Facebook, label: 'Facebook', href: 'https://facebook.com' },
+                { icon: Facebook, label: 'Facebook', href: 'https://web.facebook.com/profile.php?id=100076229890973' },
                 { icon: Instagram, label: 'Instagram', href: 'https://instagram.com' },
                 { icon: Youtube, label: 'YouTube', href: 'https://youtube.com' },
               ].map((s, idx) => {
@@ -82,14 +84,12 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
             <ul className="space-y-2.5 text-sm text-white/80">
               {[
                 { id: 'home', label: 'Home' },
-                { id: 'philosophy', label: 'Philosophy' },
-                { id: 'about', label: 'About Us' },
+                { id: 'about', label: 'About & Philosophy' },
                 { id: 'programmes', label: 'Programmes' },
-                { id: 'facilities', label: 'Facilities' },
+                { id: 'facilities', label: 'Campus & Facilities' },
                 { id: 'admissions', label: 'Admissions' },
-                { id: 'gallery', label: 'Gallery' },
-                { id: 'news', label: 'News' },
-                { id: 'contact', label: 'Contact' },
+                { id: 'news', label: 'News & Events' },
+                { id: 'contact', label: 'Contact & Visit' },
               ].map((link) => (
                 <li key={link.id}>
                   <button
