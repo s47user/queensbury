@@ -1,0 +1,8 @@
+{
+  "name": "Queensbury Montessori School",
+  "description": "Queensbury Montessori School in Santa Maria, Accra, Ghana — nurturing curious minds through authentic Montessori early-childhood education from Creche to Kindergarten.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
