@@ -106,7 +106,7 @@ export const GALLERY_ITEMS: GalleryPhoto[] = [
   },
   {
     id: 'sleep-sanctuary',
-    title: 'Peaceful Rest Suites & Sleep Sanctuary',
+    title: 'Peaceful Rest Suites & Sleep Room',
     category: 'Prepared Environment',
     image: '/src/assets/images/facility_sleep_sanctuary_1793951151256.jpg',
     aspect: 'aspect-[4/3]',

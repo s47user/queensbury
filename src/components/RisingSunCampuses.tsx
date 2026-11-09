@@ -13,7 +13,7 @@ export const RisingSunCampuses: React.FC<RisingSunCampusesProps> = ({
   const facilities = [
     {
       id: 'creche-sanctuary',
-      name: 'Infant Sleep & Daycare Sanctuary',
+      name: 'Infant Sleep & Daycare Suite',
       stage: 'CRÈCHE · AGES 0 TO 2 YEARS',
       phone: '050 568 8484',
       address: 'Low wooden floor beds, natural airflow, and 1:1 caregiver nurturing in Santa Maria',

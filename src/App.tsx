@@ -181,7 +181,7 @@ function QueensburyMainApp() {
                   Inspiring Independence, Dignity & Discovery.
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
-                  Founded in 2020 in Santa Maria, Auntie Aku, Queensbury Montessori School provides an authentic, child-centred early learning haven in western Accra founded upon Dr. Maria Montessori's principles.
+                  Founded in 2020 in Santa Maria, Auntie Aku, Queensbury Montessori School provides a dedicated, child-centred early learning environment in western Accra founded upon Dr. Maria Montessori's principles.
                 </p>
               </div>
 
@@ -258,7 +258,7 @@ function QueensburyMainApp() {
                   Prepared Environments & Campus Life
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 text-lg sm:text-xl leading-relaxed">
-                  Tour our Infant Sleep Sanctuary, Sensorial Atelier, Kindergarten Discovery Wing, Dining Pavilion, and Botanical Discovery Courtyard in Santa Maria, Accra.
+                  Tour our Infant Rest Suite, Sensorial Atelier, Kindergarten Discovery Wing, Dining Pavilion, and Botanical Discovery Courtyard in Santa Maria, Accra.
                 </p>
               </div>
 

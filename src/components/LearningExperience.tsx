@@ -49,7 +49,7 @@ export const LearningExperience: React.FC = () => {
               {language === 'tw' ? 'SUKUU MFONINI AKWANKYERƐ' : 'CAMPUS ATMOSPHERE • AUTHENTIC WORK CYCLES'}
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl text-[#0d176d] dark:text-white font-bold tracking-tight leading-tight">
-              {language === 'tw' ? 'Adesua ne Ahofadie Mfonini' : 'An unhurried journey of wonder, tactile craft, and outdoor discovery.'}
+              {language === 'tw' ? 'Adesua ne Ahofadie Mfonini' : 'An inspiring journey of wonder, hands-on learning, and outdoor discovery.'}
             </h2>
             <p className="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-light">
               {language === 'tw'

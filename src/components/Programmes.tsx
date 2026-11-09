@@ -16,7 +16,7 @@ export const Programmes: React.FC<ProgrammesProps> = ({ onSelectProgramme }) => 
       age: '0–2 Years',
       subtitle: 'The Nurturing Nest',
       title: 'Crèche & Infant Discovery',
-      tagline: 'A gentle, safe haven of sensory wonder, physical movement, and warm individual bonding.',
+      tagline: 'A gentle, safe environment of sensory exploration, physical movement, and warm individual bonding.',
       description:
         'Our Santa Maria Crèche environment is thoughtfully prepared for babies and toddlers taking their earliest steps into the world. Low wooden floor beds, grasping toys, tactile sensory fabrics, and attentive caregivers create an atmosphere of peaceful, secure attachment.',
       features: [

@@ -18,12 +18,12 @@ interface Facility {
 const FACILITIES_DATA: Facility[] = [
   {
     id: 'sleep-sanctuary',
-    name: 'Infant & Toddler Sleep Sanctuary',
+    name: 'Infant & Toddler Rest & Sleep Suite',
     category: 'sleep',
-    tag: 'Rest & Recovery',
+    tag: 'Rest & Care',
     ageGroup: 'Crèche & Toddlers (0–3 Years)',
     headline: 'Peaceful, light-filtered rest suites designed for natural biological rhythm.',
-    description: 'Montessori early childhood recognizes rest as a foundational cornerstone of cognitive development. Our sleep sanctuary is purposefully insulated from high-stimulation zones, featuring low wooden floor beds and ventilated wooden cots with organic cotton bedding.',
+    description: 'Montessori early childhood recognizes rest as a foundational cornerstone of cognitive development. Our sleep suite is purposefully insulated from high-stimulation zones, featuring low wooden floor beds and ventilated wooden cots with fresh cotton bedding.',
     image: '/src/assets/images/facility_sleep_sanctuary_1793951151256.jpg',
     highlights: [
       'Low floor beds and individual solid-wood cots that preserve autonomy',
@@ -114,7 +114,7 @@ export const FacilitiesShowcase: React.FC<FacilitiesShowcaseProps> = ({ onBookTo
 
   const filterTabs = [
     { id: 'all', label: 'All Environments' },
-    { id: 'sleep', label: 'Sleep Sanctuary' },
+    { id: 'sleep', label: 'Rest & Sleep Suite' },
     { id: 'dining', label: 'Dining Pavilion' },
     { id: 'atelier', label: 'Montessori Atelier' },
     { id: 'outdoor', label: 'Botanical Courtyard' },

@@ -49,7 +49,7 @@ export const RisingSunFooter: React.FC<RisingSunFooterProps> = ({ onNavigate }) 
             </div>
 
             <p className="text-white/70 text-sm leading-relaxed mb-6 max-w-sm">
-              An authentic early childhood Montessori haven in Santa Maria, Auntie Aku, Accra. Nurturing cognitive autonomy, sensorial exploration, and emotional security from Crèche to Kindergarten.
+              A high-calibre early childhood Montessori school in Santa Maria, Auntie Aku, Accra. Nurturing independence, sensorial exploration, and character from Crèche to Kindergarten.
             </p>
 
             {/* Social Icons */}

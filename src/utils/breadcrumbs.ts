@@ -58,7 +58,7 @@ export const SECTION_METADATA: Record<string, SectionContext> = {
     id: 'facilities',
     category: 'Campus Infrastructure',
     title: 'Prepared Facilities',
-    subtitle: 'Sleep Sanctuary · Atelier · Courtyard',
+    subtitle: 'Rest Suite · Atelier · Courtyard',
     href: '#facilities',
   },
   experience: {
@@ -92,8 +92,8 @@ export const SECTION_METADATA: Record<string, SectionContext> = {
   'parent-portal': {
     id: 'parent-portal',
     category: 'Family Suite',
-    title: 'Parent AI & Resources',
-    subtitle: 'Advisor · Commute Grounding · Moments',
+    title: 'Parent Resources & Tools',
+    subtitle: 'Commute Directions · Guidelines · Notices',
     href: '#parent-portal',
   },
   admissions: {

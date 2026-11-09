@@ -96,7 +96,7 @@ export const RisingSunWhyChooseUs: React.FC<RisingSunWhyChooseUsProps> = ({
             {/* Italic Quote with Orange Left Border */}
             <div className="border-l-4 border-[#f95716] pl-6 py-2 mb-8 bg-orange-50/40 dark:bg-orange-950/20 rounded-r-2xl">
               <p className="font-serif italic text-lg sm:text-xl text-slate-700 dark:text-slate-200 leading-relaxed">
-                “Queensbury Montessori School offers a nurturing sanctuary where each child’s unique potential is cultivated through self-direction, dignity, and sensorial discovery. We prepare young learners for purposeful, confident lives.”
+                “Queensbury Montessori School offers a nurturing environment where each child’s unique potential is cultivated through self-direction, dignity, and sensorial discovery. We prepare young learners for purposeful, confident lives.”
               </p>
             </div>
 

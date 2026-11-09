@@ -134,7 +134,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       estTag: 'Est. 2020',
       headline: 'Where curious minds grow into lifelong explorers.',
       subheadline:
-        'Queensbury Montessori School provides an authentic, child-centred early learning haven in Santa Maria, Accra. Guided by Montessori principles of self-direction, dignity, and sensorial discovery, we prepare children from Crèche through Kindergarten for purposeful lives.',
+        'Queensbury Montessori School provides a dedicated, child-centred early learning environment in Santa Maria, Accra. Guided by Montessori principles of self-direction, dignity, and sensorial discovery, we prepare children from Crèche through Kindergarten for purposeful lives.',
       ctaApply: 'Begin Admissions Inquiry',
       ctaTour: 'Book Campus Tour',
       statAges: '0–6',
@@ -151,7 +151,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       tag: 'Welcome to Queensbury • Our Community Story',
       headline: 'Rooted in Santa Maria, dedicated to raising curious, independent thinkers.',
       description:
-        'Founded in 2020, Queensbury Montessori School was established to offer families in Santa Maria, Auntie Aku, and neighboring communities in western Accra a high-calibre, nurturing Montessori haven. Here, early childhood is celebrated not as a race to adulthood, but as the foundational chapter where a child develops concentration, self-discipline, emotional security, and a lifelong love for discovery.',
+        'Founded in 2020, Queensbury Montessori School was established to offer families in Santa Maria, Auntie Aku, and neighboring communities in western Accra a high-calibre, nurturing Montessori school. Here, early childhood is celebrated not as a race to adulthood, but as the foundational chapter where a child develops concentration, self-discipline, emotional security, and a lifelong love for discovery.',
       pillar1Title: 'Child-Led Exploration',
       pillar1Desc:
         'Children choose purposeful activities from carefully curated shelves, following their intrinsic developmental urges under attentive guide observation.',
@@ -183,7 +183,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       viewDetails: 'View Stage Details',
       crecheTitle: 'Crèche & Daycare',
       crecheDesc:
-        'A calm, sensorial haven with individualized sleeping floor beds, warm caregiver attachment, and sensory discovery.',
+        'A calm, sensorial learning environment with individualized sleeping floor beds, warm caregiver attachment, and sensory discovery.',
       crecheHighlight: '7:00 AM early care · Low floor beds',
       nurseryTitle: 'Montessori Nursery',
       nurseryDesc:
@@ -198,7 +198,7 @@ export const TRANSLATIONS: Record<Language, TranslationDictionary> = {
       badge: 'Admissions & Family Onboarding • Rolling Enrollment',
       headline: 'A thoughtful, dignified welcome into our school family.',
       description:
-        'We understand that choosing an early childhood haven is an intimate family decision. We offer rolling admissions, clear communication, and an unhurried orientation tailored to your child’s emotional rhythm.',
+        'We understand that choosing an early childhood school is an important family decision. We offer rolling admissions, clear communication, and a gentle orientation tailored to your child’s emotional rhythm.',
       feeNoticeTitle: 'Transparent Fee Note:',
       feeNoticeText:
         'Physical admission forms are GH₵100 (provisional fee covering administrative registration and health records). Termly tuition and wholesome meal plans are presented in full detail during your campus walkthrough.',

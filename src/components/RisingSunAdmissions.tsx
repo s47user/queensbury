@@ -82,9 +82,17 @@ export const RisingSunAdmissions: React.FC = () => {
     },
   ];
 
+  const [waLink, setWaLink] = useState('');
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    const text = encodeURIComponent(
+      `*QUEENSBURY MONTESSORI SCHOOL - ADMISSIONS APPLICATION*\n----------------------------------------\n👤 *Parent / Guardian:* ${formData.parentName}\n📞 *Phone:* ${formData.phone}\n👶 *Child Name:* ${formData.childName || 'Not specified'}\n🎂 *Child Age:* ${formData.childAge || 'Not specified'}\n🎓 *Placement Stage:* ${formData.stage}\n📅 *Start Term:* ${formData.startTerm}\n----------------------------------------\n📍 *Campus:* Santa Maria (Auntie Aku Last Stop), Accra\n(Submitted via admissions portal)`
+    );
+    const url = `https://wa.me/233241133632?text=${text}`;
+    setWaLink(url);
+    window.open(url, '_blank');
   };
 
   return (
@@ -168,16 +176,28 @@ export const RisingSunAdmissions: React.FC = () => {
                   </h4>
                   <p className="text-green-700 text-sm mb-4">
                     {language === 'tw'
-                      ? 'Yɛn admissions panyin bɛfrɛ wo wɔ 050 568 8484 anaasɛ ɔbɛkasa akyerɛ wo wɔ WhatsApp so.'
-                      : 'Our admissions desk will contact you at your provided phone number to arrange Step 2 (Campus Observation & Tour).'}
+                      ? 'Yɛreba abɛbue WhatsApp na wo ne yɛn admissions panyin akasa ntɛm ara.'
+                      : 'Connecting you directly with our admissions coordinator on WhatsApp to confirm next steps.'}
                   </p>
-                  <button
-                    type="button"
-                    onClick={() => setSubmitted(false)}
-                    className="text-xs font-mono font-bold uppercase tracking-wider text-green-800 underline cursor-pointer"
-                  >
-                    {language === 'tw' ? 'Hyehyɛ Foforɔ' : 'Submit Another Inquiry'}
-                  </button>
+                  {waLink && (
+                    <a
+                      href={waLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md mb-4"
+                    >
+                      <span>Open in WhatsApp (024 113 3632) ↗</span>
+                    </a>
+                  )}
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => setSubmitted(false)}
+                      className="text-xs font-mono font-bold uppercase tracking-wider text-green-800 underline cursor-pointer"
+                    >
+                      {language === 'tw' ? 'Hyehyɛ Foforɔ' : 'Submit Another Application'}
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">

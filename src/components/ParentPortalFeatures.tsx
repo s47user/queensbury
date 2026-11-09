@@ -1,111 +1,139 @@
 import React, { useState } from 'react';
-import { Brain, MapPin, Video, Calendar, Send, Sparkles, AlertCircle, Play, Upload, CheckCircle2, Loader2, Navigation, MessageCircle } from 'lucide-react';
+import {
+  MapPin,
+  Calendar,
+  Navigation,
+  MessageSquare,
+  HelpCircle,
+  Image as ImageIcon,
+  ExternalLink,
+  ChevronDown,
+  ChevronUp,
+  Clock,
+  Compass,
+  LocateFixed,
+  Phone,
+  CheckCircle2,
+} from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const ParentPortalFeatures: React.FC = () => {
   const { language } = useLanguage();
-  const [activeTab, setActiveTab] = useState<'advisor' | 'maps' | 'animator' | 'notices'>('advisor');
+  const [activeTab, setActiveTab] = useState<'maps' | 'faq' | 'moments' | 'notices'>('maps');
 
-  // 1. Advisor State (gemini-4-argon with high thinking)
-  const [childAge, setChildAge] = useState<string>('3 years');
-  const [advisorTopic, setAdvisorTopic] = useState<string>('Independence & Tantrums');
-  const [advisorQuery, setAdvisorQuery] = useState<string>('My 3-year-old struggles to share toys and gets frustrated when dressing in the morning. How can Montessori methods help at home?');
-  const [advisorResponse, setAdvisorResponse] = useState<string | null>(null);
-  const [advisorLoading, setAdvisorLoading] = useState<boolean>(false);
-  const [advisorError, setAdvisorError] = useState<string | null>(null);
+  // Commute State
+  const [startLocation, setStartLocation] = useState('Lapaz, Accra');
+  const [travelMode, setTravelMode] = useState<'driving' | 'transit' | 'walking'>('driving');
+  const [locating, setLocating] = useState(false);
 
-  // 2. Maps Grounding State (gemini-3.8-flash with googleMaps)
-  const [userOrigin, setUserOrigin] = useState<string>('Lapaz, Accra');
-  const [travelMode, setTravelMode] = useState<string>('driving');
-  const [mapsResponse, setMapsResponse] = useState<string | null>(null);
-  const [mapsLoading, setMapsLoading] = useState<boolean>(false);
-  const [mapsError, setMapsError] = useState<string | null>(null);
+  // FAQ Accordion State
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
-  // 3. Animator State (gemini-omni-1.2-flash)
-  const [animatorImage, setAnimatorImage] = useState<string>('/src/assets/images/programme_nursery_practical_1793950102981.jpg');
-  const [animatorPrompt, setAnimatorPrompt] = useState<string>('A child carefully pours water with gentle ripples, soft morning sunlight, natural slow-motion movement');
-  const [aspectRatio, setAspectRatio] = useState<'16:9' | '9:16'>('16:9');
-  const [videoData, setVideoData] = useState<string | null>(null);
-  const [animatorLoading, setAnimatorLoading] = useState<boolean>(false);
-  const [animatorError, setAnimatorError] = useState<string | null>(null);
+  const popularAreas = [
+    'Santa Maria',
+    'Kwashieman',
+    'Sowutuom',
+    'Lapaz',
+    'Ablekuma',
+    'Awoshie',
+    'Anyaa',
+    'Mallam',
+    'Achimota',
+  ];
 
-  // Handlers
-  const handleAskAdvisor = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setAdvisorLoading(true);
-    setAdvisorError(null);
-    setAdvisorResponse(null);
-
-    try {
-      const res = await fetch('/api/pedagogy-advisor', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          childAge,
-          topic: advisorTopic,
-          parentQuery: advisorQuery,
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to get pedagogical consultation');
-      setAdvisorResponse(data.advice);
-    } catch (err: any) {
-      setAdvisorError(err.message || 'Consultation service unavailable');
-    } finally {
-      setAdvisorLoading(false);
+  const handleUseCurrentLocation = () => {
+    setLocating(true);
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setStartLocation(`${pos.coords.latitude.toFixed(4)}, ${pos.coords.longitude.toFixed(4)}`);
+          setLocating(false);
+        },
+        () => {
+          setStartLocation('My Location');
+          setLocating(false);
+        },
+        { timeout: 6000 }
+      );
+    } else {
+      setStartLocation('My Location');
+      setLocating(false);
     }
   };
 
-  const handleGetMapGuide = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setMapsLoading(true);
-    setMapsError(null);
-    setMapsResponse(null);
+  const handleOpenGoogleMapsDirections = (e?: React.FormEvent) => {
+    if (e) e.preventDefault();
+    const destination = encodeURIComponent(
+      'Queensbury Montessori School, Santa Maria, Auntie Aku Last Stop, Accra, Ghana'
+    );
+    const originParam = startLocation.trim()
+      ? `&origin=${encodeURIComponent(startLocation.trim())}`
+      : '&origin=My+Location';
+    const modeParam = travelMode ? `&travelmode=${travelMode}` : '';
 
-    try {
-      const res = await fetch('/api/commute-guide', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          userOrigin,
-          travelMode,
-          destination: 'Queensbury Montessori School, Santa Maria, Auntie Aku Last Stop, near North Deseret Hospital, Accra, Ghana',
-        }),
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Failed to calculate commute guide');
-      setMapsResponse(data.guide);
-    } catch (err: any) {
-      setMapsError(err.message || 'Commute guidance service unavailable');
-    } finally {
-      setMapsLoading(false);
-    }
+    const url = `https://www.google.com/maps/dir/?api=1${originParam}&destination=${destination}${modeParam}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  const handleGenerateVideo = async () => {
-    setAnimatorLoading(true);
-    setAnimatorError(null);
-    setVideoData(null);
+  const parentFaqs = [
+    {
+      question: 'How can we encourage morning independence so dressing is less frustrating?',
+      answer:
+        'Place 2 pre-selected weather-appropriate outfits on a low, child-accessible hook or shelf the night before. Use velcro or slip-on shoes. Allow 10 extra unhurried minutes in the morning so your child can practice pulling on socks and fastening shoes without being rushed.',
+      topic: 'Independence & Daily Routine',
+    },
+    {
+      question: 'My 3-year-old struggles to share toys and gets frustrated. How does Montessori handle this?',
+      answer:
+        'In true Montessori environments, children are not forced to share an active work item mid-activity. Instead, each child has protected focus until they are finished and return the material to the shelf. At home, give your child an area for their special belongings and encourage taking turns naturally rather than sudden snatching.',
+      topic: 'Emotional Regulation & Sharing',
+    },
+    {
+      question: 'When is a child ready for toilet learning in Crèche / Nursery?',
+      answer:
+        'Signs of readiness include staying dry for 2 hours, showing curiosity when adults use the bathroom, and being able to pull pants down independently. We partner closely with parents during this transition using gentle consistency, low stools, and comfortable clothing without pressure.',
+      topic: 'Self-Care & Potty Transition',
+    },
+    {
+      question: 'How do you support children experiencing separation anxiety during drop-off?',
+      answer:
+        'Predictable, warm, and brief goodbyes work best. A consistent ritual—a warm hug, saying "I will see you at 3:00 PM after fruit time," and confident hand-off to the teacher—builds trust. Lingering or sneaking away increases anxiety. Our caregivers stay close to comfort and engage the child immediately.',
+      topic: 'School Transition & Attachment',
+    },
+    {
+      question: 'What should be packed for snacks and hydration at school?',
+      answer:
+        'We encourage wholesome, fresh foods: peeled fruits (pawpaw, watermelon, sweet banana), boiled eggs, small whole-wheat sandwiches, and reusable water bottles. We avoid sweetened packaged drinks or processed candies to support steady focus and balanced energy throughout the day.',
+      topic: 'Nutrition & Health',
+    },
+  ];
 
-    try {
-      const res = await fetch('/api/animate-video', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          prompt: animatorPrompt,
-          aspectRatio,
-        }),
-      });
-
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Video animation failed');
-      setVideoData(data.videoData);
-    } catch (err: any) {
-      setAnimatorError(err.message || 'Video generation service currently processing or unavailable');
-    } finally {
-      setAnimatorLoading(false);
-    }
-  };
+  const classroomMoments = [
+    {
+      title: 'Practical Life & Independence',
+      description: 'Care of self and environment: pouring water, spooning grains, and buttoning frames.',
+      image: '/src/assets/images/programme_nursery_practical_1793950102981.jpg',
+      stage: 'Nursery (2–4 Years)',
+    },
+    {
+      title: 'Sensorial Dimension & Geometry',
+      description: 'Exploring dimension, tactile weight, and geometric forms using wooden Montessori apparatus.',
+      image: '/assets/school/school_fb_photo_1.jpg',
+      stage: 'Kindergarten (4–6 Years)',
+    },
+    {
+      title: 'Outdoor Exploration & Social Play',
+      description: 'Courtyard movement, sand play, gross motor coordination, and cooperative communication.',
+      image: '/assets/school/school_fb_photo_2.jpg',
+      stage: 'All Stages',
+    },
+    {
+      title: 'Language & Phonetic Sandpaper Letters',
+      description: 'Tracing tactile letters with fingertips while pronouncing pure phonetic sounds.',
+      image: '/assets/school/school_fb_photo_3.jpg',
+      stage: 'Preschool & Kindergarten',
+    },
+  ];
 
   return (
     <section id="parent-portal" className="py-12 bg-[#fafafc] dark:bg-[#030718] transition-colors duration-200">
@@ -113,29 +141,18 @@ export const ParentPortalFeatures: React.FC = () => {
         {/* Header */}
         <div className="max-w-3xl mb-10">
           <div className="text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
-            PARENT RESOURCES & COMMUNITY SUITE
+            PARENT RESOURCES & CAMPUS TOOLS
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl text-[#0d176d] dark:text-white font-bold tracking-tight leading-tight">
-            Parent tools designed to support your child’s journey.
+            Practical resources to support your family’s journey.
           </h2>
           <p className="mt-3 text-base text-slate-600 dark:text-slate-300 font-light leading-relaxed">
-            Access our Montessori Pedagogical Advisor, commute directions to our Santa Maria campus grounded in Google Maps, classroom memory animator, and community updates.
+            Plan your morning commute with live Google Maps directions, consult early childhood guidelines, explore classroom moments, and view term notices.
           </p>
         </div>
 
         {/* Feature Navigation Tabs */}
         <div className="flex flex-wrap items-center gap-2 p-1.5 bg-slate-100 dark:bg-[#060c24] rounded-2xl max-w-3xl mb-8 border border-slate-200 dark:border-white/10">
-          <button
-            onClick={() => setActiveTab('advisor')}
-            className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold rounded-xl transition-all cursor-pointer ${
-              activeTab === 'advisor'
-                ? 'bg-[#0d176d] dark:bg-[#f95716] text-white shadow-md'
-                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5'
-            }`}
-          >
-            <Brain className="w-4 h-4 text-[#f95716] dark:text-white" />
-            <span>Pedagogical Advisor</span>
-          </button>
           <button
             onClick={() => setActiveTab('maps')}
             className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold rounded-xl transition-all cursor-pointer ${
@@ -144,20 +161,34 @@ export const ParentPortalFeatures: React.FC = () => {
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5'
             }`}
           >
-            <MapPin className="w-4 h-4 text-[#f95716] dark:text-white" />
-            <span>Maps & Commute (Santa Maria)</span>
+            <Navigation className="w-4 h-4 text-[#f95716] dark:text-white" />
+            <span>Maps & Commute Directions</span>
           </button>
+
           <button
-            onClick={() => setActiveTab('animator')}
+            onClick={() => setActiveTab('faq')}
             className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold rounded-xl transition-all cursor-pointer ${
-              activeTab === 'animator'
+              activeTab === 'faq'
                 ? 'bg-[#0d176d] dark:bg-[#f95716] text-white shadow-md'
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5'
             }`}
           >
-            <Video className="w-4 h-4 text-[#f95716] dark:text-white" />
-            <span>Learning Moments</span>
+            <HelpCircle className="w-4 h-4 text-[#f95716] dark:text-white" />
+            <span>Montessori Home FAQs</span>
           </button>
+
+          <button
+            onClick={() => setActiveTab('moments')}
+            className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold rounded-xl transition-all cursor-pointer ${
+              activeTab === 'moments'
+                ? 'bg-[#0d176d] dark:bg-[#f95716] text-white shadow-md'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/60 dark:hover:bg-white/5'
+            }`}
+          >
+            <ImageIcon className="w-4 h-4 text-[#f95716] dark:text-white" />
+            <span>Classroom Moments</span>
+          </button>
+
           <button
             onClick={() => setActiveTab('notices')}
             className={`flex items-center gap-2 py-2.5 px-4 text-xs font-bold rounded-xl transition-all cursor-pointer ${
@@ -167,146 +198,54 @@ export const ParentPortalFeatures: React.FC = () => {
             }`}
           >
             <Calendar className="w-4 h-4 text-[#f95716] dark:text-white" />
-            <span>Parent Notices & PTA</span>
+            <span>PTA & Term Notices</span>
           </button>
         </div>
 
-        {/* Tab 1: Pedagogical Advisor */}
-        {activeTab === 'advisor' && (
-          <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
-            <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
-            <div className="max-w-2xl mb-6">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
-                MONTESSORI EXPERT CONSULTATION
-              </span>
-              <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
-                Consult the Montessori Pedagogical Advisor
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-light">
-                Ask early-childhood questions regarding toddler development, language transition, emotional regulation, or creating a Montessori home environment in Ghana.
-              </p>
-            </div>
-
-            <form onSubmit={handleAskAdvisor} className="space-y-4 max-w-3xl">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider mb-1">
-                    Child’s Age / Stage
-                  </label>
-                  <select
-                    value={childAge}
-                    onChange={(e) => setChildAge(e.target.value)}
-                    className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
-                  >
-                    <option value="14 months (Crèche)">14 months (Crèche)</option>
-                    <option value="2.5 years (Nursery Transition)">2.5 years (Nursery Transition)</option>
-                    <option value="3 years (Nursery)">3 years (Nursery)</option>
-                    <option value="4.5 years (Kindergarten)">4.5 years (Kindergarten)</option>
-                    <option value="5 to 6 years (KG2 & Primary Prep)">5 to 6 years (KG2 & Primary Prep)</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider mb-1">
-                    Consultation Focus
-                  </label>
-                  <select
-                    value={advisorTopic}
-                    onChange={(e) => setAdvisorTopic(e.target.value)}
-                    className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
-                  >
-                    <option value="Independence & Self-Regulation">Independence & Self-Regulation</option>
-                    <option value="Potty Learning & Self-Care">Potty Learning & Self-Care</option>
-                    <option value="Separation Anxiety & School Transition">Separation Anxiety & School Transition</option>
-                    <option value="Bilingual Language Acquisition">Bilingual Language Acquisition</option>
-                    <option value="Montessori Mathematics at Home">Montessori Mathematics at Home</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider mb-1">
-                  Your Specific Question or Household Situation
-                </label>
-                <textarea
-                  rows={3}
-                  value={advisorQuery}
-                  onChange={(e) => setAdvisorQuery(e.target.value)}
-                  placeholder="Describe your situation or question..."
-                  className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
-                />
-              </div>
-
-              <div className="flex items-center gap-3">
-                <button
-                  type="submit"
-                  disabled={advisorLoading}
-                  className="px-6 py-3 bg-[#0d176d] hover:bg-[#f95716] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2 disabled:opacity-50 shadow-md cursor-pointer"
-                >
-                  {advisorLoading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span>Consulting Montessori Advisor...</span>
-                    </>
-                  ) : (
-                    <>
-                      <Sparkles className="w-4 h-4" />
-                      <span>Request Montessori Consultation</span>
-                    </>
-                  )}
-                </button>
-              </div>
-            </form>
-
-            {advisorError && (
-              <div className="mt-4 p-4 rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 text-red-700 dark:text-red-300 text-xs">
-                {advisorError}
-              </div>
-            )}
-
-            {advisorResponse && (
-              <div className="mt-6 p-6 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 animate-in fade-in">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
-                  <span>Pedagogical Analysis & Guidance</span>
-                </div>
-                <div className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans leading-relaxed whitespace-pre-wrap">
-                  {advisorResponse}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Tab 2: Maps & Commute */}
+        {/* Tab 1: Maps & Commute */}
         {activeTab === 'maps' && (
           <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
-            <div className="max-w-2xl mb-6">
-              <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
-                CAMPUS COMMUTE TO SANTA MARIA
-              </span>
-              <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
-                Plan Your Commute to Queensbury (Santa Maria)
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-light">
-                Get driving directions, traffic landmarks, and arrival guidance to our Santa Maria (Auntie Aku Last Stop) campus near North Deseret Hospital.
-              </p>
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
+                  CAMPUS COMMUTE TO SANTA MARIA
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
+                  Plan Your Commute to Queensbury
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-light">
+                  Direct navigation to our Santa Maria campus (Auntie Aku Last Stop, near North Deseret Hospital).
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={handleUseCurrentLocation}
+                disabled={locating}
+                className="py-2.5 px-4 rounded-xl bg-slate-100 dark:bg-white/10 hover:bg-slate-200 dark:hover:bg-white/15 text-slate-700 dark:text-slate-200 text-xs font-semibold transition-all flex items-center gap-2 cursor-pointer shrink-0 border border-slate-200/60 dark:border-white/10"
+              >
+                <LocateFixed className={`w-4 h-4 text-[#f95716] ${locating ? 'animate-spin' : ''}`} />
+                <span>{locating ? 'Detecting Location...' : 'Use My Current Location'}</span>
+              </button>
             </div>
 
-            <form onSubmit={handleGetMapGuide} className="space-y-4 max-w-3xl">
+            <form onSubmit={handleOpenGoogleMapsDirections} className="space-y-5 max-w-3xl">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider mb-1">
                     Your Starting Neighborhood (Accra)
                   </label>
-                  <input
-                    type="text"
-                    value={userOrigin}
-                    onChange={(e) => setUserOrigin(e.target.value)}
-                    placeholder="e.g. Sowutuom, Lapaz, Kwashieman, Ablekuma"
-                    className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
-                  />
+                  <div className="relative">
+                    <Compass className="w-4 h-4 text-[#f95716] absolute left-3.5 top-1/2 -translate-y-1/2" />
+                    <input
+                      type="text"
+                      value={startLocation}
+                      onChange={(e) => setStartLocation(e.target.value)}
+                      placeholder="e.g. Lapaz, Sowutuom, Kwashieman, Ablekuma"
+                      className="w-full text-xs pl-10 pr-3 py-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
+                    />
+                  </div>
                 </div>
 
                 <div>
@@ -315,152 +254,175 @@ export const ParentPortalFeatures: React.FC = () => {
                   </label>
                   <select
                     value={travelMode}
-                    onChange={(e) => setTravelMode(e.target.value)}
-                    className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
+                    onChange={(e) => setTravelMode(e.target.value as any)}
+                    className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none cursor-pointer"
                   >
-                    <option value="driving">Driving / School Carpool</option>
-                    <option value="transit">Public Transit (Trotro & Taxi)</option>
-                    <option value="walking">Walking / Local Neighborhood</option>
+                    <option value="driving">🚗 Driving / School Drop-off</option>
+                    <option value="transit">🚌 Public Transit (Trotro & Taxi)</option>
+                    <option value="walking">🚶 Walking (Local Neighborhood)</option>
                   </select>
                 </div>
               </div>
 
-              <button
-                type="submit"
-                disabled={mapsLoading}
-                className="px-6 py-3 bg-[#0d176d] hover:bg-[#f95716] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2 disabled:opacity-50 shadow-md cursor-pointer"
-              >
-                {mapsLoading ? (
-                  <>
-                    <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Calculating Commute...</span>
-                  </>
-                ) : (
-                  <>
-                    <Navigation className="w-4 h-4" />
-                    <span>Get Commute Directions</span>
-                  </>
-                )}
-              </button>
+              {/* Quick Pick Areas */}
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 block mb-2 font-semibold">
+                  Quick Select Starting Point:
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {popularAreas.map((area) => (
+                    <button
+                      type="button"
+                      key={area}
+                      onClick={() => setStartLocation(area)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer border ${
+                        startLocation === area
+                          ? 'bg-[#0d176d] text-white border-[#0d176d]'
+                          : 'bg-slate-50 dark:bg-white/5 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-white/10 hover:border-[#f95716]'
+                      }`}
+                    >
+                      {area}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  className="px-6 py-3 bg-[#0d176d] hover:bg-[#132087] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center gap-2 shadow-md cursor-pointer"
+                >
+                  <Navigation className="w-4 h-4 text-[#f95716]" />
+                  <span>Open Route in Google Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-70" />
+                </button>
+              </div>
             </form>
 
-            {mapsError && (
-              <div className="mt-4 p-4 rounded-xl bg-red-50 dark:bg-red-950/30 border border-red-200 dark:border-red-900/50 text-red-700 dark:text-red-300 text-xs">
-                {mapsError}
-              </div>
-            )}
-
-            {mapsResponse && (
-              <div className="mt-6 p-6 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-800 dark:text-slate-200 animate-in fade-in">
-                <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[#f95716] font-bold mb-2">
-                  <MapPin className="w-4 h-4 text-[#0d176d] dark:text-[#f95716]" />
-                  <span>Santa Maria Route Guidance</span>
-                </div>
-                <div className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 font-sans leading-relaxed whitespace-pre-wrap">
-                  {mapsResponse}
-                </div>
-              </div>
-            )}
+            {/* Embedded interactive map */}
+            <div className="mt-8 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#020617] aspect-16/9 sm:aspect-21/9 shadow-inner relative">
+              <iframe
+                title="Queensbury Montessori School Location"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'contrast(1.05)' }}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Queensbury+Montessori+School+Santa+Maria+Accra+Ghana&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              />
+            </div>
           </div>
         )}
 
-        {/* Tab 3: Learning Moments Video Animator */}
-        {activeTab === 'animator' && (
+        {/* Tab 2: Montessori Home FAQs */}
+        {activeTab === 'faq' && (
           <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
             <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
-            <div className="max-w-2xl mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6">
+              <div>
+                <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
+                  MONTESSORI EARLY CHILDHOOD GUIDANCE
+                </span>
+                <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
+                  Practical Parenting at Home
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-light">
+                  Common questions regarding toddler development, toilet learning, morning independence, and positive discipline.
+                </p>
+              </div>
+
+              <a
+                href="https://wa.me/233241133632?text=Hello%20Queensbury%20Montessori%20Admissions%2C%20I%20have%20a%20question%20about%20early%20childhood%20development%20and%20enrollment."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold uppercase tracking-wider transition-all shadow-md shrink-0 cursor-pointer"
+              >
+                <MessageSquare className="w-4 h-4 fill-current" />
+                <span>Ask on WhatsApp (024 113 3632)</span>
+              </a>
+            </div>
+
+            <div className="space-y-3 max-w-4xl">
+              {parentFaqs.map((faq, idx) => {
+                const isOpen = openFaq === idx;
+                return (
+                  <div
+                    key={idx}
+                    className="border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden bg-slate-50 dark:bg-[#020617] transition-all"
+                  >
+                    <button
+                      type="button"
+                      onClick={() => setOpenFaq(isOpen ? null : idx)}
+                      className="w-full p-4 sm:p-5 text-left flex items-start justify-between gap-4 cursor-pointer"
+                    >
+                      <div>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#f95716] font-bold block mb-1">
+                          {faq.topic}
+                        </span>
+                        <h4 className="font-serif text-base font-bold text-[#0d176d] dark:text-white">
+                          {faq.question}
+                        </h4>
+                      </div>
+                      <div className="p-1 rounded-full bg-white dark:bg-white/10 text-slate-600 dark:text-slate-300 shrink-0 mt-1">
+                        {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                      </div>
+                    </button>
+
+                    {isOpen && (
+                      <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-200/50 dark:border-white/5 font-sans">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Tab 3: Classroom Moments Photo Showcase */}
+        {activeTab === 'moments' && (
+          <div className="bg-white dark:bg-[#060c24] border border-slate-200/90 dark:border-white/10 rounded-3xl p-6 sm:p-10 shadow-xl relative overflow-hidden animate-in fade-in duration-300">
+            <div className="absolute top-0 left-0 right-0 h-2 bg-[#f95716]" />
+            <div className="max-w-2xl mb-8">
               <span className="text-[11px] font-mono uppercase tracking-widest text-[#f95716] font-bold block mb-1">
-                VISUAL MOMENTS
+                DISCOVERY IN ACTION
               </span>
               <h3 className="font-serif text-2xl font-bold text-[#0d176d] dark:text-white">
-                Classroom Learning Moments Animator
+                Daily Classroom Learning Moments
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1 font-light">
-                Bring Montessori discovery photos to life with gentle cinematic motion, celebrating early childhood milestones.
+                Photographs from our prepared environments in Santa Maria showing hands-on Montessori materials, practical life exercises, and collaborative play.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <label className="block text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider mb-2">
-                  Selected Reference Photograph
-                </label>
-                <div className="aspect-16/10 rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-100 dark:bg-[#020617] mb-4">
-                  <img
-                    src={animatorImage}
-                    alt="Montessori learning scene"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-
-                <div className="space-y-3">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider mb-1">
-                      Animation Prompt
-                    </label>
-                    <input
-                      type="text"
-                      value={animatorPrompt}
-                      onChange={(e) => setAnimatorPrompt(e.target.value)}
-                      className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {classroomMoments.map((moment, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-[#020617] flex flex-col justify-between"
+                >
+                  <div className="aspect-16/10 overflow-hidden relative">
+                    <img
+                      src={moment.image}
+                      alt={moment.title}
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                     />
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-[#0d176d]/90 backdrop-blur-md text-white text-[10px] font-mono uppercase font-bold tracking-wider">
+                      {moment.stage}
+                    </div>
                   </div>
-
-                  <div>
-                    <label className="block text-xs font-bold text-slate-700 dark:text-slate-200 uppercase tracking-wider mb-1">
-                      Aspect Ratio
-                    </label>
-                    <select
-                      value={aspectRatio}
-                      onChange={(e) => setAspectRatio(e.target.value as any)}
-                      className="w-full text-xs p-3 bg-slate-50 dark:bg-[#020617] text-slate-800 dark:text-white border border-slate-200 dark:border-white/10 rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] outline-none"
-                    >
-                      <option value="16:9">Landscape (16:9)</option>
-                      <option value="9:16">Portrait / Mobile (9:16)</option>
-                    </select>
-                  </div>
-
-                  <button
-                    onClick={handleGenerateVideo}
-                    disabled={animatorLoading}
-                    className="w-full py-3 px-4 bg-[#0d176d] hover:bg-[#f95716] text-white text-xs font-bold uppercase tracking-wider rounded-full transition-all flex items-center justify-center gap-2 disabled:opacity-50 shadow-md cursor-pointer"
-                  >
-                    {animatorLoading ? (
-                      <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                        <span>Rendering Video Animation...</span>
-                      </>
-                    ) : (
-                      <>
-                        <Play className="w-4 h-4" />
-                        <span>Generate Learning Moment Video</span>
-                      </>
-                    )}
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex flex-col justify-center items-center p-8 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-center">
-                {videoData ? (
-                  <video
-                    src={`data:video/mp4;base64,${videoData}`}
-                    controls
-                    autoPlay
-                    loop
-                    className="rounded-xl shadow-xl max-h-[300px]"
-                  />
-                ) : (
-                  <div className="text-center text-slate-500 dark:text-slate-400">
-                    <Video className="w-12 h-12 text-[#f95716] mx-auto mb-3 opacity-60" />
+                  <div className="p-5">
                     <h4 className="font-serif text-lg font-bold text-[#0d176d] dark:text-white mb-1">
-                      Live Video Playback
+                      {moment.title}
                     </h4>
-                    <p className="text-xs font-light max-w-xs text-slate-500 dark:text-slate-400">
-                      Click the generate button to animate this Montessori learning moment.
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                      {moment.description}
                     </p>
                   </div>
-                )}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         )}
@@ -485,28 +447,42 @@ export const ParentPortalFeatures: React.FC = () => {
               <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
-                    Term 3 Uniform & Footwear Guidelines
+                    Uniform & Footwear Guidelines
                   </h4>
                   <span className="text-[11px] font-mono text-[#f95716] uppercase font-bold bg-[#f95716]/10 px-2.5 py-1 rounded-full">
                     Notice 01
                   </span>
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                  Please ensure children have comfortable, velcro or slip-on indoor shoes that empower them to practice dressing independently each morning in their classroom.
+                  Please ensure children wear comfortable velcro or slip-on shoes so they can independently practice putting on and taking off footwear each morning.
                 </p>
               </div>
 
               <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
                 <div className="flex items-center justify-between mb-2">
                   <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
-                    PTA Executive Assembly & Growth Review
+                    PTA General Meeting & Progress Review
                   </h4>
                   <span className="text-[11px] font-mono text-[#0d176d] dark:text-blue-300 uppercase font-bold bg-blue-100 dark:bg-blue-950/60 px-2.5 py-1 rounded-full">
                     Notice 02
                   </span>
                 </div>
                 <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
-                  Our termly parent-faculty gathering will be held on campus Saturday morning. Light refreshments and developmental portfolio reviews provided.
+                  Our termly parent-teacher gathering takes place on campus. Meet with class educators, review portfolio milestones, and discuss term activities.
+                </p>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-slate-50 dark:bg-[#020617] border border-slate-100 dark:border-white/10">
+                <div className="flex items-center justify-between mb-2">
+                  <h4 className="font-serif font-bold text-[#0d176d] dark:text-white text-base">
+                    Healthy Lunch & Fruit Break Reminder
+                  </h4>
+                  <span className="text-[11px] font-mono text-emerald-700 dark:text-emerald-300 uppercase font-bold bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-full">
+                    Notice 03
+                  </span>
+                </div>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-light">
+                  Fresh fruits and water are shared during mid-morning break. Hot nutritious lunches are freshly prepared daily in our clean campus kitchen.
                 </p>
               </div>
             </div>

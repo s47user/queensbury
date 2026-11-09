@@ -38,7 +38,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
       snippetTw:
         '“Yɛto nsa frɛ awofoɔ nyinaa sɛ mommra mmɛhwɛ sɛnea mo mmofra suani wɔ ahofadie ne asomdwoeɛ mu.”',
       fullContentEn:
-        'Queensbury Montessori School opens its doors for our biannual Open Classroom Observation Cycle. Parents are welcomed into the Crèche, Nursery, and Kindergarten environments for uninterrupted 45-minute observational windows to observe Montessori materials in action.',
+        'Queensbury Montessori School opens its doors for our biannual Open Classroom Observation Cycle. Parents are welcomed into the Crèche, Nursery, and Kindergarten environments for uninterrupted 45-minute classroom visits to observe Montessori materials in action.',
       image: '/src/assets/images/hero_montessori_classroom_1793950102607.jpg',
     },
     {
@@ -53,7 +53,7 @@ export const RisingSunNews: React.FC<RisingSunNewsProps> = ({ onNavigateToNews }
       snippetTw:
         'Yɛn akyerɛkyerɛfoɔ no anya nteteeɛ foforɔ wɔ bammbɔ ne aduro a wɔde boa mmofra ntɛm ara ho.',
       fullContentEn:
-        'All Queensbury Montessori lead guides and childcare assistants have completed accredited Pediatric First Aid and Child Safeguarding certification. In accordance with our hygiene and care protocols, continuous training ensures our Santa Maria haven remains secure, clean, and serene for all learners.',
+        'All Queensbury Montessori lead guides and childcare assistants have completed accredited Pediatric First Aid and Child Safeguarding certification. In accordance with our hygiene and care protocols, continuous training ensures our Santa Maria campus remains secure, clean, and serene for all learners.',
       image: '/assets/school/school_fb_photo_5.jpg',
     },
   ];

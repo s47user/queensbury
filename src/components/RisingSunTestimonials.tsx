@@ -9,7 +9,7 @@ export const RisingSunTestimonials: React.FC = () => {
   const testimonials = [
     {
       quoteEn:
-        '“The unhurried calm of the Crèche sleep sanctuary gave me immense peace of mind. My daughter transitioned into the Nursery with so much self-confidence and natural courtesy.”',
+        '“The calm and attentive care in the Crèche room gave me immense peace of mind. My daughter transitioned into the Nursery with so much self-confidence and natural courtesy.”',
       quoteTw:
         '“Sɛnea wɔhwɛ me ba no wɔ Crèche nna dan no mu no maa me koma tɔɔ me yam. Bere a ɔkɔɔ Nursery no, na ɔwɔ obu ne ahofadie pa ara.”',
       author: 'Mrs. Abena Brobbey Andoh',

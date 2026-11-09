@@ -17,13 +17,13 @@ export const RisingSunHero: React.FC<RisingSunHeroProps> = ({
       image: '/src/assets/images/hero_montessori_classroom_1793950102607.jpg',
       headline: 'Where Curious Minds Grow into Lifelong Explorers',
       subheadline:
-        'An authentic, child-centred Montessori sanctuary in Santa Maria, Auntie Aku, Accra. Nurturing independence, creativity, and purposeful early childhood growth.',
+        'A dedicated, child-centred Montessori school in Santa Maria, Auntie Aku, Accra. Nurturing independence, creativity, and purposeful early childhood growth.',
     },
     {
       image: '/assets/school/school_fb_photo_1.jpg',
       headline: 'Empowering Inquisitive Minds with Hands-On Apparatus',
       subheadline:
-        'From Crèche through Kindergarten, children explore self-paced discovery in child-scaled prepared environments tailored to their sensitive developmental windows.',
+        'From Crèche through Kindergarten, children explore hands-on discovery in child-scaled classrooms tailored to each developmental stage.',
     },
     {
       image: '/assets/school/school_fb_photo_2.jpg',

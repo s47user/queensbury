@@ -133,7 +133,7 @@ Observation Slot: ${preferredSlot}`;
                   className="w-full text-sm p-3 bg-slate-50 dark:bg-[#020617] border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white rounded-xl focus:bg-white dark:focus:bg-[#080f30] focus:border-[#f95716] focus:outline-none"
                 >
                   <option value="All Campus Prepared Environments">All Environments (Santa Maria)</option>
-                  <option value="Crèche Sleep & Daycare Sanctuary">Crèche Sanctuary (0–2 Years)</option>
+                  <option value="Crèche Sleep & Daycare Room">Crèche & Daycare (0–2 Years)</option>
                   <option value="Nursery Sensorial Atelier">Nursery Atelier (2–4 Years)</option>
                   <option value="Kindergarten & Math Wing">Kindergarten Wing (4–6 Years)</option>
                 </select>
